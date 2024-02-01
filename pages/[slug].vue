@@ -1,10 +1,19 @@
 <script lang="ts" setup>
 const { slug } = useRoute().params;
+const isMonted = ref(false);
+
+onMounted(() => isMonted.value = true);
 </script>
 
 <template>
   <main>
-    <Back />
+    <template v-if="isMonted">
+      <ClientOnly>
+        <Teleport to="#header">
+          <Back />
+        </Teleport>
+      </ClientOnly>
+    </template>
 
     <article class="bg-white dark:bg-black rounded-2xl">
       <ContentDoc :path="`/thoughts/${slug}`" v-slot="{ doc }">
