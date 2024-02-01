@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply
+      flex w-full justify-center rounded-xl
+      px-4 py-2 text-sm font-medium
+      transition-colors duration-200 ease-in;
+  }
+
+  .btn.btn-default {
+    @apply bg-gray-200 hover:bg-gray-300 dark:bg-black/50 dark:text-white dark:hover:bg-black/30;
+  }
+
+  .btn .btn--icon-right {
+    @apply -mr-1 ml-2 h-5 w-5 text-gray-700 dark:text-gray-100;
+  }
+
+  .btn .btn--icon-left {
+    @apply mr-2 -ml-1 h-5 w-5 text-gray-700 dark:text-gray-100;
+  }
+};
