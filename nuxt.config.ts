@@ -9,9 +9,7 @@ export default defineNuxtConfig({
     layoutTransition: { name: "layout", mode: "out-in" },
   },
   modules: ["@nuxtjs/tailwindcss", "@nuxtjs/color-mode", "@nuxt/content"],
-  content: {
-    documentDriven: true,
-  },
+  content: {},
   tailwindcss: {
     cssPath: ["~/assets/css/tailwind.css", { injectPosition: "first" }],
     configPath: "tailwind.config",

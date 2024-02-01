@@ -12,5 +12,5 @@
 import { ChevronLeftIcon } from '@heroicons/vue/24/solid';
 
 const router = useRouter();
-const goBack = () => router.go(-1);
+const goBack = () => router.back();
 </script>

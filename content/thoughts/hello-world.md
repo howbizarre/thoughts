@@ -5,8 +5,11 @@ draft: false
 tags: ["hello", "world"]
 thumbnail: "/img/hello-world.jpg"
 slug: hello-world
-layout: article
 ---
+
+::back
+Back
+::
 
 Hello World!
 
