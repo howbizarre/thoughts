@@ -1,9 +1,13 @@
+<script lang="ts" setup>
+const { slug } = useRoute().params;
+</script>
+
 <template>
   <main>
-    <Back class="mb-4" />
-    
+    <Back />
+
     <article class="bg-white dark:bg-black rounded-2xl">
-      <ContentDoc v-slot="{ doc }">
+      <ContentDoc :path="`/thoughts/${slug}`" v-slot="{ doc }">
         <div class="mt-4 content">
           <header>
             <div class="text-center p-5">

@@ -7,10 +7,6 @@ thumbnail: "/img/hello-world.jpg"
 slug: hello-world
 ---
 
-::back
-Back
-::
-
 Hello World!
 
 ```js

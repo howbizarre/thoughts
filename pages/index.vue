@@ -8,18 +8,9 @@ useHead({
   <div>
     <ContentList path="/thoughts"
                  fields="title,date,thumbnail"
-                 :query="{
-                   draft: false,
-                   sort: [
-                     {
-                       date: -1,
-                     },
-                   ],
-                 }"
+                 :query="{ draft: false, sort: [{ date: -1 }] }"
                  v-slot="{ list }">
-      <div v-for="blog in list"
-           :key="blog._path"
-           class="blog-card bg-white dark:bg-black rounded-2xl overflow-hidden mb-4">
+      <div v-for="blog in list" :key="blog._path" class="blog-card bg-white dark:bg-black rounded-2xl overflow-hidden mb-4">
         <div class="h-[300px] relative">
           <img v-if="blog.thumbnail"
                :src="blog.thumbnail"
@@ -29,7 +20,7 @@ useHead({
 
         <div class="blog-card--meta my-4 ml-4">
           <h3 class="text-2xl font-bold">
-            <NuxtLink :to="`/thoughts/${blog.slug}`">{{ blog.title }}</NuxtLink>
+            <NuxtLink :to="`${blog.slug}`">{{ blog.title }}</NuxtLink>
           </h3>
 
           <div class="text-sm text-gray-500 mt-px block">{{ blog.date }}</div>
