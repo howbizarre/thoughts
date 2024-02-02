@@ -5,7 +5,7 @@ draft: false
 tags: ["nuxt", "nuxt3", "mongodb", "mongoose"]
 thumbnail: "/img/mongodb.webp"
 slug: "mongo-db"
-locale: "bg"
+navigation: false
 ---
 
 

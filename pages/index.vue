@@ -7,11 +7,7 @@ useHead({
 </script>
 
 <template>
-  <div>
-    <h1 class="text-4xl font-bold mb-4">
-      <NuxtLink :to="localePath('/')">{{ $t('hi') }}</NuxtLink>
-    </h1>
-    
+  <div>    
     <ContentList :path="localePath('/thoughts')"
                  fields="title,date,thumbnail"
                  :query="{ draft: false, sort: [{ date: -1 }] }"

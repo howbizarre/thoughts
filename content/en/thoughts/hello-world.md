@@ -5,7 +5,7 @@ draft: false
 tags: ["hello", "world"]
 thumbnail: "/img/hello-world.jpg"
 slug: "hello-world"
-locale: "en"
+navigation: false
 ---
 
 Hello World!

@@ -7,7 +7,6 @@ export default defineNuxtConfig({
     pageTransition: { name: "page", mode: "out-in" }
   },
   modules: ["@nuxtjs/tailwindcss", "@nuxtjs/color-mode", "@nuxt/content", "@nuxtjs/i18n"],
-
   content: {},
   i18n: {
     defaultLocale: "en",

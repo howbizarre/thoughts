@@ -1,16 +1,16 @@
 <script setup lang="ts">
-const switchLocalePath = useSwitchLocalePath()
+const { locale, locales } = useI18n();
+const switchLocalePath = useSwitchLocalePath();
+
+const availableLocales = computed(() => {
+  return (locales.value).filter(i => i.code !== locale.value);
+});
 </script>
 
 <template>
   <div>
-    <NuxtLink :to="switchLocalePath('en')" class="btn btn-default inline mx-1">EN</NuxtLink>
-    <NuxtLink :to="switchLocalePath('bg')" class="btn btn-default inline mx-1">БГ</NuxtLink>
+    <NuxtLink v-for="locale in availableLocales" :key="locale.code" :to="switchLocalePath(locale.code)" class="btn btn-default">
+      {{ locale.name }}
+    </NuxtLink>
   </div>
 </template>
-
-<style scoped>
-.router-link-active.router-link-exact-active {
-  @apply bg-black text-white dark:bg-white dark:text-black;
-}
-</style>

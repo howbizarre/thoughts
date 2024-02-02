@@ -5,7 +5,7 @@ draft: false
 tags: ["здравей", "свят"]
 thumbnail: "/img/hello-world.jpg"
 slug: "hello-world"
-locale: "bg"
+navigation: false
 ---
 
 Здравей свят!
