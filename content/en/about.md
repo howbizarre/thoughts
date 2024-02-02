@@ -2,7 +2,7 @@
 title: "Who is who?"
 slug: "about"
 navigation:
-  title: "About me"
+  title: "About"
   icon: "/images/icons/user.svg"
 ---
 

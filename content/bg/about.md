@@ -2,7 +2,7 @@
 title: "Кой кой е?"
 slug: "about"
 navigation:
-  title: "За мен"
+  title: "Инфо"
   icon: "/images/icons/user.svg"
 ---
 

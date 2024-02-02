@@ -11,7 +11,7 @@ const localePath = useLocalePath();
   <ContentNavigation v-slot="{ navigation }">
     <nav class="grid grid-flow-col auto-cols-max gap-2">
       <NuxtLink :to="localePath('/')" class="btn btn-default">
-        <HomeIcon class="h-5 w-5 text-gray-700 dark:text-gray-100" />
+        <HomeIcon class="h-5 w-5" />
       </NuxtLink>
 
       <NuxtLink v-for="link of localeNavigation[0].children" :key="link._path" :to="link._path" class="btn btn-default">

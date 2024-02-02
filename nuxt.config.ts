@@ -13,13 +13,13 @@ export default defineNuxtConfig({
     locales: [
       {
         code: "en",
-        name: "English",
+        name: "EN",
         iso: "en-US",
         file: "en-US.json",
       },
       {
         code: "bg",
-        name: "Български",
+        name: "БГ",
         iso: "bg-BG",
         file: "bg-BG.json",
       },
