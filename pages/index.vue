@@ -28,9 +28,9 @@ useHead({
           <div class="text-sm text-gray-500 mt-px block">{{ blog.date }}</div>
 
           <div v-if="blog.tags" class="mt-2 text-xs">
-            <span v-for="tag in blog.tags" class="p-1 rounded bg-gray-100 dark:bg-gray-900 text-gray-500 mr-2">
+            <NuxtLink v-for="tag in blog.tags" :to="localePath(`/tag/${tag}`)" class="p-1 rounded bg-gray-100 dark:bg-gray-900 text-gray-500 mr-2">
               {{ tag }}
-            </span>
+            </NuxtLink>
           </div>
         </div>
       </div>
