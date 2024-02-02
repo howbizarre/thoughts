@@ -1,5 +1,8 @@
 <script lang="ts" setup>
-const { slug } = useRoute().params;
+const localePath = useLocalePath();
+const route = useRoute();
+
+const { slug } = route.params;
 const isMonted = ref(false);
 
 onMounted(() => isMonted.value = true);
@@ -16,7 +19,7 @@ onMounted(() => isMonted.value = true);
     </template>
 
     <article class="bg-white dark:bg-black rounded-2xl">
-      <ContentDoc :path="`/thoughts/${slug}`" v-slot="{ doc }">
+      <ContentDoc :path="localePath(`${slug}`)" v-slot="{ doc }">
         <div class="mt-4 content">
           <header>
             <div class="text-center p-5">

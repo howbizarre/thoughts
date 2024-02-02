@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+const localePath = useLocalePath();
+
 useHead({
   title: "Nuxt Content Blog Demo",
 });
@@ -6,7 +8,11 @@ useHead({
 
 <template>
   <div>
-    <ContentList path="/thoughts"
+    <h1 class="text-4xl font-bold mb-4">
+      <NuxtLink :to="localePath('/')">{{ $t('hi') }}</NuxtLink>
+    </h1>
+    
+    <ContentList :path="localePath('/thoughts')"
                  fields="title,date,thumbnail"
                  :query="{ draft: false, sort: [{ date: -1 }] }"
                  v-slot="{ list }">
@@ -20,7 +26,7 @@ useHead({
 
         <div class="blog-card--meta my-4 ml-4">
           <h3 class="text-2xl font-bold">
-            <NuxtLink :to="`${blog.slug}`">{{ blog.title }}</NuxtLink>
+            <NuxtLink :to="localePath(`/thoughts/${blog.slug}`)">{{ blog.title }}</NuxtLink>
           </h3>
 
           <div class="text-sm text-gray-500 mt-px block">{{ blog.date }}</div>

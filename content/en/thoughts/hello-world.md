@@ -1,10 +1,11 @@
 ---
 title: "Hello World"
-date: 2023-10-05
+date: "2023-10-05"
 draft: false
 tags: ["hello", "world"]
 thumbnail: "/img/hello-world.jpg"
-slug: hello-world
+slug: "hello-world"
+locale: "en"
 ---
 
 Hello World!

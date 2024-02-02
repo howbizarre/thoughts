@@ -1,3 +1,10 @@
+<script lang="ts" setup>
+import { ChevronLeftIcon } from '@heroicons/vue/24/solid';
+
+const router = useRouter();
+const goBack = () => router.back();
+</script>
+
 <template>
   <div class="relative inline-block">
     <ClientOnly>
@@ -7,10 +14,3 @@
     </ClientOnly>
   </div>
 </template>
-
-<script lang="ts" setup>
-import { ChevronLeftIcon } from '@heroicons/vue/24/solid';
-
-const router = useRouter();
-const goBack = () => router.back();
-</script>
