@@ -1,23 +1,11 @@
 <script lang="ts" setup>
 const localePath = useLocalePath();
 const route = useRoute();
-
 const { slug } = route.params;
-const isMonted = ref(false);
-
-onMounted(() => isMonted.value = true);
 </script>
 
 <template>
   <main>
-    <template v-if="isMonted">
-      <ClientOnly>
-        <Teleport to="#header">
-          <Back />
-        </Teleport>
-      </ClientOnly>
-    </template>
-
     <article class="bg-white dark:bg-black rounded-2xl">
       <ContentDoc :path="localePath(`${slug}`)" v-slot="{ doc }">
         <div class="mt-4 content">

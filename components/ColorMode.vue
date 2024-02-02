@@ -13,14 +13,14 @@ const isDark = computed({
 </script>
 
 <template>
-  <div class="relative inline-block">
+  <div>
     <ClientOnly>
-      <button @click="isDark = !isDark" class="btn btn-default">
+      <button @click="isDark = !isDark" class="btn btn-default inline">
         <template v-if="isDark">
-          <SunIcon class="h-6 w-6" />
+          <SunIcon class="h-4 w-4" />
         </template>
         <template v-else>
-          <MoonIcon class="h-6 w-6" />
+          <MoonIcon class="h-4 w-4" />
         </template>
       </button>
     </ClientOnly>

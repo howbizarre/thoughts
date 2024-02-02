@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { HomeIcon } from '@heroicons/vue/24/outline';
+
 const { locale } = useI18n();
 const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation());
 const localeNavigation = computed(() => navigation.value ? navigation.value.filter((item) => item._path === `/${locale.value}`) : []);
@@ -6,16 +8,15 @@ const localePath = useLocalePath();
 </script>
 
 <template>
-  <nav>
-    <ContentNavigation v-slot="{ navigation }">
-      <ul>
-        <li>
-          <NuxtLink :to="localePath('/')">{{ $t('hi') }}</NuxtLink>
-        </li>
-        <li v-for="link of localeNavigation[0].children" :key="link._path">
-          <NuxtLink :to="link._path">{{ link.title }}</NuxtLink>
-        </li>
-      </ul>
-    </ContentNavigation>
-  </nav>
+  <ContentNavigation v-slot="{ navigation }">
+    <nav class="grid grid-flow-col auto-cols-max gap-2">
+      <NuxtLink :to="localePath('/')" class="btn btn-default">
+        <HomeIcon class="h-5 w-5 text-gray-700 dark:text-gray-100" />
+      </NuxtLink>
+
+      <NuxtLink v-for="link of localeNavigation[0].children" :key="link._path" :to="link._path" class="btn btn-default">
+        {{ link.title }}
+      </NuxtLink>
+    </nav>
+  </ContentNavigation>
 </template>

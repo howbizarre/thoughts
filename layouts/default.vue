@@ -3,7 +3,7 @@ const localePath = useLocalePath();
 </script>
 
 <template>
-  <main id="default-layout" class="relative max-w-3xl px-4 mx-auto">
+  <main id="default-layout" class="relative max-w-3xl p-4 mx-auto">
     <Header />
 
     <div id="default-page" class="mt-3">   
