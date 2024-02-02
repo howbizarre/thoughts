@@ -10,7 +10,7 @@ const localePath = useLocalePath();
       <div v-for="blog in list" :key="blog.slug">
         <div class="mt-2 text-xs">
           <template v-for="tag in blog.tags">
-            <NuxtLink :to="`/tag/${tag}`" class="px-1 pb-1 rounded bg-gray-100 border border-gray-400/25 mr-2 shadow-sm capitalize cursor-pointer">
+            <NuxtLink :to="`/tag/${tag}`" class="p-1 rounded bg-gray-100 dark:bg-gray-900 text-gray-500 mr-2">
               {{ tag }}
             </NuxtLink>
           </template>

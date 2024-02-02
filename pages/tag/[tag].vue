@@ -12,7 +12,7 @@ const { tag } = route.params;
                  v-slot="{ list }">
       <div v-for="blog in list"
            :key="blog.slug"
-           class="blog-card bg-white rounded-2xl overflow-hidden mb-4 hover:shadow-md transition-shadow duration-200">
+           class="blog-card bg-white dark:bg-black rounded-2xl overflow-hidden mb-4 hover:shadow-md transition-shadow duration-200">
         <div class="h-[300px] relative">
           <img v-if="blog.thumbnail"
                :src="blog.thumbnail"
@@ -33,7 +33,7 @@ const { tag } = route.params;
           <template v-if="blog.tags">
             <div class="mt-2 text-xs">
               <template v-for="tag in blog.tags">
-                <NuxtLink :to="localePath(`/tag/${tag}`)" class="px-1 pb-1 rounded bg-gray-100 border border-gray-400/25 mr-2 shadow-sm capitalize cursor-pointer">
+                <NuxtLink :to="localePath(`/tag/${tag}`)" class="p-1 rounded bg-gray-100 dark:bg-gray-900 text-gray-500 mr-2">
                   {{ tag }}
                 </NuxtLink>
               </template>
