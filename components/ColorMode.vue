@@ -15,7 +15,7 @@ const isDark = computed({
 <template>
   <div>
     <ClientOnly>
-      <button @click="isDark = !isDark" class="btn btn-default inline">
+      <button @click="isDark = !isDark" class="btn btn-default btn-icon">
         <template v-if="isDark">
           <SunIcon class="h-5 w-5" />
         </template>

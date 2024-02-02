@@ -7,11 +7,15 @@
     @apply
       flex w-full justify-center rounded-xl
       px-4 py-2 text-sm font-medium
-      transition-colors duration-200 ease-in;
+      transition-colors duration-150 ease-in;
   }
 
   .btn.btn-default {
-    @apply bg-gray-200 hover:bg-gray-300 dark:bg-black/50 dark:text-white dark:hover:bg-black/30;
+    @apply bg-gray-200 hover:bg-gray-100 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-900;
+  }
+
+  .btn.btn-icon {
+    @apply px-2;
   }
 
   .btn .btn--icon-right {

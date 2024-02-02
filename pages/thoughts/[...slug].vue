@@ -5,8 +5,8 @@ const { slug } = route.params;
 </script>
 
 <template>
-  <main>
-    <article class="bg-white dark:bg-black rounded-2xl">
+  <main class="bg-white dark:bg-black rounded-2xl mb-4">
+    <article>
       <ContentDoc :path="localePath(`${slug}`)" v-slot="{ doc }">
         <div class="mt-4 content">
           <header>

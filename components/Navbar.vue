@@ -10,7 +10,7 @@ const localePath = useLocalePath();
 <template>
   <ContentNavigation v-slot="{ navigation }">
     <nav class="grid grid-flow-col auto-cols-max gap-2">
-      <NuxtLink :to="localePath('/')" class="btn btn-default">
+      <NuxtLink :to="localePath('/')" class="btn btn-default btn-icon">
         <HomeIcon class="h-5 w-5" />
       </NuxtLink>
 
