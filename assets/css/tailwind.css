@@ -27,6 +27,6 @@
   }
 
   .router-link-active.btn {
-    @apply bg-black text-white dark:bg-white dark:text-black;
+    @apply bg-black text-white dark:bg-white dark:text-black hover:text-gray-700 dark:hover:text-gray-100;
   }
 };
