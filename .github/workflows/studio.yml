@@ -52,7 +52,7 @@ jobs:
         with:
           version: 8
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v3
         with:
           version: ${{ matrix.node }}
           cache: ${{ steps.pkgman.outputs.cache }}
@@ -71,7 +71,7 @@ jobs:
         env:
           NUXT_PUBLIC_STUDIO_API_URL: https://api.nuxt.studio
           NUXT_PUBLIC_STUDIO_TOKENS: 586b0bd07448a76245b9db959ed484183038a408d10736f647c2b6d0991aa03f
-
+          BASE_URL: ${{ secrets.BASE_URL }}
 
       # Deployment job
       - name: Deploy 🚀
