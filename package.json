@@ -3,17 +3,17 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev --port 8774",
-    "generate": "nuxt generate",
+    "build": "nuxt build --dotenv .env.production",
+    "dev": "nuxt dev --port 8774 --dotenv .env.local",
+    "generate": "nuxt generate --dotenv .env.production",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
     "@nuxtjs/color-mode": "^3.3.2",
     "@nuxtjs/i18n": "^8.0.1",
-    "@nuxtjs/tailwindcss": "^6.11.2",
-    "nuxt": "^3.10.0",
+    "@nuxtjs/tailwindcss": "^6.11.3",
+    "nuxt": "^3.10.1",
     "vue": "^3.4.15",
     "vue-router": "^4.2.5"
   },

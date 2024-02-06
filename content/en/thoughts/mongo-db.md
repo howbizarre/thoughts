@@ -3,7 +3,7 @@ title: "Integrating MongoDB and Mongoose with Nuxt 3"
 date: "2023-10-06"
 draft: false
 tags: ["nuxt", "nuxt3", "mongodb", "mongoose"]
-thumbnail: "/images/thoughts/mongodb.webp"
+thumbnail: "/images/thoughtful/mongodb.webp"
 slug: "mongo-db"
 navigation: false
 ---

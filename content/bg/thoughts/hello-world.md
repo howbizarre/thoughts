@@ -2,8 +2,8 @@
 title: "Здравей свят"
 date: "2023-10-05"
 draft: false
-tags: ["nuxt", "nuxt3", "здравей", "свят"]
-thumbnail: "/images/thoughts/hello-world.jpg"
+tags: ["nuxt", "nuxt3", "hello", "world"]
+thumbnail: "/images/thoughtful/hello-world.jpg"
 slug: "hello-world"
 navigation: false
 ---
