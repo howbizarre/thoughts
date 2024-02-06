@@ -1,158 +1,30 @@
 ---
-title: "Integrating MongoDB and Mongoose with Nuxt 3"
-date: "2023-10-06"
+title: "Hello World"
+date: "2023-10-05"
 draft: false
-tags: ["nuxt", "nuxt3", "mongodb", "mongoose"]
-thumbnail: "/images/thoughtful/mongodb.webp"
-slug: "mongo-db"
+tags: ["nuxt", "nuxt3", "hello", "world"]
+thumbnail: "/images/thoughtful/hello-world.jpg"
+slug: "hello-world"
 navigation: false
 ---
 
+Hello World!
 
-Building dynamic web applications often requires seamless integration with a robust database solution. When it comes to creating powerful server-side applications, MongoDB has emerged as a popular choice among developers due to its flexibility and scalability. Combined with the Vue.js framework, Nuxt.js provides a solid foundation for building fast, server-rendered applications. However, incorporating MongoDB and its object modeling tool, Mongoose, into a Nuxt project might seem like a daunting task for those new to the stack.
+```js
+console.log("Hello World!");
+```
+
+Customer is very important, customer will be followed by customer. Vestibulum feugiat venenatis libero. Suspendisse ullamcorper lacus as euismod urn and ullamcorper leo dapibus. Fearless smart football, it was football or sore throat time.
+
 <!--more-->
-In this blog post, we'll explore two simple yet effective methods to add MongoDB and Mongoose to your Nuxt 3 project. Whether you're a seasoned developer or just starting your journey in full-stack web development, this guide will help you leverage the capabilities of MongoDB and Mongoose within the Nuxt ecosystem.
 
-## Prerequisites
+---
 
-Before we get started, make sure you have a working nuxt 3 project. If you don't have one already, you can create a new project using the following command:
 
-```bash
-npx nuxi init <project-name>
-```
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum feugiat venenatis libero. Suspendisse ullamcorper lacus ut urna euismod, ac ullamcorper leo dapibus. Integer sapien felis, porttitor eu erat vel, tempus faucibus dolor. Nulla convallis elementum dolor, non vestibulum est pretium at. Morbi eu tortor in odio tincidunt rutrum. Nunc hendrerit libero commodo tortor facilisis, nec blandit nulla consectetur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc viverra tortor blandit, ullamcorper nunc nec, finibus massa. Nunc sit amet sapien vitae tellus rutrum pellentesque. Morbi ornare nec sem in elementum. Vestibulum maximus neque sed nisi malesuada laoreet. Integer nec augue ut mi mattis dapibus vitae non mi. Nullam sit amet sagittis urna, sit amet rhoncus leo.
 
-Once the project is created, navigate to the project directory and install the dependencies:
+Nulla facilisi. Duis tincidunt erat eros, ac molestie mi malesuada nec. Curabitur tincidunt ullamcorper purus eu condimentum. Aenean hendrerit, massa egestas vehicula semper, metus nisi vehicula massa, non volutpat ex dui et est. Donec suscipit tellus sed sem scelerisque accumsan. Sed ac consequat nibh. Proin condimentum pulvinar neque. Ut tincidunt sem non nulla rhoncus, a laoreet urna scelerisque. Proin nec venenatis sapien. Suspendisse quam felis, tincidunt in ex vel, aliquam luctus nibh. Nulla at sapien venenatis, tempor dolor in, elementum nulla. Cras at nunc mi. Vivamus sagittis, enim a aliquet condimentum, orci nunc suscipit nisi, a sollicitudin massa velit sit amet elit. Suspendisse potenti. Nulla placerat tortor sit amet odio ultricies, quis blandit nisl gravida.
 
-```bash
-cd <project-name>
-npm install // or yarn install
-```
+Aliquam erat volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla bibendum sem ac sem vulputate sollicitudin. Nunc eget molestie massa, eu vulputate lorem. Quisque quis urna vel massa lacinia consectetur. Duis sagittis massa id tellus hendrerit euismod. Nunc euismod sapien eget pulvinar egestas. Ut scelerisque eleifend diam, quis ultrices tellus ultrices id. Phasellus eget tellus varius, tincidunt elit id, placerat ipsum. Nullam a vulputate sapien. Nunc consectetur lacinia lobortis. Sed in ultrices diam. Proin est velit, posuere ut pellentesque sit amet, facilisis nec quam.
 
-Now that we have a working nuxt 3 project, let's explore the two methods of adding MongoDB and Mongoose to our project.
-
-## Method 1: Using the nuxt-server-utils module
-
-This is the easiest way to add MongoDB and Mongoose to your Nuxt 3 project. The [nuxt-server-utils](https://nuxt-server-utils.jahid.dev) module provides a set of utilities that allow you to interact with your MongoDB database from within your Nuxt 3 application. It also provides a simple API for creating and managing your MongoDB collections.
-
-To get started, install the nuxt-server-utils module using the following command:
-
-```bash [npm]
-npm install nuxt-server-utils mongoose
-```
-
-Next, Add the nuxt-server-utils module to the `modules` section of your `nuxt.config.ts` file:
-
-Add `nuxt-server-utils` to the `modules` section of `nuxt.config.ts`:
-
-```ts [nuxt.config.ts]
-export default defineNuxtConfig({
-  // ...
-  modules: ["nuxt-server-utils"],
-});
-```
-
-Finally, add the MongoDB connection string to the `.env` file of your nuxt app:
-
-```bash [.env]
-MONGODB_URI=<your-mongodb-connection-string>
-```
-
-That's it! Now you can use mongoose in your Nuxt 3 server routes like how it is normally used in Express.
-For example, let's create a simple server route that returns all the documents from a MongoDB collection:
-
-**Defining the Mongoose model** in `server/models/user.model.ts`:
-
-```ts [server/models/User.ts]
-import { Schema, model } from "mongoose";
-
-const UserSchema = new Schema({
-  name: String,
-  email: String,
-});
-
-export const User = model("User", UserSchema);
-```
-
-Now let's create the **API Route** in `server/api/users.get.ts`:
-
-```ts [server/api/users.get.ts]
-import { User } from "~~/server/models/user.model";
-
-export default defineEventHandler(async (event) => {
-  const users = await User.find();
-
-  return Users;
-});
-```
-
-If you navigate to the `/api/users` route, you should see a list of all the users in your database.
-
-### Video Tutorial
-
-If you enjoy learning through video tutorials, I have created a video where i walk you through the above steps:
-
-### Example Project
-
-## Method 2: Creating a Nitro plugin
-
-Nuxt 3 uses [Nitro](https://nitro.unjs.io/) under the hood to power its server-side rendering capabilities. Nitro provides a simple API for creating plugins that can be used to extend the functionality of your Nuxt 3 application.
-In this section, we'll create a Nitro plugin that will allow us to use MongoDB and Mongoose in our Nuxt 3 project.
-
-First, let's create a new plugin file in the `server/plugins` directory:
-
-```bash
-touch server/plugins/mongodb.ts
-```
-
-Then let's install the required dependencies:
-
-```bash
-npm install mongoose
-```
-
-Next, let's add the following code to the newly created plugin file:
-
-```ts [server/plugins/mongodb.ts]
-import { Nitro } from "nitropack";
-import mongoose from "mongoose";
-
-export default async (_nitroApp: Nitro) => {
-  const config = useRuntimeConfig();
-
-  try {
-    await mongoose.connect(config.mongodbUri);
-    console.log("Connected to MongoDB");
-  } catch (e) {
-    console.error(e);
-  }
-};
-```
-
-Finally, let's add the plugin to the `plugins` section of our `nuxt.config.ts` file:
-
-```ts [nuxt.config.ts]
-export default defineNuxtConfig({
-  // ...
-  nitro: {
-    plugins: ["~/server/plugins/mongodb.ts"],
-  },
-});
-```
-
-That's it! Now you can use mongoose in your Nuxt 3 server routes like how it is normally used in Express.
-
-### Video Tutorial
-
-If you prefer video tutorials, you can watch the following video where I walk you through the process of adding MongoDB and Mongoose to a Nuxt 3 project:
-
-### Example Project
-
-Play around with the example project to get a better understanding of how to use MongoDB and Mongoose with Nuxt 3.
-
-You ca find the full source code of this example [here](https://github.com/jahidanowar/nuxt3-mongoose).
-
-## Conclusion
-
-In this blog post, we explored two simple yet effective methods to add MongoDB and Mongoose to your Nuxt 3 project. Whether you're a seasoned developer or just starting your journey in full-stack web development, this guide will help you leverage the capabilities of MongoDB and Mongoose within the Nuxt ecosystem.
-
-If you have any questions or feedback, feel free to reach out to me on [Discord](https://jahid.dev/d) or [Twitter](https://twitter.com/jahidDev).
+Nullam nec sem ut mi ullamcorper sollicitudin. Nulla nec diam elit. Nullam vitae maximus massa, bibendum malesuada nunc. Nam quis tincidunt ante, et rhoncus nisi. Phasellus dictum dictum feugiat. Integer placerat at erat at aliquam. Donec et nibh vitae nisl molestie hendrerit. In tincidunt et turpis sit amet maximus. Cras vel viverra leo. Mauris non euismod metus. Maecenas ullamcorper in justo id condimentum. Vestibulum ultricies pellentesque lorem. Sed malesuada iaculis pharetra.

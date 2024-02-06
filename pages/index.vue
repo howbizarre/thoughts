@@ -7,20 +7,20 @@ useHead({
 </script>
 
 <template>
-  <div>    
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
     <ContentList :path="localePath('/thoughts')"
                  fields="title,date,thumbnail"
                  :query="{ draft: false, sort: [{ date: -1 }] }"
                  v-slot="{ list }">
-      <div v-for="blog in list" :key="blog._path" class="blog-card bg-white dark:bg-black rounded-2xl overflow-hidden mb-4">
-        <div class="h-[300px] relative">
+      <div v-for="blog in list" :key="blog._path" class="bg-white dark:bg-black rounded-2xl overflow-hidden mb-4">
+        <div class="h-[300px] sm:h-[200px] relative">
           <img v-if="blog.thumbnail"
                :src="blog.thumbnail"
                :alt="blog.title"
                class="absolute w-full h-full object-cover" />
         </div>
 
-        <div class="blog-card--meta my-4 ml-4">
+        <div class="my-4 ml-4">
           <h3 class="text-2xl font-bold">
             <NuxtLink :to="localePath(`/thoughts/${blog.slug}`)">{{ blog.title }}</NuxtLink>
           </h3>
