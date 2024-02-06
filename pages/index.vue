@@ -2,7 +2,7 @@
 const localePath = useLocalePath();
 
 useHead({
-  title: "Nuxt Content Blog Demo",
+  title: "How Bizarre's Thoughts",
 });
 </script>
 

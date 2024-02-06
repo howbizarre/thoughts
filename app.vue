@@ -7,7 +7,7 @@
 <style>
 body, html { @apply flex flex-col; }
 html { @apply h-full w-full; }
-body { @apply min-h-full min-w-full bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 relative; }
+body { @apply min-h-full min-w-full bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 relative; }
 
 .page-enter-active,
 .page-leave-active { @apply transition-all duration-200; }
