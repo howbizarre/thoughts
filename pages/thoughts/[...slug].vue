@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+const { locale } = useI18n();
 const localePath = useLocalePath();
 const route = useRoute();
 const { slug } = route.params;
@@ -12,7 +13,7 @@ const { slug } = route.params;
           <header>
             <div class="text-center p-5">
               <h1 class="text-4xl font-bold lg:w-2/3 mx-auto">{{ doc.title }}</h1>
-              <p class="text-gray-500 text-sm mt-2">{{ doc.date }}</p>
+              <p class="text-gray-500 text-sm mt-2">{{ (new Date(doc.date)).toLocaleDateString(locale) }}</p>
 
               <div v-if="doc.tags" class="mt-2 text-xs">
                 <NuxtLink v-for="tag in doc.tags" :to="localePath(`/tag/${tag}`)" class="p-1 rounded bg-gray-100 dark:bg-gray-900 text-gray-500 mr-2">

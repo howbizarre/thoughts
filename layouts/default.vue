@@ -6,5 +6,7 @@
     <div id="default-page">
       <slot />
     </div>
+
+    <Footer />
   </main>
 </template>

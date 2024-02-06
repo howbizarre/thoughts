@@ -1,30 +1,35 @@
 ---
 title: "Hello World"
-date: "2023-10-05"
+date: "2024-02-06T12:01:53.293Z"
 draft: false
-tags: ["nuxt", "nuxt3", "hello", "world"]
-thumbnail: "/images/thoughtful/hello-world.jpg"
+tags: ["Hello", "World"]
+thumbnail: "/images/thoughtful/articles/hello-from-unsplash.webp"
 slug: "hello-world"
 navigation: false
 ---
 
-Hello World!
+## Hello World!
 
-```js
-console.log("Hello World!");
-```
-
-Customer is very important, customer will be followed by customer. Vestibulum feugiat venenatis libero. Suspendisse ullamcorper lacus as euismod urn and ullamcorper leo dapibus. Fearless smart football, it was football or sore throat time.
+It's been a long time since I maintained a blog. I write various articles for repositories on [GitHub](https://github.com/howbizarre), but they are not intended for the end users. They are more for people who pass by and are looking for quick and easy information. I don't put much effort into them because they are targeted towards tech-savvy individuals, for whom I write.
 
 <!--more-->
 
----
+I'm starting this blog to share my experience with a wonderful stack of technologies that can achieve anything, well almost anything. You may have noticed the 4 logos I've attached at the top of this site. Those will be the main topics of the blog. It seems to me that the community around these technologies in **Bulgaria** is small, and I hope to contribute to its development over time.
 
+Here are some of the main technologies I will be writing about:
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum feugiat venenatis libero. Suspendisse ullamcorper lacus ut urna euismod, ac ullamcorper leo dapibus. Integer sapien felis, porttitor eu erat vel, tempus faucibus dolor. Nulla convallis elementum dolor, non vestibulum est pretium at. Morbi eu tortor in odio tincidunt rutrum. Nunc hendrerit libero commodo tortor facilisis, nec blandit nulla consectetur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc viverra tortor blandit, ullamcorper nunc nec, finibus massa. Nunc sit amet sapien vitae tellus rutrum pellentesque. Morbi ornare nec sem in elementum. Vestibulum maximus neque sed nisi malesuada laoreet. Integer nec augue ut mi mattis dapibus vitae non mi. Nullam sit amet sagittis urna, sit amet rhoncus leo.
+- **Vue** and its ecosystem:
+  - **Vue Router** - an essential part of Vue.
+  - **Pinia** - I will write more about state management in Vue.
+- **Nuxt** and its ecosystem:
+  - Nitro - the ready-to-use endpoint for everything...
+  - Nuxt Modules - that's the 'community'!
+- **Tailwind CSS**
+  - Nuxt UI
+- **TypeScript**
+  - JavaScript
+- **Vite** - bundles everything
+- **Node** & **Express** & **MongoDB** - secondary technologies that I use and will write about.
+- **Firebase** - combined with the above, it works wonders. And it's not as expensive as it seems.
 
-Nulla facilisi. Duis tincidunt erat eros, ac molestie mi malesuada nec. Curabitur tincidunt ullamcorper purus eu condimentum. Aenean hendrerit, massa egestas vehicula semper, metus nisi vehicula massa, non volutpat ex dui et est. Donec suscipit tellus sed sem scelerisque accumsan. Sed ac consequat nibh. Proin condimentum pulvinar neque. Ut tincidunt sem non nulla rhoncus, a laoreet urna scelerisque. Proin nec venenatis sapien. Suspendisse quam felis, tincidunt in ex vel, aliquam luctus nibh. Nulla at sapien venenatis, tempor dolor in, elementum nulla. Cras at nunc mi. Vivamus sagittis, enim a aliquet condimentum, orci nunc suscipit nisi, a sollicitudin massa velit sit amet elit. Suspendisse potenti. Nulla placerat tortor sit amet odio ultricies, quis blandit nisl gravida.
-
-Aliquam erat volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla bibendum sem ac sem vulputate sollicitudin. Nunc eget molestie massa, eu vulputate lorem. Quisque quis urna vel massa lacinia consectetur. Duis sagittis massa id tellus hendrerit euismod. Nunc euismod sapien eget pulvinar egestas. Ut scelerisque eleifend diam, quis ultrices tellus ultrices id. Phasellus eget tellus varius, tincidunt elit id, placerat ipsum. Nullam a vulputate sapien. Nunc consectetur lacinia lobortis. Sed in ultrices diam. Proin est velit, posuere ut pellentesque sit amet, facilisis nec quam.
-
-Nullam nec sem ut mi ullamcorper sollicitudin. Nulla nec diam elit. Nullam vitae maximus massa, bibendum malesuada nunc. Nam quis tincidunt ante, et rhoncus nisi. Phasellus dictum dictum feugiat. Integer placerat at erat at aliquam. Donec et nibh vitae nisl molestie hendrerit. In tincidunt et turpis sit amet maximus. Cras vel viverra leo. Mauris non euismod metus. Maecenas ullamcorper in justo id condimentum. Vestibulum ultricies pellentesque lorem. Sed malesuada iaculis pharetra.
+Well, now I just need to find more time. It's good that there is someone to help with generAtIng the texts :o)

@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+const { locale } = useI18n();
 const localePath = useLocalePath();
 const route = useRoute();
 const { tag } = route.params;
@@ -28,7 +29,7 @@ const { tag } = route.params;
             </NuxtLink>
           </h3>
 
-          <div class="text-sm text-gray-500 mt-px block">{{ `${((`${blog.date}`).split('T'))[0]}` }}</div>
+          <div class="text-sm text-gray-500 mt-px block">{{ (new Date(blog.date)).toLocaleDateString(locale) }}</div>
 
           <template v-if="blog.tags">
             <div class="mt-2 text-xs">

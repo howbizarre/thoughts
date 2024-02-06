@@ -4,8 +4,7 @@
 
 @layer components {
   .btn {
-    @apply
-      flex w-full justify-center rounded-xl
+    @apply flex w-full justify-center rounded-xl
       px-4 py-2 text-sm font-medium
       transition-colors duration-150 ease-in;
   }
@@ -29,4 +28,36 @@
   .router-link-active.btn {
     @apply bg-black text-white dark:bg-white dark:text-black hover:text-gray-700 dark:hover:text-gray-100;
   }
-};
+}
+
+@layer base {
+  .content {
+    h2 {
+      @apply text-4xl font-semibold mb-4;
+    }
+
+    p {
+      @apply mb-2;
+
+      a {
+        @apply border-b border-dotted border-black dark:border-white;
+
+        &:hover {
+          @apply border-b border-solid;
+        }
+      }
+    }
+
+    a {
+      @apply text-black dark:text-white;
+    }
+
+    ul {
+      @apply list-disc list-inside ml-1 mb-2;
+
+      ul {
+        @apply ml-5;
+      }
+    }
+  }
+}
