@@ -8,13 +8,11 @@ slug: "hello-world"
 navigation: false
 ---
 
-## Hello World!
-
-It's been a long time since I maintained a blog. I write various articles for repositories on [GitHub](https://github.com/howbizarre), but they are not intended for the end users. They are more for people who pass by and are looking for quick and easy information. I don't put much effort into them because they are targeted towards tech-savvy individuals, for whom I write.
+A long time ago, I stopped maintaining a blog. Currently, I write various articles for repositories on [GitHub](https://github.com/howbizarre), but they are not intended for the end users. They are more for people who quickly pass by for information, and I don't put much effort into them because they are targeted towards tech-savvy individuals, for whom I write.
 
 <!--more-->
 
-I'm starting this blog to share my experience with a wonderful stack of technologies that can achieve anything, well almost anything. You may have noticed the 4 logos I've attached at the top of this site. Those will be the main topics of the blog. It seems to me that the community around these technologies in **Bulgaria** is small, and I hope to contribute to its development over time.
+I am starting this blog to share my experience with a wonderful stack of technologies that can achieve anything, well almost anything. You may have noticed the logos I've attached at the top of this site. Those will be the main topics of the blog. It seems to me that the community around these technologies in **Bulgaria** is small, and I hope to contribute to its development over time.
 
 Here are some of the main technologies I will be writing about:
 

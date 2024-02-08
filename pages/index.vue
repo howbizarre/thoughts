@@ -26,12 +26,16 @@ useHead({
             <NuxtLink :to="localePath(`/thoughts/${blog.slug}`)">{{ blog.title }}</NuxtLink>
           </h3>
 
-          <div class="text-sm text-gray-500 mt-px block">{{ (new Date(blog.date)).toLocaleDateString(locale) }}</div>
+          <div class="text-sm text-gray-500 mt-xs block">{{ (new Date(blog.date)).toLocaleDateString(locale) }}</div>
 
           <div v-if="blog.tags" class="mt-2 text-xs">
             <NuxtLink v-for="tag in blog.tags" :to="localePath(`/tag/${tag}`)" class="p-1 rounded bg-gray-100 dark:bg-gray-900 text-gray-500 mr-2">
               {{ tag }}
             </NuxtLink>
+          </div>
+
+          <div v-if="blog?.excerpt" class="pr-2 mt-3">
+            <ContentRendererMarkdown :value="blog.excerpt" />
           </div>
         </div>
       </div>
