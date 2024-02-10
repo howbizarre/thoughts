@@ -3,18 +3,14 @@ const localePath = useLocalePath();
 </script>
 
 <template>
-  <div>
+  <div class="rounded-2xl">
     <ContentList :path="localePath('/thoughts')"
                  fields="tags"
                  v-slot="{ list }">
-      <div v-for="blog in list" :key="blog.slug">
-        <div class="mt-2 text-xs">
-          <template v-for="tag in blog.tags">
-            <NuxtLink :to="`/tag/${tag}`" class="p-1 rounded bg-gray-100 dark:bg-gray-900 text-gray-500 mr-2">
-              {{ tag }}
-            </NuxtLink>
-          </template>
-        </div>
+      <div v-for="blog in list" :key="blog.slug" class="p-3">
+        <template v-for="tag in blog.tags">
+          <Tag :tag="tag" />
+        </template>
       </div>
     </ContentList>
   </div>

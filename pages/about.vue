@@ -1,6 +1,6 @@
 <template>
   <main>
-    <article class="bg-white dark:bg-black rounded-2xl">
+    <article class="rounded-2xl">
       <ContentDoc v-slot="{ doc }">
         <div class="mt-4 content">
           <header class="p-5">
