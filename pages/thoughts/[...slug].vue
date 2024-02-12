@@ -9,17 +9,12 @@ const { slug } = route.params;
   <main class="rounded-2xl mb-4">
     <article>
       <ContentDoc :path="localePath(`${slug}`)" v-slot="{ doc }">
-        <div class="mt-4 content">
+        <div class="mt-4">
           <header>
             <div class="text-left p-5">
               <p class="text-gray-500 text-sm !-mb-1 block">{{ (new Date(doc.date)).toLocaleDateString(locale) }}</p>
               <h1 class="text-4xl font-bold lg:w-2/3">{{ doc.title }}</h1>
             </div>
-
-            <img v-if="doc.thumbnail"
-                 :src="doc.thumbnail"
-                 :alt="doc.title"
-                 class="w-full rounded-2xl" />
           </header>
 
           <div class="px-5">
@@ -35,6 +30,7 @@ const { slug } = route.params;
                 <Tag :tag="tag" />
               </template>
             </div>
+            
             <div v-if="doc.competence" class="mt-2">
               {{ t("LBL_COMPETENCE") }}:
               <Competence :competence="doc.competence" />

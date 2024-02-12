@@ -1,54 +1,51 @@
 <script lang="ts" setup>
-import type { QueryBuilderWhere } from '@nuxt/content/types';
+import type { QueryBuilderParams } from '@nuxt/content/types';
 
 const { locale, t } = useI18n();
 const localePath = useLocalePath();
 const route = useRoute();
 const { tag } = route.params;
+
+const query: QueryBuilderParams = { path: localePath('/thoughts'), where: [{ tags: { $contains: tag } }], limit: 5, sort: [{ date: -1 }] };
+
+useHead({
+  title: t("LBL_TAG"),
+});
 </script>
 
 <template>
-  <div v-if="tag" class="grid grid-cols-1 gap-2 content">
-    <ContentList :path="localePath('/thoughts')"
-                 fields="tags,title,date,thumbnail"
-                 :query="{ where: { tags: { $contains: tag } } } as QueryBuilderWhere"
-                 v-slot="{ list }">
-      <div v-for="blog in list"
-           :key="blog.slug"
+  <div v-if="tag" class="grid grid-cols-1 gap-2">
+    <ContentList :query="query" v-slot="{ list }">
+      <div v-for="doc in list"
+           :key="doc.slug"
            class="rounded-2xl overflow-hidden mb-4">
-        <div v-if="blog.thumbnail" class="h-[200px] relative">
-          <img :src="blog.thumbnail"
-               :alt="blog.title"
-               class="absolute w-full h-full object-cover" />
-        </div>
-
         <div class="my-4 ml-4">
           <div class="text-sm text-gray-500 -mb-1 block">
-            {{ (new Date(blog.date)).toLocaleDateString(locale) }}
+            {{ (new Date(doc.date)).toLocaleDateString(locale) }}
           </div>
 
           <h3 class="text-2xl font-bold">
-            <NuxtLink :to="localePath(`/thoughts/${blog.slug}`)">
-              {{ blog.title }}
+            <NuxtLink :to="localePath(`/thoughts/${doc.slug}`)">
+              {{ doc.title }}
               <span class="sr-only">Link to the blog post</span>
             </NuxtLink>
           </h3>
 
-          <div v-if="blog?.excerpt" class="pr-4 my-3">
-            <ContentRendererMarkdown :value="blog.excerpt" />
+          <div v-if="doc?.excerpt" class="pr-4 my-3">
+            <ContentRendererMarkdown :value="doc.excerpt" />
           </div>
 
           <hr class="h-px my-4 bg-gray-300 border-0 dark:bg-gray-700" />
 
-          <div v-if="blog.tags">
+          <div v-if="doc.tags">
             {{ t("LBL_TAGS") }}:
-            <template v-for="tag in blog.tags">
+            <template v-for="tag in doc.tags">
               <Tag :tag="tag" />
             </template>
           </div>
 
-          <div v-if="blog.competence" class="mt-2">
-            {{ t("LBL_COMPETENCE") }}: <Competence :competence="blog.competence" />
+          <div v-if="doc.competence" class="mt-2">
+            {{ t("LBL_COMPETENCE") }}: <Competence :competence="doc.competence" />
           </div>
         </div>
       </div>

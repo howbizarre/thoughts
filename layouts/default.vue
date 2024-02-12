@@ -1,5 +1,5 @@
 <template>
-  <main id="default-layout" class="max-w-3xl p-4 mx-auto">
+  <main id="default-layout" class="max-w-3xl p-4 mx-auto content">
     <Logos />
     <Header />
 

@@ -54,10 +54,6 @@
 
     ul {
       @apply list-disc list-inside ml-1 mb-2;
-
-      ul {
-        @apply ml-5;
-      }
     }
   }
 }

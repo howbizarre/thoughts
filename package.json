@@ -3,9 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt build --dotenv .env.production",
-    "dev": "nuxt dev --port 8774 --dotenv .env.local",
-    "generate": "nuxt generate --dotenv .env.production",
+    "build": "nuxt build",
+    "dev": "nuxt dev --port 8774",
+    "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
