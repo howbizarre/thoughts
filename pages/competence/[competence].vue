@@ -4,14 +4,14 @@ import type { QueryBuilderWhere } from '@nuxt/content/types';
 const { locale, t } = useI18n();
 const localePath = useLocalePath();
 const route = useRoute();
-const { tag } = route.params;
+const { competence } = route.params;
 </script>
 
 <template>
-  <div v-if="tag" class="grid grid-cols-1 gap-2 content">
+  <div v-if="competence" class="grid grid-cols-1 gap-2 content">
     <ContentList :path="localePath('/thoughts')"
-                 fields="tags,title,date,thumbnail"
-                 :query="{ where: { tags: { $contains: tag } } } as QueryBuilderWhere"
+                 fields="competence,title,date,thumbnail"
+                 :query="({ where: { competence: competence } } as QueryBuilderWhere)"
                  v-slot="{ list }">
       <div v-for="blog in list"
            :key="blog.slug"
