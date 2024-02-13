@@ -1,5 +1,5 @@
 ---
-title: "Кой кой е?"
+title: "Who is who?"
 slug: "about"
 navigation:
   title: "About"
