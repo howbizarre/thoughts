@@ -10,7 +10,6 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss", "@nuxtjs/color-mode", "@nuxt/content", "@nuxtjs/i18n"],
   content: {},
   i18n: {
-    defaultLocale: "en",
     locales: [
       {
         code: "en",
@@ -27,10 +26,11 @@ export default defineNuxtConfig({
     ],
     lazy: true,
     langDir: "i18n/",
+    defaultLocale: "en",
     vueI18n: "./i18n.config.ts",
     detectBrowserLanguage: {
       useCookie: true,
-      cookieKey: "i18n_redirected",
+      alwaysRedirect: true,
       redirectOn: "root", // recommended
     },
     strategy: "prefix",
