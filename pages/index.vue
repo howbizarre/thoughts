@@ -15,7 +15,7 @@ useHead({
   <div class="grid grid-cols-1 gap-2">
     <ContentList :query="query">
       <template #default="{ list }">
-        <div v-for="doc in list" :key="doc._path" class="rounded-2xl p-5 border border-gray-50 dark:border-gray-950">
+        <div v-for="doc in list" :key="doc._path" class="rounded-2xl p-5 border border-gray-50 dark:border-gray-950 outline outline-offset-[-2px] outline-1 outline-gray-300 dark:outline-gray-700">
           <div class="text-xs text-gray-500 -mb-1 block">
             {{ (new Date(doc.date)).toLocaleDateString(locale) }}
           </div>
