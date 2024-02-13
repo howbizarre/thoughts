@@ -3,7 +3,6 @@ const { locale, t } = useI18n();
 const localePath = useLocalePath();
 const route = useRoute();
 const { slug } = route.params;
-console.log('slug', slug);
 </script>
 
 <template>
