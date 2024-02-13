@@ -3,7 +3,6 @@ title: "Hello World"
 date: "2024-02-06T12:01:53.293Z"
 draft: false
 tags: ["Thought"]
-# thumbnail: "/images/thoughtful/articles/hello-from-unsplash.webp"
 slug: "hello-world"
 navigation: false
 competence: None
