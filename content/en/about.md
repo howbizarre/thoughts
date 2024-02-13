@@ -1,8 +1,9 @@
 ---
-title: "Who is who?"
+title: "Кой кой е?"
 slug: "about"
 navigation:
-  title: "About"
+  title: "Инфо"
+  icon: "/images/icons/user.svg"
 ---
 
-# Who is who?
+# Кой кой е?
