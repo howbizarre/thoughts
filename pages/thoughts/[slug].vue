@@ -3,11 +3,12 @@ const { locale, t } = useI18n();
 const localePath = useLocalePath();
 const route = useRoute();
 const { slug } = route.params;
+console.log('slug', slug);
 </script>
 
 <template>
   <article class="rounded-2xl mb-4">
-    <ContentDoc :path="localePath(`${slug}`)" v-slot="{ doc }">
+    <ContentDoc :path="localePath(`/thoughts/${slug}`)" v-slot="{ doc }">
       <div class="mt-4">
         <header>
           <div class="text-left p-5">
