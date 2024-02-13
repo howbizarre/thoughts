@@ -18,34 +18,35 @@ useHead({
     <ContentList :query="query" v-slot="{ list }">
       <div v-for="doc in list"
            :key="doc.slug"
-           class="rounded-2xl overflow-hidden mb-4">
-        <div class="my-4 ml-4">
-          <div class="text-sm text-gray-500 -mb-1 block">
-            {{ (new Date(doc.date)).toLocaleDateString(locale) }}
+           class="p-5 rounded-2xl border border-gray-50 dark:border-gray-950">
+        <div class="text-sm text-gray-500 -mb-1 block">
+          {{ (new Date(doc.date)).toLocaleDateString(locale) }}
+        </div>
+
+        <h3 class="text-2xl font-bold">
+          <NuxtLink :to="localePath(`/thoughts/${doc.slug}`)">
+            {{ doc.title }}
+            <span class="sr-only">Link to the blog post</span>
+          </NuxtLink>
+        </h3>
+
+        <div v-if="doc?.excerpt" class="pr-4 my-3">
+          <ContentRendererMarkdown :value="doc.excerpt" />
+        </div>
+
+        <hr class="h-px my-4 bg-gray-300 border-0 dark:bg-gray-700" />
+
+        <div class="flex justify-start items-center gap-2 sm:gap-5">
+          <div v-if="doc.competence">
+            {{ t("LBL_COMPETENCE") }}:
+            <Competence :competence="doc.competence" />
           </div>
-
-          <h3 class="text-2xl font-bold">
-            <NuxtLink :to="localePath(`/thoughts/${doc.slug}`)">
-              {{ doc.title }}
-              <span class="sr-only">Link to the blog post</span>
-            </NuxtLink>
-          </h3>
-
-          <div v-if="doc?.excerpt" class="pr-4 my-3">
-            <ContentRendererMarkdown :value="doc.excerpt" />
-          </div>
-
-          <hr class="h-px my-4 bg-gray-300 border-0 dark:bg-gray-700" />
-
+          
           <div v-if="doc.tags">
             {{ t("LBL_TAGS") }}:
             <template v-for="tag in doc.tags">
               <Tag :tag="tag" />
             </template>
-          </div>
-
-          <div v-if="doc.competence" class="mt-2">
-            {{ t("LBL_COMPETENCE") }}: <Competence :competence="doc.competence" />
           </div>
         </div>
       </div>

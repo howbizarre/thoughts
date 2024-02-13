@@ -7,7 +7,7 @@ const thoughtsPath = localePath('/thoughts');
 const query: QueryBuilderParams = { path: thoughtsPath, where: [{ draft: false }], sort: [{ date: -1 }] };
 
 useHead({
-  title: "How Bizarre's Thoughts",
+  title: "",
 });
 </script>
 
@@ -15,21 +15,26 @@ useHead({
   <div class="grid grid-cols-1 gap-2">
     <ContentList :query="query">
       <template #default="{ list }">
-        <div v-for="doc in list" :key="doc._path" class="rounded-2xl overflow-hidden mb-4">
-          <div class="p-5">
-            <div class="text-xs text-gray-500 -mb-1 block">
-              {{ (new Date(doc.date)).toLocaleDateString(locale) }}
+        <div v-for="doc in list" :key="doc._path" class="rounded-2xl p-5 border border-gray-50 dark:border-gray-950">
+          <div class="text-xs text-gray-500 -mb-1 block">
+            {{ (new Date(doc.date)).toLocaleDateString(locale) }}
+          </div>
+
+          <div class="hN text-2xl font-bold">
+            <NuxtLink :to="localePath(`/thoughts/${doc.slug}`)">{{ doc.title }}</NuxtLink>
+          </div>
+
+          <div v-if="doc?.excerpt" class="my-3">
+            <ContentRendererMarkdown :value="doc.excerpt" />
+          </div>
+
+          <hr class="h-px my-4 bg-gray-300 border-0 dark:bg-gray-700" />
+
+          <div class="flex justify-start items-center gap-2 sm:gap-5">
+            <div v-if="doc.competence">
+              {{ t("LBL_COMPETENCE") }}:
+              <Competence :competence="doc.competence" />
             </div>
-
-            <h3 class="text-2xl font-bold">
-              <NuxtLink :to="localePath(`/thoughts/${doc.slug}`)">{{ doc.title }}</NuxtLink>
-            </h3>
-
-            <div v-if="doc?.excerpt" class="my-3">
-              <ContentRendererMarkdown :value="doc.excerpt" />
-            </div>
-
-            <hr class="h-px my-4 bg-gray-300 border-0 dark:bg-gray-700" />
 
             <div v-if="doc.tags">
               {{ t("LBL_TAGS") }}:
@@ -37,17 +42,12 @@ useHead({
                 <Tag :tag="tag" />
               </template>
             </div>
-            
-            <div v-if="doc.competence" class="mt-2">
-              {{ t("LBL_COMPETENCE") }}:
-              <Competence :competence="doc.competence" />
-            </div>
           </div>
         </div>
       </template>
 
       <template #not-found>
-        <p>The cobntent is not added!</p>
+        <p>The content is not added!</p>
       </template>
     </ContentList>
   </div>

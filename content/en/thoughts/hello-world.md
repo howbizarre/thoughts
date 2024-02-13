@@ -8,38 +8,40 @@ navigation: false
 competence: None
 ---
 
-A long time ago, I stopped maintaining a blog. Currently, I write various articles for repositories on [GitHub](https://github.com/howbizarre), but they are not intended for the end users. They are more for people who quickly pass by for information, and I don't put much effort into them because they are targeted towards tech-savvy individuals, for whom I write.
+I stopped blogging a long time ago. I am currently writing various articles in the [GitHub](https://github.com/howbizarre) repositories, but they are not intended to reach the end user. They're more for people who are just passing through for information and I'm not trying too hard because they're aimed at the tech savvy I'm writing about.
 
 <!--more-->
 
-I am starting this blog to share my experience with a wonderful stack of technologies that can achieve anything, well... almost anything. You may have noticed the logos I've attached at the top of this site. Those will be the main topics of the blog. It seems to me that the community around these technologies in **Bulgaria** is small, and I hope to contribute to its development over time.
+I'm starting this blog to share my experience with a wonderful technology stack that can do anything, well...almost anything. [Vue](https://vuejs.org/), [Nuxt](https://nuxt.com/), [TailwindCSS](https://tailwindcss.com/) and [TypeScript](https:// www.typescriptlang.org/). These will be the main topics of my reflections. Strongly focused on the front-end and complemented by the back-end. It seems to me that the community around these technologies in **Bulgaria** is small and I hope to help its development over time.
 
 ## Vue
 
-If we exclude **jQuery** - Somewhere around 2012, I started using "reactive" JavaScript libraries. One of the first ones was [Knockout](https://knockoutjs.com/). Great one. Everyone starting with the Observable model, and in general, everyone starting with "reactive" JavaScript libraries should go through it. Then many others followed - including **Angular** and **React**. I even briefly wrote my own library based on jQuery and **Mustache**. Eventually, I came across **Vue**.
+If we exclude **jQuery** - Sometime around 2012 I started using "reactive" JavaScript libraries. One of the first was [Knockout](https://knockoutjs.com/). Great one. Anyone starting with the Observable model, and generally anyone starting with "reactive" JavaScript libraries, should go through it. Many more followed after that, including **Angular** and **React**. I even briefly wrote my own based on jQuery and **Mustache**. Finally, I came across **Vue**.
 
-Back in the day, I used to write a lot of **CSS** and used **ASP.NET** and **Razor** for front-end development. I also used various CSS frameworks like **960.gs**, **Bootstrap**, **Foundation**, and others. Vue naturally entered my daily routine with its component-based approach, resembling the file organization model I was familiar with.
+At the time, I wrote a lot of **CSS** and used **ASP.NET** and **Razor** to create the front-end. I also used quite a few CSS libraries, such as **960.gs**, **Bootstrap**, **Foundation** and more. and Vue somehow naturally entered my daily life with separated writing in components somewhat resembling the file organization model I was used to.
 
-When you add **Vue Router** and **Pinia** (formerly Vuex) to the mix, the image becomes even better. **Vue + Vue Router + Pinia = MVC** in front-end. I will explain in more detail how I build MVC (Model View Controller) with them.
+When you add Vue Router and Pinia (Vuex before it) and the picture becomes even better. **Vue + Vue Router + Pinia = MVC** in front-end. I will write further how I build MVC (Model View Controller) with them.
 
 ## Nuxt
 
-**Nuxt** is based on Vue. In addition to the many conveniences it provides, such as automatic imports, automatic routing, plugins, modules, etc. - it also adds a back-end server (**Nitro**) and allows you to work as one system, without the need to create a separate server application or have extensive knowledge of Node & Express. This is the tool that removed .NET & C# from my field of view. With Nitro, you can build server middleware, API endpoints, connect to databases - everything you need from the back-end.
+**Nuxt** is based on Vue. Apart from the many facilities it gives like automatic imports, automatic routing, plugins, modules, etc. - also adds a back-end server (**Nitro**) and you work as a single system, without the need to create a second server application, without the need for super knowledge of Node & Express operation. This is the tool that took .NET & C# out of my sight. With Nitro you can build server middleware, API endpoints, database connection - everything you need from the back-end.
 
 ## TailwindCSS
 
-After the Just-in-Time Mode, **TailwindCSS** completely replaced Bootstrap and more. I no longer use massive CSS libraries with included UI components. I separate them. Even the component libraries are built with TailwindCSS. Lately, I have relied more on **Nuxt UI**, mainly to support the ecosystem.
+After Just-in-Time Mode - **TailwindCSS** completely replaced Bootstrap and more. I no longer use massive CSS libraries with included UI components. I separate them. Even the component libraries are also built with TailwindCSS. Maybe lately I'm betting more on **Nuxt UI** and that's mostly to support the ecosystem.
 
 ## TypeScript
 
-**JavaScript** provides immense freedom for writing, declaring, invoking, binding, parallelism, asynchrony, and more. It has well-known patterns for various aspects of programming models. You can use it for both back-end and front-end development. There are many large organizations and a huge community that contribute to its development.
+**JavaScript** gives enormous freedom in writing, declaring, calling, binding, concurrency, async, etc. There are built-in patterns for all aspects of programming patterns. You use it for beck & front at the same time. There are pretty massive organizations and a huge community developing it.
 
 But this freedom also has its drawbacks. There is no compiler to protect you. There is no unified debugging model. There is no correct way to generate the final/production code. **TypeScript** helps alleviate some of the problems of JavaScript. It is not a panacea and sometimes it is not easy to configure, especially when working with shared data models between front-end and back-end, but it provides a much more structured approach to the development, maintenance, and delivery of code.
 
+But this freedom also has its drawbacks. There is no compiler to protect you. There is no single model for debugging. There is no correct way to generate the final/production code. **TypeScript** helps eliminate some of the problems of JavaScript. It's not a panacea and sometimes not easy to configure, especially when working with shared data models between front & back end, but it gives a much more structured approach to the development, maintenance, and delivery of code.
+
 ## The others
 
-**Vite**, **Node**, **Express**, **MongoDB**, **NPM**, **Firebase** complement my current technology stack.
+**Vite**, **Node**, **Express**, **MongoDB**, **NPM**, **Firebase** round out my current technology stack.
 
-Vite is my personal choice for development. And not just for Vue projects. Sometimes I use **Parcel**, but for specific solutions.
+Vite is my personal choice for development. And not just for Vue projects. Sometimes I use **Parcel** but for specific solutions.
 
-I also work with other "metro" technologies like **Nest**, **ElectronJS** & **React Native**, **bun**, etc., but most of them are for small or personal projects.
+I also work with other "metro" technologies like **Nest**, **ElectonJS** & **React Native**, **Bun** etc. but most are for small or personal projects.

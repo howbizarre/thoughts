@@ -4,6 +4,11 @@ export default defineNuxtConfig({
     head: {
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1, shrink-to-fit=no",
+      link: [
+        { rel: "preconnect", href: "https://fonts.googleapis.com" },
+        { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" },
+        { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" },
+      ],
     },
     pageTransition: { name: "page", mode: "out-in" },
   },
@@ -28,11 +33,8 @@ export default defineNuxtConfig({
     langDir: "i18n/",
     defaultLocale: "en",
     vueI18n: "./i18n.config.ts",
-    detectBrowserLanguage: {
-      useCookie: true,
-      alwaysRedirect: true,
-      redirectOn: "root", // recommended
-    },
+    rootRedirect: "en",
+    detectBrowserLanguage: false,
     strategy: "prefix",
   },
   tailwindcss: {
