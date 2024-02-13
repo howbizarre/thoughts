@@ -2,7 +2,7 @@
 title: "Hello World"
 date: "2024-02-06T12:01:53.293Z"
 draft: false
-tags: ["Thought"]
+tags: ["Thoughts"]
 slug: "hello-world"
 navigation: false
 competence: None
@@ -32,11 +32,9 @@ After Just-in-Time Mode - **TailwindCSS** completely replaced Bootstrap and more
 
 ## TypeScript
 
-**JavaScript** gives enormous freedom in writing, declaring, calling, binding, concurrency, async, etc. There are built-in patterns for all aspects of programming patterns. You use it for beck & front at the same time. There are pretty massive organizations and a huge community developing it.
+**JavaScript** gives enormous freedom in writing, declaring, calling, binding, concurrency, async, etc. There are a lot of patterns for all aspects of programming models. You use it for beck & front at the same time. There are pretty massive organizations and a huge community developing it.
 
 But this freedom also has its drawbacks. There is no compiler to protect you. There is no unified debugging model. There is no correct way to generate the final/production code. **TypeScript** helps alleviate some of the problems of JavaScript. It is not a panacea and sometimes it is not easy to configure, especially when working with shared data models between front-end and back-end, but it provides a much more structured approach to the development, maintenance, and delivery of code.
-
-But this freedom also has its drawbacks. There is no compiler to protect you. There is no single model for debugging. There is no correct way to generate the final/production code. **TypeScript** helps eliminate some of the problems of JavaScript. It's not a panacea and sometimes not easy to configure, especially when working with shared data models between front & back end, but it gives a much more structured approach to the development, maintenance, and delivery of code.
 
 ## The others
 
