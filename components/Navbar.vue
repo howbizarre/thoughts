@@ -14,9 +14,11 @@ const localePath = useLocalePath();
         <HomeIcon class="h-5 w-5" />
       </NuxtLink>
 
-      <NuxtLink v-for="link of localeNavigation[0].children" :key="link._path" :to="link._path" class="btn btn-default">
-        {{ link.title }}
-      </NuxtLink>
+      <template v-for="nav of localeNavigation">
+        <NuxtLink v-for="link of nav.children" :key="link._path" :to="link._path" class="btn btn-default">
+          {{ link.title }}
+        </NuxtLink>
+      </template>
     </nav>
   </ContentNavigation>
 </template>
