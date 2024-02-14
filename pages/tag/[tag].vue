@@ -9,7 +9,7 @@ const { tag } = route.params;
 const query: QueryBuilderParams = { path: localePath('/thoughts'), where: [{ tags: { $contains: tag } }], limit: 5, sort: [{ date: -1 }] };
 
 useHead({
-  title: t("LBL_TAG"),
+  title: t("LBL_TAG") + ' - ' + t((`TAG_${tag}`).toUpperCase())
 });
 </script>
 
@@ -18,7 +18,7 @@ useHead({
     <ContentList :query="query" v-slot="{ list }">
       <div v-for="doc in list"
            :key="doc.slug"
-           class="p-5 rounded-2xl border border-gray-50 dark:border-gray-950">
+           class="excerpt-card">
         <div class="text-sm text-gray-500 -mb-1 block">
           {{ (new Date(doc.date)).toLocaleDateString(locale) }}
         </div>
@@ -34,7 +34,7 @@ useHead({
           <ContentRendererMarkdown :value="doc.excerpt" />
         </div>
 
-        <hr class="h-px my-4 bg-gray-300 border-0 dark:bg-gray-700" />
+        <hr class="h-line" />
 
         <div class="flex justify-start items-center gap-2 sm:gap-5">
           <div v-if="doc.competence">

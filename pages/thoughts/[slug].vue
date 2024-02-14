@@ -20,7 +20,7 @@ const { slug } = route.params;
           <ContentRenderer :value="doc" />
         </div>
 
-        <hr class="h-px my-4 bg-gray-300 border-0 dark:bg-gray-700" />
+        <hr class="h-line" />
 
         <div class="px-5 pb-5">
           <div v-if="doc.tags">

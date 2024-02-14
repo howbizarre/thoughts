@@ -1,7 +1,8 @@
 {
+  "COMPETENCE_NONE": "None",
   "LBL_COMPETENCE": "Competence",
   "LBL_COMPETENCIES": "Competencies",
   "LBL_TAG": "Tag",
   "LBL_TAGS": "Tags",
-  "hi": "Hello"
+  "TAG_THOUGHT": "Thought"
 }

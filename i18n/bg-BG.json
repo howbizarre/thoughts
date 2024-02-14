@@ -1,7 +1,8 @@
 {
+  "COMPETENCE_NONE": "Няма",
   "LBL_COMPETENCE": "Компетентност",
   "LBL_COMPETENCIES": "Компетенции",
   "LBL_TAG": "Таг",
   "LBL_TAGS": "Тагове",
-  "hi": "Здрасти"
+  "TAG_THOUGHT": "Мисъл"
 }
