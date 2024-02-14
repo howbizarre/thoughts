@@ -12,7 +12,7 @@ I stopped blogging a long time ago. I am currently writing various articles in t
 
 <!--more-->
 
-I'm starting this blog to share my experience with a wonderful technology stack that can do anything, well...almost anything. [Vue](https://vuejs.org/), [Nuxt](https://nuxt.com/), [TailwindCSS](https://tailwindcss.com/) and [TypeScript](https:// www.typescriptlang.org/). These will be the main topics of my reflections. Strongly focused on the front-end and complemented by the back-end. It seems to me that the community around these technologies in **Bulgaria** is small and I hope to help its development over time.
+I'm starting this blog to share my experience with a wonderful technology stack that can do anything, well...almost anything. [Vue](https://vuejs.org/), [Nuxt](https://nuxt.com/), [TailwindCSS](https://tailwindcss.com/) and [TypeScript](https://www.typescriptlang.org/). These will be the main topics of my reflections. Strongly focused on the front-end and complemented by the back-end. It seems to me that the community around these technologies in **Bulgaria** is small and I hope to help its development over time.
 
 ## Vue
 

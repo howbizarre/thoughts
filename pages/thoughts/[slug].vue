@@ -9,18 +9,16 @@ const { slug } = route.params;
   <article class="rounded-2xl mb-4">
     <ContentDoc :path="localePath(`/thoughts/${slug}`)" v-slot="{ doc }">
       <div class="mt-4">
-        <header>
-          <div class="text-left p-5">
-            <p class="text-gray-500 text-sm !-mb-1 block">{{ (new Date(doc.date)).toLocaleDateString(locale) }}</p>
-            <h1 class="text-4xl font-bold lg:w-2/3">{{ doc.title }}</h1>
-          </div>
+        <header class="text-left p-5 mb-5">          
+          <p class="text-gray-500 text-sm !-mb-1 block">{{ (new Date(doc.date)).toLocaleDateString(locale) }}</p>
+          <h1 class="text-4xl font-bold lg:w-2/3">{{ doc.title }}</h1>
         </header>
 
         <div class="px-5">
           <ContentRenderer :value="doc" />
         </div>
 
-        <hr class="h-px my-4 bg-gray-300 border-0 dark:bg-gray-700" />
+        <hr class="h-line" />
 
         <div class="px-5 pb-5">
           <div v-if="doc.tags">
