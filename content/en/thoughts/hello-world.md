@@ -2,7 +2,7 @@
 title: "Hello World"
 date: "2024-02-06T12:01:53.293Z"
 draft: false
-tags: ["Thought"]
+tags: ["Thoughts"]
 slug: "hello-world"
 navigation: false
 competence: None
