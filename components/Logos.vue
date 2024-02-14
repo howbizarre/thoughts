@@ -31,13 +31,6 @@ onMounted(() => doRound());
         <p class="text-gray-500">I try to think really hard.</p>
       </div>
     </div>
-
-    <div class="flex justify-center mt-3 sm:mt-0 sm:justify-between items-end gap-1">
-      <NuxtLink to="https://nuxt.com/" target="_blank" external><img src="/images/svgs/nuxt.svg" alt="Nuxt" class="w-8 h-8 rounded-full bg-white dark:bg-black p-1" /></NuxtLink>
-      <NuxtLink to="https://vuejs.org/" target="_blank" external><img src="/images/svgs/vue.svg" alt="Vue" class="w-8 h-8 rounded-full bg-white dark:bg-black p-1" /></NuxtLink>
-      <NuxtLink to="https://tailwindcss.com/" target="_blank" external><img src="/images/svgs/tailwindcss.svg" alt="Tailwind CSS" class="w-8 h-8 rounded-full bg-white dark:bg-black p-1" /></NuxtLink>
-      <NuxtLink to="https://www.typescriptlang.org/" target="_blank" external><img src="/images/svgs/ts.svg" alt="TypeScript" class="w-8 h-8 rounded-full bg-white dark:bg-black p-1" /></NuxtLink>
-    </div>
   </div>
 </template>
 
