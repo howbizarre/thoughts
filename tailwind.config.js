@@ -9,7 +9,7 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      "sans": ["Andika", "sans-serif"],
+      "sans": ["Istok Web", "sans-serif"],
       "serif": ["Playfair Display", "serif"],
     },
     extend: {},
