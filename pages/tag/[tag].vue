@@ -36,7 +36,7 @@ useHead({
 
         <hr class="h-line" />
 
-        <div class="flex justify-start items-center gap-2 sm:gap-5">
+        <div class="grid grid-col-1 sm:flex sm:justify-start sm:items-center gap-2 sm:gap-5">
           <div v-if="doc.competence">
             {{ t("LBL_COMPETENCE") }}:
             <Competence :competence="doc.competence" />

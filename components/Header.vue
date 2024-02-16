@@ -20,7 +20,7 @@ onBeforeUnmount(() => window.removeEventListener('scroll', stickIt));
 </script>
 
 <template>
-  <header ref="header" class="flex transition-colors duration-300 justify-between bg-white dark:bg-black rounded-2xl shadow-lg p-3 mb-4 sticky top-0 z-50">
+  <header ref="header" class="flex transition-colors duration-300 justify-between bg-white dark:bg-black rounded-2xl shadow-lg p-3 mb-10 sticky top-0 z-50">
     <Navbar />
 
     <div class="grid grid-flow-col auto-cols-max gap-2">

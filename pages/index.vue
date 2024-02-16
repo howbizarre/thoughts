@@ -12,7 +12,7 @@ useHead({
 </script>
 
 <template>
-  <div class="grid grid-cols-1 gap-2">
+  <div class="grid grid-cols-1 gap-5">
     <ContentList :query="query">
       <template #default="{ list }">
         <div v-for="doc in list" :key="doc._path" class="excerpt-card">
@@ -30,7 +30,7 @@ useHead({
 
           <hr class="h-line" />
 
-          <div class="flex justify-start items-center gap-2 sm:gap-5">
+          <div class="grid grid-col-1 sm:flex sm:justify-start sm:items-center gap-2 sm:gap-5">
             <div v-if="doc.competence">
               {{ t("LBL_COMPETENCE") }}:
               <Competence :competence="doc.competence" />

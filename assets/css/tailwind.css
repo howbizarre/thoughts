@@ -47,7 +47,7 @@
     }
 
     p {
-      @apply mb-2 leading-relaxed;
+      @apply mb-2 leading-7;
 
       a {
         @apply border-b border-dotted border-black dark:border-white;
@@ -59,7 +59,7 @@
     }
 
     a {
-      @apply text-black dark:text-white;
+      @apply text-black dark:text-white no-underline;
     }
 
     ul {

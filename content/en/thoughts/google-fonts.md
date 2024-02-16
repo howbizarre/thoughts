@@ -8,6 +8,67 @@ navigation: false
 competence: Elementary
 ---
 
-[Google Fonts](https://fonts.google.com/) service is very convenient and very easy to use/integrate. There is quite a large selection and a very good way to filter according to your needs. In the Nuxt ecosystem, there is a very good [module to integrate Google Fonts](https://google-fonts.nuxtjs.org/) into your app, but I'm going to show you a slightly different approach.
+The [Google Fonts](https://fonts.google.com/) service is very easy to use. There is a large selection of fonts and an easy way to filter them according to your needs. The Nuxt ecosystem has a very good [Google Fonts module](https://google-fonts.nuxtjs.org/) you can easily integrate into your app, but I will show you a slightly different approach.
 
 <!--more-->
+
+In the [config](https://nuxt.com/docs/api/nuxt-config#head) Nuxt allows us to handle the **Head** piece of HTML. There are other places you can do this, but for this, I will use the `nuxt.config.ts` configuration file.
+
+When you choose a font from Google, it provides you with code to add to your app. The code looks like this:
+
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+```
+
+To add this piece of code to `nuxt.config.ts` you need to split it into parts in the `link` array in the configuration.
+
+```typescript
+export default defineNuxtConfig({
+  app: {
+    head: {
+      link: [
+        { rel: "preconnect", href: "https://fonts.googleapis.com" },
+        { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" },
+        { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Roboto&display=swap" }
+      ]
+    }
+  }
+```
+
+An extremely simple and elegant solution. On build, the above code is injected into the Head of your app and the fonts are loaded from Google. This works great, but sometimes it's not enough.
+
+For example, if you generate your app statically with `npx nuxt generate`. Then it is good to think about how to optimize the loading of the fonts because they can reach quite large volumes.
+
+It is easily done by initially changing the value of the `rel` attribute and after calling the `onload` event we restore it.
+
+```typescript
+export default defineNuxtConfig({
+  app: {
+    head: {
+      link: [
+        { rel: "preconnect", href: "https://fonts.googleapis.com" },
+        { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" },
+        { rel: "preload", as: "style", onload: "this.onload = null; this.rel = 'stylesheet';", href: "https://fonts.googleapis.com/css2?family=Roboto&display=swap" }
+      ]
+    }
+  }
+```
+
+Once the font is loaded we need to promote it to the app. In my case I use **TailwindCSS**.
+
+TailwindCSS allows you to use pre-made [font families](https://tailwindcss.com/docs/font-family), but they have also provided an easy way to reconfigure them in the `tailwind.config.js` configuration file.
+
+```javascript
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  theme: {
+    fontFamily: {
+      "sans": ["Roboto", "sans-serif"]
+    }
+  }
+}
+```
+
+Now the `font-sans` CSS class will draw your text with the **Roboto** font.
