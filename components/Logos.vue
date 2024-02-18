@@ -2,6 +2,17 @@
 const localePath = useLocalePath();
 const logo = ref<HTMLElement | null>(null);
 
+const route = useRoute();
+const isHomePage = ref(((route.path).split("/")).length === 2)
+
+watch(() => route.path, (newPath) => {
+  if ((newPath.split("/")).length === 2) {
+    isHomePage.value = true;
+  } else {
+    isHomePage.value = false;
+  }
+});
+
 function doRound() {
   logo.value?.addEventListener('mouseover', function rotateImage(event: MouseEvent) {
     const target = event.target as HTMLElement;
@@ -22,12 +33,16 @@ onMounted(() => doRound());
       </NuxtLink>
 
       <div class="ml-3">
-        <div class="hN text-2xl font-semibold">
+        <h1 v-if="isHomePage" class="text-2xl font-semibold">
+          HB's Thoughts
+        </h1>
+
+        <div v-else class="hN text-2xl font-semibold">
           <NuxtLink :to="localePath('/')" title="HB's Thoughts">
             HB's Thoughts
           </NuxtLink>
         </div>
-        
+
         <p class="text-gray-500">I try to think really hard.</p>
       </div>
     </div>

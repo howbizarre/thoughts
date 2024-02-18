@@ -1,5 +1,7 @@
 <script lang="ts" setup>
-const i18nHead = useLocaleHead();
+const i18nHead = useLocaleHead({
+  addSeoAttributes: {}
+});
 
 useHead({
   htmlAttrs: {

@@ -6,8 +6,15 @@ const { locale, t } = useI18n();
 const thoughtsPath = localePath('/thoughts');
 const query: QueryBuilderParams = { path: thoughtsPath, where: [{ draft: false }], sort: [{ date: -1 }] };
 
+const localeKey = ref(locale.value as 'bg' | 'en');
+const description = {
+  "bg": "Статии, предимно за Vue, Nuxt, TailwindCSS, TypeScript, но не само. Повече за front-end и по-малко за back-end.",
+  "en": "Articles mostly about Vue, Nuxt, TailwindCSS, and TypeScript, but not limited to—more on the front-end and less on the back-end."
+};
+
 useHead({
   title: "",
+  meta: [{ name: 'description', content: description[localeKey.value] }]
 });
 </script>
 
