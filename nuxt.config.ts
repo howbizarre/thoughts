@@ -15,17 +15,18 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss", "@nuxtjs/color-mode", "@nuxt/content", "@nuxtjs/i18n"],
   content: {},
   i18n: {
+    baseUrl: "https://thoughts.bizarre.how",
     locales: [
       {
         code: "en",
         name: "EN",
-        iso: "en-US",
+        iso: "en",
         file: "en-US.json",
       },
       {
         code: "bg",
         name: "БГ",
-        iso: "bg-BG",
+        iso: "bg",
         file: "bg-BG.json",
       },
     ],
