@@ -16,7 +16,7 @@ navigation:
 
 ## Кои са технологиите
 
-Основните технологии, за които пиша са насочени повече към front-end, но щи има и за back-end, и за инструментите, и за облаците и още други.
+Основните технологии, за които пиша са насочени повече към front-end, но щe има и за back-end, и за инструментите, и за облаците и още други.
 
 [VueJS](https://vuejs.org/), [Nuxt](https://nuxt.com), [TailwindCSS](https://tailwindcss.com/), [TypeScript](https://www.typescriptlang.org/), [NodeJS](https://nodejs.org/), [NPM](https://www.npmjs.com/), [ExpressJS](https://expressjs.com/), [MongoDB](https://www.mongodb.com/), [GraphQL](https://graphql.org/), [Firebase](https://firebase.google.com/), [PM2](https://pm2.keymetrics.io/), [NginX](https://www.nginx.com/) и др...
 
