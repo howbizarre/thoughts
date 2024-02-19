@@ -32,6 +32,6 @@ onBeforeUnmount(() => window.removeEventListener('scroll', stickIt));
 
 <style scoped>
 .sticky-active {
-  @apply rounded-tl-none rounded-tr-none bg-slate-500 dark:bg-slate-700;
+  @apply rounded-tl-none rounded-tr-none;
 }
 </style>
