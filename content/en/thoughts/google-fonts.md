@@ -25,6 +25,8 @@ When you choose a font from Google, it provides you with code to add to your app
 To add this piece of code to `nuxt.config.ts` you need to split it into parts in the `link` array in the configuration.
 
 ```typescript
+// nuxt.config.ts
+
 export default defineNuxtConfig({
   app: {
     head: {
@@ -44,6 +46,8 @@ For example, if you generate your app statically with `npx nuxt generate`. Then 
 It is easily done by initially changing the value of the `rel` attribute and after calling the `onload` event we restore it.
 
 ```typescript
+// nuxt.config.ts
+
 export default defineNuxtConfig({
   app: {
     head: {
@@ -61,6 +65,8 @@ Once the font is loaded we need to promote it to the app. In my case I use **Tai
 TailwindCSS allows you to use pre-made [font families](https://tailwindcss.com/docs/font-family), but they have also provided an easy way to reconfigure them in the `tailwind.config.js` configuration file.
 
 ```javascript
+// tailwind.config.js
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   theme: {

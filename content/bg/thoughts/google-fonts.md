@@ -25,6 +25,8 @@ competence: Elementary
 За да добавите това парче от код в `nuxt.config.ts` трябва да го разделите на части в `link` масива в конфигурацията.
 
 ```typescript
+//nuxt.config.ts
+
 export default defineNuxtConfig({
   app: {
     head: {
@@ -44,6 +46,8 @@ export default defineNuxtConfig({
 Става лесно, като първоначално променим стойността на `rel` атрибута и след извикването на `onload` събитието го възстановяваме.
 
 ```typescript
+//nuxt.config.ts
+
 export default defineNuxtConfig({
   app: {
     head: {
@@ -61,6 +65,8 @@ export default defineNuxtConfig({
 TailwindCSS Ви позволява да използвате предварително подготвени [фамилии от шрифтове](https://tailwindcss.com/docs/font-family), но са предоставили и лесен начин да ги преконфигурирате в конфигурационния файл `tailwind.config.js`.
 
 ```javascript
+// tailwind.config.js
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   theme: {
