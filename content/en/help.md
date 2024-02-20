@@ -1,16 +1,14 @@
 ---
-title: "Some small explanations"
+title: "What is competence?"
 slug: "help"
 navigation:
   title: "Help"
 ---
 
-## What is competence?
-
 Competence shows how familiar you should be with the technologies mentioned in the article.
 
 - **None**: No technical experience required;
-- **Elementary**: You should have gone through at least the **Getting Started** of the respective technology;
+- **Elementary**: You know `Getting Started` by heart;
 - **Profi**: You use the technology and its toolings;
 - **Geek**: You have more answers than questions;
 
@@ -22,6 +20,6 @@ The main technologies I write about are mostly focused on front-end, but there w
 
 ## Who am I?
 
->"I am a Front-end Senpai, who strictly follows the W3Code of Bushido!".
+>I am a Front-end Senpai, who strictly follows the W3Code of Bushido!.
 
 I like to use that phrase. Otherwise, I am **Kosta** and together with my family, I work and live in **Sofia**, **Bulgaria**.
