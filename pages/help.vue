@@ -7,7 +7,7 @@
         </header>
 
         <div class="p-5">
-          <ContentRenderer :value="doc" />
+          <ContentRenderer :value="doc" class="prose dark:prose-invert max-w-full prose-blockquote:border-gray-500/50" />
         </div>
       </div>
     </ContentDoc>
