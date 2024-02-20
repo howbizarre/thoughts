@@ -1,6 +1,7 @@
 {
   "COMPETENCE_ELEMENTARY": "Базова",
   "COMPETENCE_NONE": "Няма",
+  "COMPETENCE_PRO": "Про",
   "LBL_COMPETENCE": "Компетентност",
   "LBL_COMPETENCIES": "Компетенции",
   "LBL_TAG": "Таг",
@@ -8,5 +9,6 @@
   "TAG_FONTS": "Шрифтове",
   "TAG_NUXT": "Nuxt",
   "TAG_TAILWINDCSS": "TailwindCSS",
-  "TAG_THOUGHTS": "Мисли"
+  "TAG_THOUGHTS": "Мисли",
+  "TAG_VUE": "Vue"
 }

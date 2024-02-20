@@ -9,7 +9,7 @@ Competence shows how familiar you should be with the technologies mentioned in t
 
 - **None**: No technical experience required;
 - **Elementary**: You know `Getting Started` by heart;
-- **Profi**: You use the technology and its toolings;
+- **Pro**: You use the technology and its toolings;
 - **Geek**: You have more answers than questions;
 
 ## What are the technologies

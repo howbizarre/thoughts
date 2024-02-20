@@ -1,6 +1,7 @@
 {
   "COMPETENCE_ELEMENTARY": "Еlementary",
   "COMPETENCE_NONE": "None",
+  "COMPETENCE_PRO": "Pro",
   "LBL_COMPETENCE": "Competence",
   "LBL_COMPETENCIES": "Competencies",
   "LBL_TAG": "Tag",
@@ -8,5 +9,6 @@
   "TAG_FONTS": "Fonts",
   "TAG_NUXT": "Nuxt",
   "TAG_TAILWINDCSS": "TailwindCSS",
-  "TAG_THOUGHTS": "Thoughts"
+  "TAG_THOUGHTS": "Thoughts",
+  "TAG_VUE": "Vue"
 }
