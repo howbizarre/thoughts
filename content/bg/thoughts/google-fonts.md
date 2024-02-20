@@ -5,7 +5,7 @@ draft: false
 tags: ["Nuxt", "TailwindCSS", "Fonts"]
 slug: "google-fonts"
 navigation: false
-competence: Elementary
+competence: "Elementary"
 ---
 
 Услугата на [Google за шрифтовете](https://fonts.google.com/) е страшно удобна за използване. Има голям избор от шрифтове и лесен начин да ги филтрираш спрямо нуждите ти. В екосистемата на Nuxt има много добър [модул за интегриране на Google шрифтове](https://google-fonts.nuxtjs.org/) в приложението Ви, но аз ще Ви покажа малко по-различен подход.

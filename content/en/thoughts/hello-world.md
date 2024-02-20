@@ -5,7 +5,7 @@ draft: false
 tags: ["Thoughts"]
 slug: "hello-world"
 navigation: false
-competence: None
+competence: "None"
 ---
 
 I stopped blogging a long time ago. I am currently writing various articles in the [GitHub](https://github.com/howbizarre) repositories, but they are not intended to reach the end user. They're more for people who are just passing through for information and I'm not trying too hard because they're aimed at the tech savvy I'm writing about.

@@ -5,7 +5,7 @@ draft: false
 tags: ["Nuxt", "TailwindCSS", "Fonts"]
 slug: "google-fonts"
 navigation: false
-competence: Elementary
+competence: "Elementary"
 ---
 
 The [Google Fonts](https://fonts.google.com/) service is very easy to use. There is a large selection of fonts and an easy way to filter them according to your needs. The Nuxt ecosystem has a very good [Google Fonts module](https://google-fonts.nuxtjs.org/) you can easily integrate into your app, but I will show you a slightly different approach.
