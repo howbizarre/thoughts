@@ -1,6 +1,6 @@
 ---
 title: "Една входна точка за множество сайтове"
-date: "2024-02-20T14:21:19Z"
+date: "2024-02-20T14:46:19.000Z"
 draft: true
 tags: ["Vue"]
 slug: "one-entry-point-multiple-sites"

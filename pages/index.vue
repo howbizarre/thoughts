@@ -4,7 +4,9 @@ import type { QueryBuilderParams } from '@nuxt/content/types';
 const localePath = useLocalePath();
 const { locale, t } = useI18n();
 const thoughtsPath = localePath('/thoughts');
-const query: QueryBuilderParams = { path: thoughtsPath, where: [{ draft: false }], sort: [{ date: -1 }] };
+const query: QueryBuilderParams = import.meta.dev
+                                ? { path: thoughtsPath, sort: [{ date: -1 }] }
+                                : { path: thoughtsPath, where: [{ draft: false }], sort: [{ date: -1 }] };
 
 const localeKey = ref(locale.value as 'bg' | 'en');
 const description = {
