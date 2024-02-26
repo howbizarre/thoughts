@@ -3,10 +3,10 @@ import type { QueryBuilderParams } from '@nuxt/content/types';
 
 const localePath = useLocalePath();
 const { locale, t } = useI18n();
-const thoughtsPath = localePath('/thoughts');
+const articlesPath = localePath('/articles');
 const query: QueryBuilderParams = import.meta.dev
-                                ? { path: thoughtsPath, sort: [{ date: -1 }] }
-                                : { path: thoughtsPath, where: [{ draft: false }], sort: [{ date: -1 }] };
+                                ? { path: articlesPath, sort: [{ date: -1 }] }
+                                : { path: articlesPath, where: [{ draft: false }], sort: [{ date: -1 }] };
 
 const localeKey = ref(locale.value as 'bg' | 'en');
 const description = {
@@ -30,7 +30,7 @@ useHead({
           </div>
 
           <div class="hN text-2xl font-bold">
-            <NuxtLink :to="localePath(`/thoughts/${doc.slug}`)">{{ doc.title }}</NuxtLink>
+            <NuxtLink :to="localePath(`/articles/${doc.slug}`)">{{ doc.title }}</NuxtLink>
           </div>
 
           <div v-if="doc?.excerpt" class="my-3">

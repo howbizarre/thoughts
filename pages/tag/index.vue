@@ -9,7 +9,7 @@ useHead({
 
 <template>
   <div class="rounded-2xl">
-    <ContentList :path="localePath('/thoughts')" v-slot="{ list }">
+    <ContentList :path="localePath('/articles')" v-slot="{ list }">
       <div v-for="doc in list" :key="doc.slug" class="p-3">
         <template v-for="tag in doc.tags">
           <Tag :tag="tag" />

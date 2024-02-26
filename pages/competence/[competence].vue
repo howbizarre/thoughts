@@ -6,7 +6,7 @@ const localePath = useLocalePath();
 const route = useRoute();
 const { competence } = route.params;
 
-const query: QueryBuilderParams = { path: localePath('/thoughts'), where: [{ competence: competence }], limit: 5, sort: [{ date: -1 }] };
+const query: QueryBuilderParams = { path: localePath('/articles'), where: [{ competence: competence }], limit: 5, sort: [{ date: -1 }] };
 
 useHead({
   title: t("LBL_COMPETENCE") + ' - ' + t((`COMPETENCE_${competence}`).toUpperCase()),
@@ -24,7 +24,7 @@ useHead({
         </div>
 
         <h3 class="text-2xl font-bold">
-          <NuxtLink :to="localePath(`/thoughts/${doc.slug}`)">
+          <NuxtLink :to="localePath(`/articles/${doc.slug}`)">
             {{ doc.title }}
             <span class="sr-only">Link to the blog post</span>
           </NuxtLink>

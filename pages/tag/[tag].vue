@@ -6,7 +6,7 @@ const localePath = useLocalePath();
 const route = useRoute();
 const { tag } = route.params;
 
-const query: QueryBuilderParams = { path: localePath('/thoughts'), where: [{ tags: { $contains: tag } }], limit: 5, sort: [{ date: -1 }] };
+const query: QueryBuilderParams = { path: localePath('/articles'), where: [{ tags: { $contains: tag } }], limit: 5, sort: [{ date: -1 }] };
 
 useHead({
   title: t("LBL_TAG") + ' - ' + t((`TAG_${tag}`).toUpperCase())
@@ -24,7 +24,7 @@ useHead({
         </div>
 
         <h3 class="text-2xl font-bold">
-          <NuxtLink :to="localePath(`/thoughts/${doc.slug}`)">
+          <NuxtLink :to="localePath(`/articles/${doc.slug}`)">
             {{ doc.title }}
             <span class="sr-only">Link to the blog post</span>
           </NuxtLink>
