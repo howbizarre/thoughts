@@ -2,10 +2,10 @@
 title: "The legacy of Barry"
 date: "2024-02-21T09:00:00.000Z"
 draft: false
-tags: ["Thoughts"]
+tags: ["thoughts"]
 slug: "the-legacy-of-barry"
 navigation: false
-competence: "None"
+competence: "none"
 ---
 
 My family had a dog. His name was **Barry Night**. A black standard poodle. About 12 kilograms. He lived exactly 3 years. He passed away on his birthday. Our beautiful pal is no longer here, but he left us with a legacy that I will share with all of you who have come across this page.
