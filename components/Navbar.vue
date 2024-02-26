@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { HomeIcon } from '@heroicons/vue/24/outline';
+const { t } = useI18n();
 
 const { locale } = useI18n();
 const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation());
@@ -10,7 +11,7 @@ const localePath = useLocalePath();
 <template>
   <ContentNavigation v-slot="{ navigation }">
     <nav class="grid grid-flow-col auto-cols-max gap-2">
-      <NuxtLink :to="localePath('/')" class="btn btn-default btn-icon">
+      <NuxtLink :to="localePath('/')" class="btn btn-default btn-icon" role="button" :aria-label="t('LBL_LOAD_HOME_PAGE')">
         <HomeIcon class="h-5 w-5" />
       </NuxtLink>
 

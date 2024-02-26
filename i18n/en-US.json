@@ -1,9 +1,11 @@
 {
-  "COMPETENCE_ELEMENTARY": "Еlementary",
+  "BTN_THEME_SWITCH": "Change the color theme",
+  "COMPETENCE_ELEMENTARY": "Elementary",
   "COMPETENCE_NONE": "None",
   "COMPETENCE_PRO": "Pro",
   "LBL_COMPETENCE": "Competence",
   "LBL_COMPETENCIES": "Competencies",
+  "LBL_LOAD_HOME_PAGE": "Load home page",
   "LBL_TAG": "Tag",
   "LBL_TAGS": "Tags",
   "TAG_FONTS": "Fonts",

@@ -29,7 +29,7 @@ onMounted(() => doRound());
   <div class="my-4 px-1 sm:flex sm:justify-between leading-5 z-0">
     <div class="flex justify-center sm:justify-start">
       <NuxtLink :to="localePath('/')" title="HB's Thoughts">
-        <img ref="logo" src="/images/logo.svg" alt="HB's Thoughts" class="w-12 h-12 rounded-full bg-white dark:bg-gray-500 scale-95" />
+        <img ref="logo" src="/images/logo.svg" alt="HB's Thoughts" class="w-12 h-12 rounded-full scale-95" />
       </NuxtLink>
 
       <div class="ml-3">

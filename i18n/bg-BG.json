@@ -1,9 +1,11 @@
 {
+  "BTN_THEME_SWITCH": "Смяна на цветовата тема",
   "COMPETENCE_ELEMENTARY": "Базова",
   "COMPETENCE_NONE": "Няма",
   "COMPETENCE_PRO": "Про",
   "LBL_COMPETENCE": "Компетентност",
   "LBL_COMPETENCIES": "Компетенции",
+  "LBL_LOAD_HOME_PAGE": "Зареди началната страница",
   "LBL_TAG": "Таг",
   "LBL_TAGS": "Тагове",
   "TAG_FONTS": "Шрифтове",

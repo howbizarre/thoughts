@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { SunIcon, MoonIcon } from '@heroicons/vue/24/solid';
+const { t } = useI18n();
 
 const colorMode = useColorMode();
 const isDark = computed({
@@ -15,7 +16,7 @@ const isDark = computed({
 <template>
   <div>
     <ClientOnly>
-      <button @click="isDark = !isDark" class="btn btn-default btn-icon">
+      <button @click="isDark = !isDark" class="btn btn-default btn-icon" :aria-label="t('BTN_THEME_SWITCH')">
         <template v-if="isDark">
           <SunIcon class="h-5 w-5" />
         </template>
