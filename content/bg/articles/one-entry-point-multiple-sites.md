@@ -1,7 +1,7 @@
 ---
 title: "Една входна точка за множество сайтове"
 date: "2024-02-27T07:43:58.000Z"
-draft: true
+draft: false
 tags: ["vue", "vue-router"]
 slug: "one-entry-point-multiple-sites"
 navigation: false
