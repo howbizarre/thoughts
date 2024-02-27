@@ -8,7 +8,7 @@ navigation: false
 competence: "none"
 ---
 
-My family had a dog. His name was **Barry Night**. A black standard poodle. About 12 kilograms. He lived exactly 3 years. He passed away on his birthday. Our beautiful pal is no longer here, but he left us with a legacy that I will share with all of you who have come across this page.
+My family had a dog. His name was **Barry Night**. We also called him **Baritosh**, **Baritoshev**, **Baritoshko**, **Torongash**, **Paliok**, **Chernio**, **Mr. President**, and others. A black standard poodle. About 12 kilograms. He lived exactly 3 years. He passed away on his birthday. Our beautiful pal is no longer here, but he left us with a legacy that I will share with all of you who have come across this page.
 
 <!--more-->
 
@@ -25,6 +25,6 @@ There are countless similar stories with our pal. We could probably tell 1001, m
 That's why I'm writing these few lines, to share with you that it wasn't Barry who placed joy and love in us. He only taught us how to discover and share it. And now, when he's gone, I share with you the legacy he left us:
 
 
-> Every creature on this earth is born with a volcano of joy and love in its heart. It's not easy to activate them, and many of us need conductors like **Barry**, but they are there. Experience joy when you see loved ones - never miss it. Experience joy in the morning, as if they haven't been there for an eternity. Show them love for everything they do. Embrace them, kiss them, and rejoice in their presence. The volcanoes in our hearts are infinite. They will never run out.
+> Every creature on this world is born with a volcano of joy and love in its heart. It's not easy to activate them, and many of us need conductors like **Barry**, but they are there. Experience joy when you see loved ones - never miss it. Experience joy in the morning, as if they haven't been there for an eternity. Show them love for everything they do. Embrace them, kiss them, and rejoice in their presence. The volcanoes in our hearts are infinite. They will never run out.
 
 Until soon, our little pal. We will meet in endless fields - and know that we will bring the green ball.
