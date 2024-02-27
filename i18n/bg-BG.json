@@ -12,5 +12,6 @@
   "TAG_NUXT": "Nuxt",
   "TAG_TAILWIND": "TailwindCSS",
   "TAG_THOUGHTS": "Мисли",
-  "TAG_VUE": "Vue"
+  "TAG_VUE": "Vue",
+  "TAG_VUE-ROUTER": "Vue Router"
 }
