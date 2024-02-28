@@ -8,10 +8,10 @@ navigation:
 
 Competence shows how familiar you should be with the technologies mentioned in the article.
 
-- **None**: No technical experience required;
-- **Elementary**: You know `Getting Started` by heart;
-- **Pro**: You use the technology and its toolings;
-- **Geek**: You have more answers than questions;
+- [**None**](/en/competence/none): No technical experience required;
+- [**Elementary**](/en/competence/elementary): You know `Getting Started` by heart;
+- [**Pro**](/en/competence/pro): You use the technology and its toolings;
+- [**Geek**](/en/competence/geek): You have more answers than questions;
 
 ## What are the technologies
 

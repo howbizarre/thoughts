@@ -1,6 +1,7 @@
 {
   "BTN_THEME_SWITCH": "Смяна на цветовата тема",
   "COMPETENCE_ELEMENTARY": "Базова",
+  "COMPETENCE_GEEK": "Маниак",
   "COMPETENCE_NONE": "Няма",
   "COMPETENCE_PRO": "Про",
   "LBL_COMPETENCE": "Компетентност",
@@ -10,6 +11,7 @@
   "LBL_TAGS": "Тагове",
   "TAG_FONTS": "Шрифтове",
   "TAG_NUXT": "Nuxt",
+  "TAG_PARCEL": "Parcel",
   "TAG_TAILWIND": "TailwindCSS",
   "TAG_THOUGHTS": "Мисли",
   "TAG_VUE": "Vue",

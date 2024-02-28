@@ -1,6 +1,7 @@
 {
   "BTN_THEME_SWITCH": "Change the color theme",
   "COMPETENCE_ELEMENTARY": "Elementary",
+  "COMPETENCE_GEEK": "Geek",
   "COMPETENCE_NONE": "None",
   "COMPETENCE_PRO": "Pro",
   "LBL_COMPETENCE": "Competence",
@@ -10,6 +11,7 @@
   "LBL_TAGS": "Tags",
   "TAG_FONTS": "Fonts",
   "TAG_NUXT": "Nuxt",
+  "TAG_PARCEL": "Parcel",
   "TAG_TAILWIND": "TailwindCSS",
   "TAG_THOUGHTS": "Thoughts",
   "TAG_VUE": "Vue",
