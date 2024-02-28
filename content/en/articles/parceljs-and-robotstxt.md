@@ -28,6 +28,7 @@ This way, `robots.txt` and `favicon.ico` will not be processed by [ParcelJS](htt
 To make the above build script work properly, you need to add the following code to the `.parcelrc` file:
 
 ```json
+// .parcelrc
 {
   "extends": "@parcel/config-default",
   "transformers": {

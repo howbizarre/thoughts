@@ -28,6 +28,7 @@ competence: "geek"
 За да заработи правилно горния билд скрипт, трябва да добавите в `.parcelrc` файла следния код:
 
 ```json
+// .parcelrc
 {
   "extends": "@parcel/config-default",
   "transformers": {
