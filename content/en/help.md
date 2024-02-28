@@ -17,7 +17,7 @@ Competence shows how familiar you should be with the technologies mentioned in t
 
 The main technologies I write about are mostly focused on front-end, but there will also be content about back-end, tools, clouds, patterns, best practices, and more.
 
-[VueJS](https://vuejs.org/), [Nuxt](https://nuxt.com), [TailwindCSS](https://tailwindcss.com/), [TypeScript](https://www.typescriptlang.org/), [NodeJS](https://nodejs.org/), [NPM](https://www.npmjs.com/), [ExpressJS](https://expressjs.com/), [MongoDB](https://www.mongodb.com/), [GraphQL](https://graphql.org/), [Firebase](https://firebase.google.com/), [PM2](https://pm2.keymetrics.io/), [NginX](https://www.nginx.com/) and more...
+[VueJS](https://vuejs.org/), [Nuxt](https://nuxt.com), [TailwindCSS](https://tailwindcss.com/), [TypeScript](https://www.typescriptlang.org/), [NodeJS](https://nodejs.org/), [NPM](https://www.npmjs.com/), [Vite](https://vitejs.dev/), [Parcel](https://parceljs.org/), [ExpressJS](https://expressjs.com/), [MongoDB](https://www.mongodb.com/), [GraphQL](https://graphql.org/), [Firebase](https://firebase.google.com/), [PM2](https://pm2.keymetrics.io/), [NginX](https://www.nginx.com/) and more...
 
 ## Who am I?
 

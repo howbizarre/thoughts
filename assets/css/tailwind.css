@@ -35,7 +35,7 @@
   }
 
   .excerpt-card {
-    @apply rounded-2xl p-5 border border-gray-50 dark:border-gray-950 outline outline-offset-[-2px] outline-1 outline-gray-300 dark:outline-gray-700;
+    @apply p-5 rounded-2xl bg-gray-500/5;
   }
 
   .h-line {

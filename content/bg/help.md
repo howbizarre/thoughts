@@ -17,7 +17,7 @@ navigation:
 
 Основните технологии, за които пиша са насочени повече към front-end, но щe има и за back-end, и за инструментите, и за облаците, и за моделите, и за добрите практики и още други.
 
-[VueJS](https://vuejs.org/), [Nuxt](https://nuxt.com), [TailwindCSS](https://tailwindcss.com/), [TypeScript](https://www.typescriptlang.org/), [NodeJS](https://nodejs.org/), [NPM](https://www.npmjs.com/), [ExpressJS](https://expressjs.com/), [MongoDB](https://www.mongodb.com/), [GraphQL](https://graphql.org/), [Firebase](https://firebase.google.com/), [PM2](https://pm2.keymetrics.io/), [NginX](https://www.nginx.com/) и др...
+[VueJS](https://vuejs.org/), [Nuxt](https://nuxt.com), [TailwindCSS](https://tailwindcss.com/), [TypeScript](https://www.typescriptlang.org/), [NodeJS](https://nodejs.org/), [NPM](https://www.npmjs.com/), [Vite](https://vitejs.dev/), [Parcel](https://parceljs.org/), [ExpressJS](https://expressjs.com/), [MongoDB](https://www.mongodb.com/), [GraphQL](https://graphql.org/), [Firebase](https://firebase.google.com/), [PM2](https://pm2.keymetrics.io/), [NginX](https://www.nginx.com/) и др...
 
 ## Кой съм аз ли?
 
