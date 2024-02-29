@@ -34,6 +34,7 @@ useHead({
 
 <template>
   <div class="grid grid-cols-1 gap-10">
+  <pre>{{ articles }}</pre>
     <div v-for="article in articles" class="excerpt-card">
       <ContentRenderer :value="article">
         <div class="text-xs text-gray-500 -mb-1 block">
@@ -67,11 +68,13 @@ useHead({
     </div>
 
     <div v-if="!haveReachedEnd" class="excerpt-card">
-      <button @click="loadMore" class="btn flex justify-between">
-        <span>{{ t("LBL_LOAD_MORE") }}...</span>
+      <ClientOnly>
+        <button @click="loadMore" class="btn flex justify-between">
+          <span>{{ t("LBL_LOAD_MORE") }}...</span>
 
-        <ChevronDownIcon class="h-5 w-5" />
-      </button>
+          <ChevronDownIcon class="h-5 w-5" />
+        </button>
+      </ClientOnly>
     </div>
   </div>
 </template>
