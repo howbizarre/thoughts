@@ -7,18 +7,14 @@ const articlesPath = localePath('/articles');
 const { locale, t } = useI18n();
 
 const maxArticlesPerPage = 3;
-const currentPage = ref(1);
-const haveReachedEnd = ref(false);
+const currentPage = ref(0);
 const countArticles = await queryContent(articlesPath).count();
 const { data: articles } = await useAsyncData('home-page-articles', () => queryContent(articlesPath).sort({ date: -1 }).limit(maxArticlesPerPage).where({ draft: false }).find());
+const haveReachedEnd = computed(() => articles.value ? articles.value?.length >= countArticles : true);
 
 const loadMore = async () => {
-  currentPage.value += 1;
-
-  const moreArticles = await queryContent(articlesPath).sort({ date: -1 }).skip(maxArticlesPerPage * (currentPage.value - 1)).limit(maxArticlesPerPage).where({ draft: false }).find();
-  articles.value = articles.value && moreArticles ? [...articles.value, ...moreArticles] : [];
-
-  if (articles.value.length >= countArticles) haveReachedEnd.value = true;
+  const moreArticles = await queryContent(articlesPath).sort({ date: -1 }).skip(maxArticlesPerPage * (currentPage.value =+ 1)).limit(maxArticlesPerPage).where({ draft: false }).find();
+  articles.value = [...articles.value!, ...moreArticles];
 };
 
 const description = {
