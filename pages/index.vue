@@ -34,7 +34,6 @@ useHead({
 
 <template>
   <div class="grid grid-cols-1 gap-10">
-  <pre>{{ articles }}</pre>
     <div v-for="article in articles" class="excerpt-card">
       <ContentRenderer :value="article">
         <div class="text-xs text-gray-500 -mb-1 block">
