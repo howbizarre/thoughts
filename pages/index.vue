@@ -10,7 +10,7 @@ const maxArticlesPerPage = 3;
 const currentPage = ref(0);
 const countArticles = await queryContent(articlesPath).count();
 const { data: articles } = await useAsyncData('home-page-articles', () => queryContent(articlesPath).sort({ date: -1 }).limit(maxArticlesPerPage).where({ draft: false }).find());
-const haveReachedEnd = computed(() => articles.value ? articles.value?.length >= countArticles : true);
+const haveReachedEnd = computed(() => articles.value ? articles.value.length >= countArticles : true);
 
 const loadMore = async () => {
   const moreArticles = await queryContent(articlesPath).sort({ date: -1 }).skip(maxArticlesPerPage * (currentPage.value =+ 1)).limit(maxArticlesPerPage).where({ draft: false }).find();
