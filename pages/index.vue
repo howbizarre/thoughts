@@ -15,8 +15,8 @@ const { data: articles } = await useAsyncData('home-page-articles', () => queryC
 const loadMore = async () => {
   currentPage.value += 1;
 
-  const { data: moreArticles } = await useAsyncData(`home-page-articles-p${currentPage.value}`, () => queryContent(articlesPath).sort({ date: -1 }).skip(maxArticlesPerPage * (currentPage.value - 1)).limit(maxArticlesPerPage).where({ draft: false }).find());
-  articles.value = articles.value && moreArticles.value ? [...articles.value, ...moreArticles.value] : [];
+  const moreArticles = await queryContent(articlesPath).sort({ date: -1 }).skip(maxArticlesPerPage * (currentPage.value - 1)).limit(maxArticlesPerPage).where({ draft: false }).find();
+  articles.value = articles.value && moreArticles ? [...articles.value, ...moreArticles] : [];
 
   if (articles.value.length >= countArticles) haveReachedEnd.value = true;
 };
