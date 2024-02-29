@@ -13,7 +13,7 @@ const { data: articles } = await useAsyncData('home-page-articles', () => queryC
 const haveReachedEnd = computed(() => articles.value ? articles.value.length >= countArticles : true);
 
 const loadMore = async () => {
-  const moreArticles = await queryContent(articlesPath).sort({ date: -1 }).skip(maxArticlesPerPage * (currentPage.value =+ 1)).limit(maxArticlesPerPage).where({ draft: false }).find();
+  const moreArticles = await queryContent(articlesPath).sort({ date: -1 }).skip(maxArticlesPerPage * (currentPage.value = + 1)).limit(maxArticlesPerPage).where({ draft: false }).find();
   articles.value = [...articles.value!, ...moreArticles];
 };
 
@@ -63,13 +63,11 @@ useHead({
     </div>
 
     <div v-if="!haveReachedEnd" class="excerpt-card">
-      <ClientOnly>
-        <button @click="loadMore" class="btn flex justify-between">
-          <span>{{ t("LBL_LOAD_MORE") }}...</span>
+      <button @click="loadMore" class="btn flex justify-between">
+        <span>{{ t("LBL_LOAD_MORE") }}...</span>
 
-          <ChevronDownIcon class="h-5 w-5" />
-        </button>
-      </ClientOnly>
+        <ChevronDownIcon class="h-5 w-5" />
+      </button>
     </div>
   </div>
 </template>
