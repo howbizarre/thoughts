@@ -1,18 +1,17 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  darkMode: "class",
-  content: [
-    "./components/**/*.{vue,ts}",
-    "./layouts/**/*.vue",
-    "./pages/**/*.vue",
-    "./app.vue",
-  ],
-  theme: {
-    fontFamily: {
-      "sans": ["Inter", "sans-serif"],
-      "serif": ["Playfair Display", "serif"],
-    },
-    extend: {},
+
+export const darkMode = "class";
+export const content = [
+  "./components/**/*.{vue,ts}",
+  "./layouts/**/*.vue",
+  "./pages/**/*.vue",
+  "./app.vue",
+];
+export const theme = {
+  fontFamily: {
+    "sans": ["Inter", "sans-serif"],
+    "serif": ["Playfair Display", "serif"],
   },
-  plugins: [require("@tailwindcss/typography")],
-}
+  extend: {},
+};
+export const plugins = [require("@tailwindcss/typography")];

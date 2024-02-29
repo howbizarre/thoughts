@@ -1,8 +1,5 @@
 <script setup lang="ts">
-const siteHomeTitle = "How Bizarre's Thoughts";
-const sitePageTitle = "HB's Thoughts";
-
-useHead({ titleTemplate: (titleChunk) => titleChunk ? `${titleChunk} | ${sitePageTitle}` : siteHomeTitle });
+useHead({ titleTemplate: (titleChunk) => titleChunk ? `${titleChunk} | HB's Thoughts` : "How Bizarre's Thoughts" });
 </script>
 
 <template>
