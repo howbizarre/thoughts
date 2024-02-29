@@ -9,7 +9,7 @@ const { locale, t } = useI18n();
 const maxArticlesPerPage = 3;
 const currentPage = ref(0);
 const countArticles = await queryContent(articlesPath).count();
-const { data: articles } = await useAsyncData('home-page-articles', () => queryContent(articlesPath).sort({ date: -1 }).limit(maxArticlesPerPage).where({ draft: false }).find());
+const { data: articles } = await useAsyncData('home-page-articles', () => queryContent(articlesPath).sort({ date: -1 }).where({ draft: false }).find());
 const haveReachedEnd = computed(() => articles.value ? articles.value.length >= countArticles : true);
 
 const loadMore = async () => {
@@ -62,12 +62,12 @@ useHead({
       </ContentRenderer>
     </div>
 
-    <div v-if="!haveReachedEnd" class="excerpt-card">
+    <!-- <div v-if="!haveReachedEnd" class="excerpt-card">
       <button @click="loadMore" class="btn flex justify-between">
         <span>{{ t("LBL_LOAD_MORE") }}...</span>
 
         <ChevronDownIcon class="h-5 w-5" />
       </button>
-    </div>
+    </div> -->
   </div>
 </template>
