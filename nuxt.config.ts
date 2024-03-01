@@ -50,4 +50,13 @@ export default defineNuxtConfig({
       routes: ["/sitemap.xml"],
     },
   },
+  routeRules: {
+    "/": { prerender: true },
+    "/bg": { prerender: true },
+    "/en": { prerender: true },
+    "/bg/help": { prerender: true },
+    "/en/help": { prerender: true },
+    "/bg/articles/**": { isr: true },
+    "/en/articles/**": { isr: true },
+  },
 });

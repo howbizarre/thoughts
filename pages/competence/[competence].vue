@@ -5,12 +5,11 @@ const { locale, t } = useI18n();
 const localePath = useLocalePath();
 const route = useRoute();
 const { competence } = route.params;
+const pageTitle = `${t('LBL_COMPETENCE')} - ${t((`COMPETENCE_${(competence)}`).toUpperCase())}`;
 
 const query: QueryBuilderParams = { path: localePath('/articles'), where: [{ competence: competence }], limit: 5, sort: [{ date: -1 }] };
 
-useHead({
-  title: t("LBL_COMPETENCE") + ' - ' + t((`COMPETENCE_${competence}`).toUpperCase()),
-});
+useHead({ title: pageTitle });
 
 function uniqCompetence(arr: ParsedContent[]): ParsedContent[] {
   return arr.filter((value, index, self) => self.findIndex(obj => (obj.competence === value.competence)) === index);
@@ -20,7 +19,7 @@ function uniqCompetence(arr: ParsedContent[]): ParsedContent[] {
 <template>
   <div v-if="competence" class="grid grid-cols-1 gap-10">
     <h1 class="text-3xl font-bold">
-      {{ t('LBL_COMPETENCE') }} &raquo; {{ t(`COMPETENCE_${(competence as string).toUpperCase()}`) }}
+      {{ pageTitle }}
     </h1>
 
     <div class="excerpt-card">

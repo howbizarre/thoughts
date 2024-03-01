@@ -1,23 +1,31 @@
 <script lang="ts" setup>
-import type { ParsedContent, QueryBuilderParams } from '@nuxt/content/types';
+import type { QueryBuilderParams } from '@nuxt/content/types';
 
 const { locale, t } = useI18n();
 const localePath = useLocalePath();
 const route = useRoute();
 const { tag } = route.params;
+const pageTitle = `${t('LBL_TAG')} - ${t((`TAG_${(tag)}`).toUpperCase())}`;
 
 const query: QueryBuilderParams = { path: localePath('/articles'), where: [{ tags: { $contains: tag } }], limit: 5, sort: [{ date: -1 }] };
+const articles = await queryContent(localePath('/articles')).find();
+const tags = [...new Set(articles.flatMap(article => article.tags))];
 
-useHead({
-  title: t("LBL_TAG") + ' - ' + t((`TAG_${tag}`).toUpperCase())
-});
+useHead({ title: pageTitle });
 </script>
 
 <template>
   <div v-if="tag" class="grid grid-cols-1 gap-10">
     <h1 class="text-3xl font-bold">
-      {{ t(`TAG_${(tag as string).toUpperCase()}`) }}
+      {{ pageTitle }}
     </h1>
+
+    <div class="excerpt-card">
+      {{ t('LBL_MORE') }}:
+      <template v-for="tag in tags">
+        <Tag :tag="tag" class="ml-2" />
+      </template>
+    </div>
 
     <ContentList :query="query" v-slot="{ list }">
       <div v-for="doc in list"
