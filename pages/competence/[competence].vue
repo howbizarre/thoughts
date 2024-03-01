@@ -18,9 +18,7 @@ function uniqCompetence(arr: ParsedContent[]): ParsedContent[] {
 
 <template>
   <div v-if="competence" class="grid grid-cols-1 gap-10">
-    <h1 class="text-3xl font-bold">
-      {{ pageTitle }}
-    </h1>
+    <h1 class="text-4xl font-bold">{{ pageTitle }}</h1>
 
     <div class="excerpt-card">
       <ContentList :path="localePath('/articles')" v-slot="{ list }">
