@@ -26,7 +26,6 @@ competence: "elementary"
 
 ```typescript
 //nuxt.config.ts
-
 export default defineNuxtConfig({
   app: {
     head: {
@@ -47,7 +46,6 @@ export default defineNuxtConfig({
 
 ```typescript
 //nuxt.config.ts
-
 export default defineNuxtConfig({
   app: {
     head: {
@@ -66,15 +64,14 @@ TailwindCSS Ви позволява да използвате предварит
 
 ```javascript
 // tailwind.config.js
-
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  theme: {
-    fontFamily: {
-      "sans": ["Roboto", "sans-serif"]
-    }
-  }
-}
+
+export const theme = {
+  fontFamily: {
+    "sans": ["Inter", "sans-serif"],
+    "serif": ["Playfair Display", "serif"],
+  },
+};
 ```
 
 От тук на там CSS класът `font-sans` ще рисува текста Ви с **Roboto** шрифта.

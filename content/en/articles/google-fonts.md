@@ -26,7 +26,6 @@ To add this piece of code to `nuxt.config.ts` you need to split it into parts in
 
 ```typescript
 // nuxt.config.ts
-
 export default defineNuxtConfig({
   app: {
     head: {
@@ -47,7 +46,6 @@ It is easily done by initially changing the value of the `rel` attribute and aft
 
 ```typescript
 // nuxt.config.ts
-
 export default defineNuxtConfig({
   app: {
     head: {
@@ -66,15 +64,14 @@ TailwindCSS allows you to use pre-made [font families](https://tailwindcss.com/d
 
 ```javascript
 // tailwind.config.js
-
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  theme: {
-    fontFamily: {
-      "sans": ["Roboto", "sans-serif"]
-    }
-  }
-}
+
+export const theme = {
+  fontFamily: {
+    "sans": ["Inter", "sans-serif"],
+    "serif": ["Playfair Display", "serif"],
+  },
+};
 ```
 
 Now the `font-sans` CSS class will draw your text with the **Roboto** font.

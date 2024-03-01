@@ -8,7 +8,7 @@ navigation: false
 competence: "geek"
 ---
 
-There are different ways to indicate to **ParcelJS** which files are static and should not go through the build transformation, but if there are only a few, you can activate the transformers plugin and then include them directly in the build script in the `package.json` file.
+There are different ways to tell **ParcelJS** which files are static and should not go through the build transformation, but if there are only a few, you can activate the transformers plugin and then include them directly in the build script in the `package.json` file.
 
 <!--more-->
 
@@ -37,4 +37,4 @@ To make the above build script work properly, you need to add the following code
 }
 ```
 
-*ParcelJS* will not only not add hashes to the file names, but the linked objects in the processed files will not be changed.
+So *ParcelJS* will not add hashes to the names of the files, but also the linked objects in the files being processed will not be changed.

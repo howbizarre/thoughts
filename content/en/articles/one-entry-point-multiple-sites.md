@@ -171,5 +171,11 @@ The whole solution for one entry point and multiple sites worked with these few 
 ---
 
 ::note
+I am omitting some of the object implementations in the article - they are not essential but only serve to suggest what business logic is behind them.
+::
+
+---
+
+::note
 "I use the term **back-end** quite loosely. I wondered if it might just be a server, but in our case, that's not quite the correct definition.
 ::
