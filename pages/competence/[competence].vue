@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { QueryBuilderParams } from '@nuxt/content/types';
+import type { ParsedContent, QueryBuilderParams } from '@nuxt/content/types';
 
 const { locale, t } = useI18n();
 const localePath = useLocalePath();
@@ -11,10 +11,27 @@ const query: QueryBuilderParams = { path: localePath('/articles'), where: [{ com
 useHead({
   title: t("LBL_COMPETENCE") + ' - ' + t((`COMPETENCE_${competence}`).toUpperCase()),
 });
+
+function uniqCompetence(arr: ParsedContent[]): ParsedContent[] {
+  return arr.filter((value, index, self) => self.findIndex(obj => (obj.competence === value.competence)) === index);
+}
 </script>
 
 <template>
-  <div v-if="competence" class="grid grid-cols-1 gap-2">
+  <div v-if="competence" class="grid grid-cols-1 gap-10">
+    <h1 class="text-3xl font-bold">
+      {{ t('LBL_COMPETENCE') }} &raquo; {{ t(`COMPETENCE_${(competence as string).toUpperCase()}`) }}
+    </h1>
+
+    <div class="excerpt-card">
+      <ContentList :path="localePath('/articles')" v-slot="{ list }">
+        {{ t('LBL_MORE') }}:
+        <template v-for="doc in uniqCompetence(list)" :key="doc.slug">
+          <Competence v-if="doc.competence !== competence" :competence="doc.competence" class="ml-2" />
+        </template>
+      </ContentList>
+    </div>
+
     <ContentList :query="query" v-slot="{ list }">
       <div v-for="doc in list"
            :key="doc.slug"
@@ -41,7 +58,7 @@ useHead({
             {{ t("LBL_COMPETENCE") }}:
             <Competence :competence="doc.competence" />
           </div>
-          
+
           <div v-if="doc.tags">
             {{ t("LBL_TAGS") }}:
             <template v-for="tag in doc.tags">

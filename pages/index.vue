@@ -5,11 +5,8 @@ const localePath = useLocalePath();
 const { locale, t } = useI18n();
 const articlesPath = localePath('/articles');
 
-const query: QueryBuilderParams = import.meta.dev
-  ? { path: articlesPath, sort: [{ date: -1 }] }
-  : { path: articlesPath, where: [{ draft: false }], sort: [{ date: -1 }] };
+const query: QueryBuilderParams = { path: articlesPath, where: [{ draft: false }], sort: [{ date: -1 }], limit: 5 };
 
-const localeKey = ref(locale.value as 'bg' | 'en');
 const description = {
   "bg": "Статии, предимно за Vue, Nuxt, TailwindCSS, TypeScript, но не само. Повече за front-end и по-малко за back-end.",
   "en": "Articles mostly about Vue, Nuxt, TailwindCSS, and TypeScript, but not limited to—more on the front-end and less on the back-end."
@@ -17,12 +14,12 @@ const description = {
 
 useHead({
   title: "",
-  meta: [{ name: 'description', content: description[localeKey.value] }]
+  meta: [{ name: 'description', content: description[(locale.value as 'bg' | 'en')] }]
 });
 </script>
 
 <template>
-  <div class="grid grid-cols-1 gap-5">
+  <div class="grid grid-cols-1 gap-10">
     <ContentList :query="query">
       <template #default="{ list }">
         <div v-for="doc in list" :key="doc._path" class="excerpt-card">

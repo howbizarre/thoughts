@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { QueryBuilderParams } from '@nuxt/content/types';
+import type { ParsedContent, QueryBuilderParams } from '@nuxt/content/types';
 
 const { locale, t } = useI18n();
 const localePath = useLocalePath();
@@ -14,7 +14,11 @@ useHead({
 </script>
 
 <template>
-  <div v-if="tag" class="grid grid-cols-1 gap-2">
+  <div v-if="tag" class="grid grid-cols-1 gap-10">
+    <h1 class="text-3xl font-bold">
+      {{ t(`TAG_${(tag as string).toUpperCase()}`) }}
+    </h1>
+
     <ContentList :query="query" v-slot="{ list }">
       <div v-for="doc in list"
            :key="doc.slug"
