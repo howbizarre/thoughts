@@ -16,7 +16,7 @@ useHead({ title: pageTitle });
 
 <template>
   <div v-if="tag" class="grid grid-cols-1 gap-10">
-    <h1 class="text-3xl font-bold">
+    <h1 class="text-3xl font-bold text-center">
       {{ pageTitle }}
     </h1>
 
