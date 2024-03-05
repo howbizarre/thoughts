@@ -25,33 +25,35 @@ useHead({
     <ContentList :query="query">
       <template #default="{ list }">
         <div v-for="doc in list" :key="doc._path" class="excerpt-card">
-          <div class="text-xs text-gray-500 -mb-1 block">
-            {{ (new Date(doc.date)).toLocaleDateString(locale) }}
-          </div>
-
-          <div class="hN text-2xl font-bold">
-            <NuxtLink :to="localePath(`/articles/${doc.slug}`)">{{ doc.title }}</NuxtLink>
-          </div>
-
-          <div v-if="doc?.excerpt" class="my-3">
-            <ContentRendererMarkdown :value="doc.excerpt" />
-          </div>
-
-          <hr class="h-line" />
-
-          <div class="grid grid-col-1 sm:flex sm:justify-start sm:items-center gap-2 sm:gap-5">
-            <div v-if="doc.competence">
-              {{ t("LBL_COMPETENCE") }}:
-              <Competence :competence="doc.competence" />
+          <ContentRenderer :value="doc">
+            <div class="text-xs text-gray-500 -mb-1 block">
+              {{ (new Date(doc.date)).toLocaleDateString(locale) }}
             </div>
 
-            <div v-if="doc.tags">
-              {{ t("LBL_TAGS") }}:
-              <template v-for="tag in doc.tags">
-                <Tag :tag="tag" />
-              </template>
+            <div class="hN text-2xl font-bold">
+              <NuxtLink :to="localePath(`/articles/${doc.slug}`)">{{ doc.title }}</NuxtLink>
             </div>
-          </div>
+
+            <div v-if="doc?.excerpt" class="my-3">
+              <ContentRendererMarkdown :value="doc.excerpt" />
+            </div>
+
+            <hr class="h-line" />
+
+            <div class="grid grid-col-1 sm:flex sm:justify-start sm:items-center gap-2 sm:gap-5">
+              <div v-if="doc.competence">
+                {{ t("LBL_COMPETENCE") }}:
+                <Competence :competence="doc.competence" />
+              </div>
+
+              <div v-if="doc.tags">
+                {{ t("LBL_TAGS") }}:
+                <template v-for="tag in doc.tags">
+                  <Tag :tag="tag" />
+                </template>
+              </div>
+            </div>
+          </ContentRenderer>
         </div>
       </template>
 
