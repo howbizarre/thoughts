@@ -48,7 +48,7 @@ useHead({
 
               <div v-if="doc.tags">
                 {{ t("LBL_TAGS") }}:
-                <template v-for="tag in doc.tags">
+                <template v-for="tag in doc.tags" :key="tag">
                   <Tag :tag="tag" />
                 </template>
               </div>
