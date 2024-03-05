@@ -25,11 +25,11 @@ function uniqCompetence(arr: ParsedContent[]): ParsedContent[] {
     <div class="excerpt-card">
       <ContentList :path="localePath('/articles')" v-slot="{ list }">
         <div class="absolute inline-flex items-center justify-center text-xs px-2 py-1 bg-white text-black dark:bg-black dark:text-white mr-0.5 rounded-full -top-2 -end-2">
-          <NuxtLink :to="localePath(`/competence`) ">{{ t("LBL_COMPETENCIES") }}</NuxtLink>
+          {{ t("LBL_COMPETENCIES") }}
         </div>
 
         <template v-for="doc in uniqCompetence(list)" :key="doc._path">
-          <Competence v-if="doc.competence !== competence" :competence="doc.competence" class="mx-1" />
+          <Competence :competence="doc.competence" class="mx-1" />
         </template>
       </ContentList>
     </div>
@@ -55,7 +55,7 @@ function uniqCompetence(arr: ParsedContent[]): ParsedContent[] {
 
             <hr class="h-line" />
 
-            <div class="grid grid-col-1 sm:flex sm:justify-start sm:items-center gap-2 sm:gap-5">
+            <div class="flex justify-start items-center gap-2">
               <div v-if="doc.competence">
                 {{ t("LBL_COMPETENCE") }}:
                 <Competence :competence="doc.competence" />

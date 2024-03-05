@@ -22,11 +22,11 @@ useHead({ title: pageTitle });
 
     <div class="excerpt-card">
       <div class="absolute inline-flex items-center justify-center text-xs px-2 py-1 bg-white text-black dark:bg-black dark:text-white mr-0.5 rounded-full -top-2 -end-2">
-        <NuxtLink :to="localePath(`/tag`)">{{ t("LBL_TAGS") }}</NuxtLink>
+        {{ t("LBL_TAGS") }}
       </div>
 
       <template v-for="tag in tags">
-        <Tag :tag="tag" class="ml-2" />
+        <Tag :tag="tag" class="mx-1" />
       </template>
     </div>
 

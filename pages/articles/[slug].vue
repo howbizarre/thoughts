@@ -9,11 +9,11 @@ const { slug } = route.params;
   <article class="rounded-2xl mb-4">
     <ContentDoc :path="localePath(`/articles/${slug}`)" v-slot="{ doc }">
       <div class="p-5">
-        <header class="text-left mb-10">          
+        <header class="text-left mb-10">
           <p class="text-gray-500 text-sm !-mb-1 block">{{ (new Date(doc.date)).toLocaleDateString(locale) }}</p>
           <h1 class="text-4xl font-bold">{{ doc.title }}</h1>
         </header>
-        
+
         <ContentRenderer :value="doc" class="prose dark:prose-invert max-w-full" />
 
         <hr class="h-line" />
@@ -21,13 +21,13 @@ const { slug } = route.params;
         <div class="grid grid-col-1 sm:flex sm:justify-start sm:items-center gap-2 sm:gap-5">
           <div v-if="doc.competence">
             {{ t("LBL_COMPETENCE") }}:
-            <Competence :competence="doc.competence" />
+            <Competence :competence="doc.competence" class="mx-1" />
           </div>
-          
+
           <div v-if="doc.tags">
             {{ t("LBL_TAGS") }}:
             <template v-for="tag in doc.tags">
-              <Tag :tag="tag" />
+              <Tag :tag="tag" class="mx-1" />
             </template>
           </div>
         </div>
