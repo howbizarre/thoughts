@@ -29,7 +29,7 @@ useHead({
       {{ pageTitle }}
     </h1>
 
-    <div class="excerpt-card">
+    <div class="excerpt-card text-center">
       <div class="absolute inline-flex items-center justify-center text-xs px-2 py-1 bg-white text-black dark:bg-black dark:text-white mr-0.5 rounded-full -top-2 -end-2">
         {{ t("LBL_TAGS") }}
       </div>
@@ -39,10 +39,10 @@ useHead({
       </template>
     </div>
 
-    <div v-for="doc in articles" :key="doc._path" class="excerpt-card">
+    <template v-for="doc in articles" :key="doc._path">
       <ContentRenderer :value="doc">
         <Excerpt :doc="doc" />
       </ContentRenderer>
-    </div>
+    </template>
   </div>
 </template>

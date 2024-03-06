@@ -32,7 +32,7 @@ function uniqCompetence(arr: ParsedContent[]): ParsedContent[] {
       {{ pageTitle }}
     </h1>
 
-    <div class="excerpt-card">
+    <div class="excerpt-card text-center">
       <ContentList :path="localePath('/articles')" v-slot="{ list }">
         <div class="absolute inline-flex items-center justify-center text-xs px-2 py-1 bg-white text-black dark:bg-black dark:text-white mr-0.5 rounded-full -top-2 -end-2">
           {{ t("LBL_COMPETENCIES") }}

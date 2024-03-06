@@ -27,12 +27,12 @@ const localePath = useLocalePath();
     <hr class="h-line" />
 
     <div class="grid grid-col-1 sm:flex sm:justify-start sm:items-center gap-2 sm:gap-5">
-      <div v-if="doc.competence">
+      <div v-if="doc.competence" class="text-sm">
         {{ t("LBL_COMPETENCE") }}:
         <Competence :competence="doc.competence" :active="false" />
       </div>
 
-      <div v-if="doc.tags">
+      <div v-if="doc.tags" class="text-sm">
         {{ t("LBL_TAGS") }}:
         <template v-for="tag in doc.tags">
           <Tag :tag="tag" :active="false" />
