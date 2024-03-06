@@ -52,12 +52,12 @@ function uniqCompetence(arr: ParsedContent[]): ParsedContent[] {
               {{ (new Date(doc.date)).toLocaleDateString(locale) }}
             </div>
 
-            <h3 class="text-2xl font-bold">
+            <h2 class="text-2xl font-bold">
               <NuxtLink :to="localePath(`/articles/${doc.slug}`)">
                 {{ doc.title }}
                 <span class="sr-only">Link to the blog post</span>
               </NuxtLink>
-            </h3>
+            </h2>
 
             <div v-if="doc?.excerpt" class="pr-4 my-3">
               <ContentRendererMarkdown :value="doc.excerpt" />
