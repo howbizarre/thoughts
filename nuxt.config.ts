@@ -47,18 +47,18 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   nitro: {
     prerender: {
-      routes: ["/sitemap.xml"],
-      // crawlLinks: true,
-      // ignore: ["/api"],
+      routes: ["/", "/sitemap.xml", "/bg", "/en", "/bg/help", "/en/help", "/bg/articles/**", "/en/articles/**"],
+      crawlLinks: true,
+      ignore: ["/api"],
     },
   },
-  // routeRules: {
-  //   "/": { prerender: true },
-  //   "/bg": { prerender: true },
-  //   "/en": { prerender: true },
-  //   "/bg/help": { prerender: true },
-  //   "/en/help": { prerender: true },
-  //   "/bg/articles/**": { isr: true },
-  //   "/en/articles/**": { isr: true },
-  // },
+  routeRules: {
+    "/": { prerender: true },
+    "/bg": { prerender: true },
+    "/en": { prerender: true },
+    "/bg/help": { prerender: true },
+    "/en/help": { prerender: true },
+    "/bg/articles/**": { isr: true },
+    "/en/articles/**": { isr: true },
+  },
 });
