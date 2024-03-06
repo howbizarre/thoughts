@@ -47,38 +47,7 @@ function uniqCompetence(arr: ParsedContent[]): ParsedContent[] {
     <ContentList :query="query" v-slot="{ list }">
       <template v-for="doc in list" :key="doc._path">
         <ContentRenderer :value="doc">
-          <div class="excerpt-card">
-            <div class="text-sm text-gray-500 -mb-1 block">
-              {{ (new Date(doc.date)).toLocaleDateString(locale) }}
-            </div>
-
-            <h2 class="text-2xl font-bold">
-              <NuxtLink :to="localePath(`/articles/${doc.slug}`)">
-                {{ doc.title }}
-                <span class="sr-only">Link to the blog post</span>
-              </NuxtLink>
-            </h2>
-
-            <div v-if="doc?.excerpt" class="pr-4 my-3">
-              <ContentRendererMarkdown :value="doc.excerpt" />
-            </div>
-
-            <hr class="h-line" />
-
-            <div class="flex justify-start items-center gap-2">
-              <div v-if="doc.competence">
-                {{ t("LBL_COMPETENCE") }}:
-                <Competence :competence="doc.competence" :active="false" />
-              </div>
-
-              <div v-if="doc.tags">
-                {{ t("LBL_TAGS") }}:
-                <template v-for="tag in doc.tags">
-                  <Tag :tag="tag" :active="false" />
-                </template>
-              </div>
-            </div>
-          </div>
+          <Excerpt :doc="doc" />
         </ContentRenderer>
       </template>
     </ContentList>

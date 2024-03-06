@@ -17,5 +17,6 @@
   "TAG_TAILWIND": "TailwindCSS",
   "TAG_THOUGHTS": "Мисли",
   "TAG_VUE": "Vue",
-  "TAG_VUE-ROUTER": "Vue Router"
+  "TAG_VUE-ROUTER": "Vue Router",
+  "TXT_LINK_ARTICLE": "Линк към статията"
 }
