@@ -50,7 +50,12 @@ export default defineNuxtConfig({
       routes: ["/", "/sitemap.xml", "/bg", "/en", "/bg/help", "/en/help"],
       crawlLinks: true,
       ignore: ["/api"],
+      autoSubfolderIndex: false
     },
+    experimental: {
+      wasm: true,
+    },
+    preset: "cloudflare-pages",
   },
   routeRules: {
     "/": { prerender: true },
