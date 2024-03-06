@@ -29,7 +29,7 @@ function uniqCompetence(arr: ParsedContent[]): ParsedContent[] {
         </div>
 
         <template v-for="doc in uniqCompetence(list)" :key="doc._path">
-          <Competence :competence="doc.competence" class="mx-1" />
+          <Competence :competence="doc.competence" :active="competence === doc.competence" />
         </template>
       </ContentList>
     </div>
@@ -58,13 +58,13 @@ function uniqCompetence(arr: ParsedContent[]): ParsedContent[] {
             <div class="flex justify-start items-center gap-2">
               <div v-if="doc.competence">
                 {{ t("LBL_COMPETENCE") }}:
-                <Competence :competence="doc.competence" />
+                <Competence :competence="doc.competence" :active="false" />
               </div>
 
               <div v-if="doc.tags">
                 {{ t("LBL_TAGS") }}:
                 <template v-for="tag in doc.tags">
-                  <Tag :tag="tag" />
+                  <Tag :tag="tag" :active="false" />
                 </template>
               </div>
             </div>

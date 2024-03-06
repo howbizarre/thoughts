@@ -21,13 +21,13 @@ const { slug } = route.params;
         <div class="grid grid-col-1 sm:flex sm:justify-start sm:items-center gap-2 sm:gap-5">
           <div v-if="doc.competence">
             {{ t("LBL_COMPETENCE") }}:
-            <Competence :competence="doc.competence" class="mx-1" />
+            <Competence :competence="doc.competence" :active="false" />
           </div>
 
           <div v-if="doc.tags">
             {{ t("LBL_TAGS") }}:
             <template v-for="tag in doc.tags">
-              <Tag :tag="tag" class="mx-1" />
+              <Tag :tag="tag" :active="false" />
             </template>
           </div>
         </div>

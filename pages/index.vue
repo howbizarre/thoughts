@@ -41,13 +41,13 @@ useHead({
         <div class="grid grid-col-1 sm:flex sm:justify-start sm:items-center gap-2 sm:gap-5">
           <div v-if="article.competence">
             {{ t("LBL_COMPETENCE") }}:
-            <Competence :competence="article.competence" class="mx-1" />
+            <Competence :competence="article.competence" :active="false" />
           </div>
 
           <div v-if="article.tags">
             {{ t("LBL_TAGS") }}:
             <template v-for="tag in article.tags">
-              <Tag :tag="tag" class="mx-1" />
+              <Tag :tag="tag" :active="false" />
             </template>
           </div>
         </div>

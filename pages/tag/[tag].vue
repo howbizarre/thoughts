@@ -7,7 +7,7 @@ const { tag } = route.params;
 
 const pageTitle = `${t('LBL_TAG')} - ${t((`TAG_${(tag)}`).toUpperCase())}`;
 
-const { data: allArticles } = await useAsyncData('[tag]', () => queryContent(localePath('/articles')).find());
+const { data: allArticles } = await useAsyncData('[tag]', () => queryContent(localePath('/articles')).sort({ date: -1 }).find());
 const tags = allArticles.value ? [...new Set(allArticles.value.flatMap(article => article.tags))] : [];
 const articles = allArticles.value ? allArticles.value.filter(article => article.tags.includes(tag)) : [];
 
@@ -25,8 +25,8 @@ useHead({ title: pageTitle });
         {{ t("LBL_TAGS") }}
       </div>
 
-      <template v-for="tag in tags">
-        <Tag :tag="tag" class="mx-1" />
+      <template v-for="_tag in tags">
+        <Tag :tag="_tag" :active="_tag === tag" />
       </template>
     </div>
 
@@ -52,13 +52,13 @@ useHead({ title: pageTitle });
         <div class="grid grid-col-1 sm:flex sm:justify-start sm:items-center gap-2 sm:gap-5">
           <div v-if="doc.competence">
             {{ t("LBL_COMPETENCE") }}:
-            <Competence :competence="doc.competence" />
+            <Competence :competence="doc.competence" :active="false" />
           </div>
 
           <div v-if="doc.tags">
             {{ t("LBL_TAGS") }}:
-            <template v-for="tag in doc.tags">
-              <Tag :tag="tag" />
+            <template v-for="_tag in doc.tags">
+              <Tag :tag="_tag" :active="false" />
             </template>
           </div>
         </div>
