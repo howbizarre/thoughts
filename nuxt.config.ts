@@ -47,7 +47,7 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   nitro: {
     prerender: {
-      routes: ["/", "/sitemap.xml", "/bg", "/en", "/bg/help", "/en/help", "/bg/articles/**", "/en/articles/**"],
+      routes: ["/", "/sitemap.xml", "/bg", "/en", "/bg/help", "/en/help"],
       crawlLinks: true,
       ignore: ["/api"],
     },

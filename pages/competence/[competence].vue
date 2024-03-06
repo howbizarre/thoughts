@@ -5,11 +5,21 @@ const { locale, t } = useI18n();
 const localePath = useLocalePath();
 const route = useRoute();
 const { competence } = route.params;
-const pageTitle = `${t('LBL_COMPETENCE')} - ${t((`COMPETENCE_${(competence)}`).toUpperCase())}`;
+
+const pageCompetence = t((`COMPETENCE_${(competence)}`).toUpperCase());
+const pageTitle = `${t('LBL_COMPETENCE')} - ${pageCompetence}`;
 
 const query: QueryBuilderParams = { path: localePath('/articles'), where: [{ competence: competence }], limit: 5, sort: [{ date: -1 }] };
 
-useHead({ title: pageTitle });
+const description = {
+  "bg": `Компетентността '${pageCompetence}' е показател, колко технически насочена е статията. От простичка, без технически детайли, до много професионална.`,
+  "en": `Competence '${pageCompetence}' is an indicator of how technically oriented an article is. From simple, without technical details, to very professional.`
+};
+
+useHead({
+  title: pageTitle,
+  meta: [{ name: 'description', content: description[(locale.value as 'bg' | 'en')] }]
+});
 
 function uniqCompetence(arr: ParsedContent[]): ParsedContent[] {
   return arr.filter((value, index, self) => self.findIndex(obj => (obj.competence === value.competence)) === index);

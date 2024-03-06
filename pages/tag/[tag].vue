@@ -5,13 +5,22 @@ const localePath = useLocalePath();
 const route = useRoute();
 const { tag } = route.params;
 
-const pageTitle = `${t('LBL_TAG')} - ${t((`TAG_${(tag)}`).toUpperCase())}`;
+const pageTag = t((`TAG_${(tag)}`).toUpperCase());
+const pageTitle = `${t('LBL_TAG')} - ${pageTag}`;
 
 const { data: allArticles } = await useAsyncData('[tag]', () => queryContent(localePath('/articles')).sort({ date: -1 }).find());
 const tags = allArticles.value ? [...new Set(allArticles.value.flatMap(article => article.tags))] : [];
 const articles = allArticles.value ? allArticles.value.filter(article => article.tags.includes(tag)) : [];
 
-useHead({ title: pageTitle });
+const description = {
+  "bg": `Тагът '${pageTag}' е ключова дума за лесно филтриране на статиите по тематики.`,
+  "en": `The tag '${pageTag}' is a keyword for easy filtering of articles by topics.`
+};
+
+useHead({
+  title: pageTitle,
+  meta: [{ name: 'description', content: description[(locale.value as 'bg' | 'en')] }]
+});
 </script>
 
 <template>
