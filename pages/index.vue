@@ -2,7 +2,7 @@
 const localePath = useLocalePath();
 const { locale } = useI18n();
 
-const { data: getArticles } = await useAsyncData(() => queryContent(localePath('/articles')).where({ draft: false }).limit(3).sort({ date: -1 }).find());
+const { data: articles } = await useAsyncData(() => queryContent(localePath('/articles')).where({ draft: false }).limit(3).sort({ date: -1 }).find());
 
 const description = {
   "bg": "Статии, предимно за Vue, Nuxt, TailwindCSS, TypeScript, но не само. Повече за front-end и по-малко за back-end.",
@@ -17,9 +17,9 @@ useHead({
 
 <template>
   <div class="grid grid-cols-1 gap-10">
-    <template v-for="doc in getArticles" :key="doc._path">
-      <ContentRenderer :value="doc">
-        <Excerpt :doc="doc" />
+    <template v-for="article in articles" :key="article._path">
+      <ContentRenderer :value="article">
+        <Excerpt :doc="article" />
       </ContentRenderer>
     </template>
   </div>
