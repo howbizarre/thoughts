@@ -55,7 +55,6 @@ if (data.value && data.value.length > 0) {
       <hr class="h-line" />
 
       <div class="grid gap-8 sm:grid-cols-2">
-        <ClientOnly>
           <ContentRenderer v-if="prev && (`${prev._path}`).includes(`/${locale}/`)" :value="prev">
             <NuxtLink :to="localePath(`/articles/${prev.slug}`)" class="block px-6 py-8 border rounded-lg !border-gray-50 dark:!border-gray-950 hover:bg-gray-50/50 dark:hover:bg-gray-950/50 group transition-colors duration-300">
               <div class="inline-flex items-center rounded-full p-1.5 bg-gray-100 dark:bg-gray-800 ring-1 ring-gray-300 dark:ring-gray-700 mb-4">
@@ -79,7 +78,6 @@ if (data.value && data.value.length > 0) {
               <ContentRendererMarkdown :value="next.excerpt" class="text-sm font-normal text-gray-500 dark:text-gray-400 line-clamp-3" />
             </NuxtLink>
           </ContentRenderer>
-        </ClientOnly>
       </div>
 
       <hr class="h-line" />
