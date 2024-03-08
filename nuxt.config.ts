@@ -47,23 +47,23 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   nitro: {
     prerender: {
-      routes: ["/", "/sitemap.xml", "/bg", "/en", "/bg/help", "/en/help"],
-      crawlLinks: true,
-      ignore: ["/api"],
-      autoSubfolderIndex: false
+      routes: ["/sitemap.xml"],
+      // crawlLinks: true,
+      // ignore: ["/api"],
+      // autoSubfolderIndex: false,
     },
-    experimental: {
-      wasm: true,
-    },
-    preset: "cloudflare-pages",
+    // experimental: {
+    //   wasm: true,
+    // },
+    // preset: "cloudflare-pages",
   },
-  routeRules: {
-    "/": { prerender: true },
-    "/bg": { prerender: true },
-    "/en": { prerender: true },
-    "/bg/help": { prerender: true },
-    "/en/help": { prerender: true },
-    "/bg/articles/**": { isr: true },
-    "/en/articles/**": { isr: true },
-  },
+  // routeRules: {
+  //   "/": { prerender: true },
+  //   "/bg": { prerender: true },
+  //   "/en": { prerender: true },
+  //   "/bg/help": { prerender: true },
+  //   "/en/help": { prerender: true },
+  //   "/bg/articles/**": { prerender: true },
+  //   "/en/articles/**": { prerender: true },
+  // },
 });

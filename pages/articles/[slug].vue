@@ -9,17 +9,17 @@ const { slug } = route.params;
 const path = computed(() => localePath(`/articles/${slug}`));
 //const [prev, next] = await queryContent().where({ draft: false }).only(['slug', 'title', 'excerpt', '_path']).findSurround(path.value, { before: 1, after: 1 });
 
-const { data } = await useAsyncData('prev:next', () => queryContent(localePath('/articles')).where({ draft: false }).only(['slug', 'title', 'excerpt', '_path']).findSurround(path.value, { before: 1, after: 1 }));
+const { data } = await useAsyncData(() => queryContent(localePath('/articles')).where({ draft: false }).only(['slug', 'title', 'excerpt', '_path']).findSurround(path.value, { before: 1, after: 1 }));
 
 const prev = ref();
 const next = ref();
 
-onMounted(() => {
-  if (data.value && data.value.length > 0) {
-    prev.value = data.value[0];
-    next.value = data.value[1];
-  }
-});
+if (data.value && data.value.length > 0) {
+  prev.value = data.value[0];
+  next.value = data.value[1];
+
+  console.log('path', path.value);
+}
 </script>
 
 <template>
@@ -55,27 +55,32 @@ onMounted(() => {
       <hr class="h-line" />
 
       <div class="grid gap-8 sm:grid-cols-2">
-        <NuxtLink v-if="prev && (`${prev._path}`).includes(`/${locale}/`)" :to="localePath(`/articles/${prev.slug}`)" class="block px-6 py-8 border rounded-lg !border-gray-50 dark:!border-gray-950 hover:bg-gray-50/50 dark:hover:bg-gray-950/50 group transition-colors duration-300">
-          <div class="inline-flex items-center rounded-full p-1.5 bg-gray-100 dark:bg-gray-800 ring-1 ring-gray-300 dark:ring-gray-700 mb-4">
-            <ArrowLeftIcon class="w-5 h-5 text-gray-900 dark:text-white group-hover:text-green-500 transition-colors duration-300" />
-          </div>
+        <ClientOnly>
+          <ContentRenderer v-if="prev && (`${prev._path}`).includes(`/${locale}/`)" :value="prev">
+            <NuxtLink :to="localePath(`/articles/${prev.slug}`)" class="block px-6 py-8 border rounded-lg !border-gray-50 dark:!border-gray-950 hover:bg-gray-50/50 dark:hover:bg-gray-950/50 group transition-colors duration-300">
+              <div class="inline-flex items-center rounded-full p-1.5 bg-gray-100 dark:bg-gray-800 ring-1 ring-gray-300 dark:ring-gray-700 mb-4">
+                <ArrowLeftIcon class="w-5 h-5 text-gray-900 dark:text-white group-hover:text-green-500 transition-colors duration-300" />
+              </div>
 
-          <p class="font-medium text-gray-900 dark:text-white text-[15px] mb-1">{{ prev.title }}</p>
-          <ContentRendererMarkdown v-if="prev.excerpt" :value="prev.excerpt" class="text-sm font-normal text-gray-500 dark:text-gray-400 line-clamp-3" />
-        </NuxtLink>
+              <p class="font-medium text-gray-900 dark:text-white text-[15px] mb-1">{{ prev.title }}</p>
+              <ContentRendererMarkdown :value="prev.excerpt" class="text-sm font-normal text-gray-500 dark:text-gray-400 line-clamp-3" />
+            </NuxtLink>
+          </ContentRenderer>
 
-        <div v-else class="block px-6 py-8">&nbsp;</div>
+          <div v-else class="block px-6 py-8">&nbsp;</div>
 
-        <NuxtLink v-if="next && (`${next._path}`).includes(`/${locale}/`)" :to="localePath(`/articles/${next.slug}`)" class="block px-6 py-8 border rounded-lg !border-gray-50 dark:!border-gray-950 hover:bg-gray-50/50 dark:hover:bg-gray-950/50 group transition-colors duration-300 text-right">
-          <div class="inline-flex items-center rounded-full p-1.5 bg-gray-100 dark:bg-gray-800 ring-1 ring-gray-300 dark:ring-gray-700 mb-4">
-            <ArrowRightIcon class="w-5 h-5 text-gray-900 dark:text-white group-hover:text-green-500 transition-colors duration-300" />
-          </div>
+          <ContentRenderer v-if="next && (`${next._path}`).includes(`/${locale}/`) " :value="next">
+            <NuxtLink :to="localePath(`/articles/${next.slug}`)" class="block px-6 py-8 border rounded-lg !border-gray-50 dark:!border-gray-950 hover:bg-gray-50/50 dark:hover:bg-gray-950/50 group transition-colors duration-300 text-right">
+              <div class="inline-flex items-center rounded-full p-1.5 bg-gray-100 dark:bg-gray-800 ring-1 ring-gray-300 dark:ring-gray-700 mb-4">
+                <ArrowRightIcon class="w-5 h-5 text-gray-900 dark:text-white group-hover:text-green-500 transition-colors duration-300" />
+              </div>
 
-          <p class="font-medium text-gray-900 dark:text-white text-[15px] mb-1">{{ next.title }}</p>
-          <ContentRendererMarkdown v-if="next.excerpt" :value="next.excerpt" class="text-sm font-normal text-gray-500 dark:text-gray-400 line-clamp-3" />
-        </NuxtLink>
+              <p class="font-medium text-gray-900 dark:text-white text-[15px] mb-1">{{ next.title }}</p>
+              <ContentRendererMarkdown :value="next.excerpt" class="text-sm font-normal text-gray-500 dark:text-gray-400 line-clamp-3" />
+            </NuxtLink>
+          </ContentRenderer>
+        </ClientOnly>
       </div>
-
 
       <hr class="h-line" />
     </div>
