@@ -7,7 +7,19 @@ const route = useRoute();
 const { slug } = route.params;
 
 const path = computed(() => localePath(`/articles/${slug}`));
-const [prev, next] = await queryContent().where({ draft: false }).only(['slug', 'title', 'excerpt', '_path']).findSurround(path.value, { before: 1, after: 1 });
+//const [prev, next] = await queryContent().where({ draft: false }).only(['slug', 'title', 'excerpt', '_path']).findSurround(path.value, { before: 1, after: 1 });
+
+const { data } = await useAsyncData('prev:next', () => queryContent(localePath('/articles')).where({ draft: false }).only(['slug', 'title', 'excerpt', '_path']).findSurround(path.value, { before: 1, after: 1 }));
+
+const prev = ref();
+const next = ref();
+
+onMounted(() => {
+  if (data.value && data.value.length > 0) {
+    prev.value = data.value[0];
+    next.value = data.value[1];
+  }
+});
 </script>
 
 <template>
