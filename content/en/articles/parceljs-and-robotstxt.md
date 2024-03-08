@@ -38,3 +38,11 @@ To make the above build script work properly, you need to add the following code
 ```
 
 So *ParcelJS* will not add hashes to the names of the files, but also the linked objects in the files being processed will not be changed.
+
+---
+
+::comments
+---
+discussions: https://github.com/howbizarre/thoughts/discussions/8
+---
+::

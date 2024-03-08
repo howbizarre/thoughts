@@ -43,3 +43,7 @@ But this freedom also has its drawbacks. There is no compiler to protect you. Th
 Vite is my personal choice for development. And not just for Vue projects. Sometimes I use **Parcel** but for specific solutions.
 
 I also work with other "metro" technologies like **Nest**, **ElectonJS** & **React Native**, **Bun** etc. but most are for small or personal projects.
+
+---
+
+::comments

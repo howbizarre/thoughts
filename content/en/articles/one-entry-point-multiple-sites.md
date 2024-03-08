@@ -179,3 +179,11 @@ I am omitting some of the object implementations in the article - they are not e
 ::note
 "I use the term **back-end** quite loosely. I wondered if it might just be a server, but in our case, that's not quite the correct definition.
 ::
+
+---
+
+::comments
+---
+discussions: https://github.com/howbizarre/thoughts/discussions/7
+---
+::

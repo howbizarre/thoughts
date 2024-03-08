@@ -2,7 +2,7 @@
 import type { QueryBuilderParams } from '@nuxt/content/types';
 
 const localePath = useLocalePath();
-const { locale, t } = useI18n();
+const { locale } = useI18n();
 
 //const { data: articles } = await useAsyncData('[home-page]', () => queryContent(localePath('/articles')).where({ draft: false }).limit(3).sort({ date: -1 }).find());
 const query: QueryBuilderParams = { path: localePath('/articles'), where: [{ draft: false }], limit: 3, sort: [{ date: -1 }] };

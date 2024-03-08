@@ -28,3 +28,7 @@ That's why I'm writing these few lines, to share with you that it wasn't Barry w
 > Every creature on this world is born with a volcano of joy and love in its heart. It's not easy to activate them, and many of us need conductors like **Barry**, but they are there. Experience joy when you see loved ones - never miss it. Experience joy in the morning, as if they haven't been there for an eternity. Show them love for everything they do. Embrace them, kiss them, and rejoice in their presence. The volcanoes in our hearts are infinite. They will never run out.
 
 Until soon, our little pal. We will meet in endless fields - and know that we will bring the green ball.
+
+---
+
+::comments

@@ -179,3 +179,11 @@ async function loadClientConfiguration(configStore: string): Promise<Config> {
 ::note
 "Използвам думата **back-end** доста примитивно. Чудех се, дали да не е просто сървър, но при нас това, не е съвсем правилно определение.
 ::
+
+---
+
+::comments
+---
+discussions: https://github.com/howbizarre/thoughts/discussions/7
+---
+::

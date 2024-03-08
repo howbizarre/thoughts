@@ -75,3 +75,11 @@ export const theme = {
 ```
 
 От тук на там CSS класът `font-sans` ще рисува текста Ви с **Roboto** шрифта.
+
+---
+
+::comments
+---
+discussions: https://github.com/howbizarre/thoughts/discussions/6
+---
+::

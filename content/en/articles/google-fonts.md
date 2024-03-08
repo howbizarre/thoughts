@@ -75,3 +75,11 @@ export const theme = {
 ```
 
 Now the `font-sans` CSS class will draw your text with the **Roboto** font.
+
+---
+
+::comments
+---
+discussions: https://github.com/howbizarre/thoughts/discussions/6
+---
+::

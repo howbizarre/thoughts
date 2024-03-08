@@ -38,3 +38,11 @@ competence: "geek"
 ```
 
 *ParcelJS* не само, че няма да добави хешове към имената, на файловете, но и линкнантите обектите във файловете, които се процесват няма да бъдат променени.
+
+---
+
+::comments
+---
+discussions: https://github.com/howbizarre/thoughts/discussions/8
+---
+::
