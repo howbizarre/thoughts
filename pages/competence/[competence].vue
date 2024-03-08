@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { ParsedContent } from '@nuxt/content/types';
+import type { ParsedContent, QueryBuilderParams } from '@nuxt/content/types';
 
 const { locale, t } = useI18n();
 const localePath = useLocalePath();
@@ -9,7 +9,7 @@ const { competence } = route.params;
 const pageCompetence = t((`COMPETENCE_${(competence)}`).toUpperCase());
 const pageTitle = `${t('LBL_COMPETENCE')} - ${pageCompetence}`;
 
-const { data: articles } = await useAsyncData(() => queryContent(localePath('/articles')).where({ competence: competence }).limit(5).sort({ date: -1 }).find());
+const query: QueryBuilderParams = { path: localePath('/articles'), where: [{ competence: competence }], limit: 5, sort: [{ date: -1 }] };
 
 const description = {
   "bg": `Компетентността '${pageCompetence}' е показател, колко технически насочена е статията. От простичка, без технически детайли, до много професионална.`,
@@ -44,10 +44,12 @@ function uniqCompetence(arr: ParsedContent[]): ParsedContent[] {
       </ContentList>
     </div>
 
-    <template v-for="article in articles" :key="article._path">
-      <ContentRenderer :value="article">
-        <Excerpt :doc="article" />
-      </ContentRenderer>
-    </template>
+    <ContentList :query="query" v-slot="{ list }">
+      <template v-for="doc in list" :key="doc._path">
+        <ContentRenderer :value="doc">
+          <Excerpt :doc="doc" />
+        </ContentRenderer>
+      </template>
+    </ContentList>
   </div>
 </template>
