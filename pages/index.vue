@@ -2,7 +2,13 @@
 const localePath = useLocalePath();
 const { locale } = useI18n();
 
-const { data: articles } = await useAsyncData(() => queryContent(localePath('/articles')).where({ draft: false }).limit(3).sort({ date: -1 }).find());
+const { data: articles } = await useAsyncData(() => {
+  return queryContent(localePath('/articles'))
+    .where({ draft: false })
+    .limit(3)
+    .sort({ date: -1 })
+    .find();
+}, { default: () => [] });
 
 const description = {
   "bg": "Статии, предимно за Vue, Nuxt, TailwindCSS, TypeScript, но не само. Повече за front-end и по-малко за back-end.",

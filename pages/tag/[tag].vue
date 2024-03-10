@@ -8,7 +8,11 @@ const { tag } = route.params;
 const pageTag = t((`TAG_${(tag)}`).toUpperCase());
 const pageTitle = `${t('LBL_TAG')} - ${pageTag}`;
 
-const { data: allArticles } = await useAsyncData('[tag]', () => queryContent(localePath('/articles')).sort({ date: -1 }).find());
+const { data: allArticles } = await useAsyncData(`[tag-${tag}]`, () => { 
+  return queryContent(localePath('/articles'))
+    .sort({ date: -1 })
+    .find();
+}, { default: () => [] });
 const tags = allArticles.value ? [...new Set(allArticles.value.flatMap(article => article.tags))] : [];
 const articles = allArticles.value ? allArticles.value.filter(article => article.tags.includes(tag)) : [];
 

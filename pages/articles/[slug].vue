@@ -8,7 +8,7 @@ const route = useRoute();
 const { slug } = route.params;
 
 const path = computed(() => localePath(`/articles/${slug}`));
-const { data: surround } = await useAsyncData(() => {
+const { data: surround } = await useAsyncData(`[slug-${slug}]`, () => {
   return queryContent()
     .where({ draft: false })
     .only(['slug', 'title', 'excerpt', '_path'])
