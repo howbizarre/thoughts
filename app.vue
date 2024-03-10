@@ -1,11 +1,29 @@
 <script setup lang="ts">
-useHead({ titleTemplate: (titleChunk) => titleChunk ? `${titleChunk} | HB's Thoughts` : "How Bizarre's Thoughts" });
+const i18nHead = useLocaleHead({
+  addSeoAttributes: true
+});
+
+useHead({
+  titleTemplate: (titleChunk) => titleChunk ? `${titleChunk} | HB's Thoughts` : "How Bizarre's Thoughts",
+  htmlAttrs: {
+    lang: i18nHead.value.htmlAttrs!.lang
+  },
+  link: [...(i18nHead.value.link || [])],
+  meta: [...(i18nHead.value.meta || [])]
+});
 </script>
 
 <template>
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
+  <main id="default-layout" class="max-w-3xl mx-auto p-4 md:px-0">
+    <Logos />
+    <Header />
+
+    <div id="default-page" class="content">
+      <NuxtPage />
+    </div>
+
+    <Footer />
+  </main>
 </template>
 
 <style>

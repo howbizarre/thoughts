@@ -8,16 +8,21 @@ const route = useRoute();
 const { slug } = route.params;
 
 const path = computed(() => localePath(`/articles/${slug}`));
-const { data: articles } = await useAsyncData(() => queryContent(localePath('/articles')).where({ draft: false }).only(['slug', 'title', 'excerpt', '_path']).findSurround(path.value, { before: 1, after: 1 }));
+const { data: surround } = await useAsyncData(() => {
+  return queryContent()
+    .where({ draft: false })
+    .only(['slug', 'title', 'excerpt', '_path'])
+    .findSurround(path.value, { before: 1, after: 1 })
+}, { default: () => [] });
 
 const shake = reactive({
   prev: null as Pick<ParsedContent, "slug" | "_path" | "title" | "excerpt"> | null,
   next: null as Pick<ParsedContent, "slug" | "_path" | "title" | "excerpt"> | null
 });
 
-if (articles.value && articles.value.length > 0) {
-  shake.prev = articles.value[0];
-  shake.next = articles.value[1];
+if (surround.value && surround.value.length > 0) {
+  shake.prev = surround.value[0];
+  shake.next = surround.value[1];
 }
 </script>
 
