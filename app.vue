@@ -14,7 +14,7 @@ useHead({
 </script>
 
 <template>
-  <main id="default-layout" class="max-w-3xl mx-auto p-4 md:px-0">
+  <main id="default-layout" class="max-w-3xl mx-auto p-2 md:px-0">
     <Logos />
     <Header />
 
