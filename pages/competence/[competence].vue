@@ -47,9 +47,7 @@ function uniqCompetence(arr: ParsedContent[]): ParsedContent[] {
 
     <ContentList :query="query" v-slot="{ list }">
       <template v-for="doc in list" :key="doc._path">
-        <ContentRenderer :value="doc">
-          <Excerpt :doc="doc" />
-        </ContentRenderer>
+        <Excerpt :doc="doc" />
       </template>
     </ContentList>
   </div>

@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import type { QueryBuilderParams } from '@nuxt/content/types';
+
 const { locale, t } = useI18n();
 const localePath = useLocalePath();
 const path = computed(() => localePath('/articles'));
@@ -9,13 +11,14 @@ const { tag } = route.params;
 const pageTag = t((`TAG_${(tag)}`).toUpperCase());
 const pageTitle = `${t('LBL_TAG')} - ${pageTag}`;
 
-const { data: allArticles } = await useAsyncData(`[tag-${tag}]`, () => { 
+const { data: allArticles } = await useAsyncData(`[tag-${tag}]`, () => {
   return queryContent(path.value)
     .sort({ date: -1 })
     .find();
 }, { default: () => [] });
 const tags = allArticles.value ? [...new Set(allArticles.value.flatMap(article => article.tags))] : [];
-const articles = allArticles.value ? allArticles.value.filter(article => article.tags.includes(tag)) : [];
+
+const query: QueryBuilderParams = { path: path.value, where: [{ tags: { $contains: tag } }], limit: 5, sort: [{ date: -1 }] };
 
 const description = {
   "bg": `Тагът '${pageTag}' е ключова дума за лесно филтриране на статиите по тематики.`,
@@ -44,10 +47,10 @@ useHead({
       </template>
     </div>
 
-    <template v-for="doc in articles" :key="doc._path">
-      <ContentRenderer :value="doc">
+    <ContentList :query="query" v-slot="{ list }">
+      <template v-for="doc in list" :key="doc._path">
         <Excerpt :doc="doc" />
-      </ContentRenderer>
-    </template>
+      </template>
+    </ContentList>
   </div>
 </template>
