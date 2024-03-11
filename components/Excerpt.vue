@@ -1,10 +1,12 @@
 <script lang="ts" setup>
-defineProps({
-  doc: Object as PropType<any>
+const props = defineProps({
+  doc: { type: Object as PropType<any>, required: true }
 });
+const { doc } = toRefs(props);
 
 const { locale, t } = useI18n();
 const localePath = useLocalePath();
+const path = computed(() => localePath(`/articles/${doc.value.slug}`));
 </script>
 
 <template>
@@ -14,7 +16,7 @@ const localePath = useLocalePath();
     </div>
 
     <h2 class="text-2xl font-bold">
-      <NuxtLink :to="localePath(`/articles/${doc.slug}`)">
+      <NuxtLink :to="path">
         {{ doc.title }}
         <span class="sr-only">{{ t('TXT_LINK_ARTICLE') }}</span>
       </NuxtLink>

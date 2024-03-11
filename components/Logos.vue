@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 const localePath = useLocalePath();
+const path = computed(() => localePath('/'));
 const logo = ref<HTMLElement | null>(null);
 
 const route = useRoute();
@@ -28,7 +29,7 @@ onMounted(() => doRound());
 <template>
   <div class="my-4 px-1 sm:flex sm:justify-between leading-5 z-0">
     <div class="flex justify-center sm:justify-start">
-      <NuxtLink :to="localePath('/')" title="HB's Thoughts">
+      <NuxtLink :to="path" title="HB's Thoughts">
         <img ref="logo" src="/images/logo.svg" alt="HB's Thoughts" class="w-12 h-12 rounded-full scale-95" />
       </NuxtLink>
 
@@ -38,7 +39,7 @@ onMounted(() => doRound());
         </h1>
 
         <div v-else class="hN text-2xl font-semibold">
-          <NuxtLink :to="localePath('/')" title="HB's Thoughts">
+          <NuxtLink :to="path" title="HB's Thoughts">
             HB's Thoughts
           </NuxtLink>
         </div>

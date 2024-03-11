@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 const localePath = useLocalePath();
 const { locale } = useI18n();
-
+const path = computed(() => localePath(`/articles`));
 const { data: articles } = await useAsyncData(() => {
-  return queryContent(localePath('/articles'))
+  return queryContent(path.value)
     .where({ draft: false })
     .limit(3)
     .sort({ date: -1 })

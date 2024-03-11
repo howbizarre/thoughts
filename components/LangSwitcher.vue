@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { LanguageIcon } from '@heroicons/vue/24/solid';
+
 const { locale, locales } = useI18n();
 const switchLocalePath = useSwitchLocalePath();
 

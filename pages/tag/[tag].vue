@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 const { locale, t } = useI18n();
 const localePath = useLocalePath();
+const path = computed(() => localePath('/articles'));
 
 const route = useRoute();
 const { tag } = route.params;
@@ -9,7 +10,7 @@ const pageTag = t((`TAG_${(tag)}`).toUpperCase());
 const pageTitle = `${t('LBL_TAG')} - ${pageTag}`;
 
 const { data: allArticles } = await useAsyncData(`[tag-${tag}]`, () => { 
-  return queryContent(localePath('/articles'))
+  return queryContent(path.value)
     .sort({ date: -1 })
     .find();
 }, { default: () => [] });

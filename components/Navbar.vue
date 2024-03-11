@@ -6,12 +6,13 @@ const { locale } = useI18n();
 const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation());
 const localeNavigation = computed(() => navigation.value ? navigation.value.filter((item) => item._path === `/${locale.value}`) : []);
 const localePath = useLocalePath();
+const path = computed(() => localePath('/'));
 </script>
 
 <template>
   <ContentNavigation v-slot="{ navigation }">
     <nav class="grid grid-flow-col auto-cols-max gap-2">
-      <NuxtLink :to="localePath('/')" class="btn btn-default btn-icon" role="button" :aria-label="t('LBL_LOAD_HOME_PAGE')">
+      <NuxtLink :to="path" class="btn btn-default btn-icon" role="button" :aria-label="t('LBL_LOAD_HOME_PAGE')">
         <HomeIcon class="h-5 w-5" />
       </NuxtLink>
 

@@ -28,7 +28,7 @@ if (surround.value && surround.value.length > 0) {
 
 <template>
   <article class="rounded-2xl mb-4">
-    <ContentDoc :path="localePath(`/articles/${slug}`)" v-slot="{ doc }">
+    <ContentDoc :path="path" v-slot="{ doc }">
       <div class="px-5 pt-5">
         <header class="text-left mb-10">
           <p class="text-gray-500 text-sm !-mb-1 block">{{ (new Date(doc.date)).toLocaleDateString(locale) }}</p>
