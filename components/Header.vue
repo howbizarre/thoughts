@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 const header = ref<HTMLElement | null>(null);
 const sticky = ref(104);
 

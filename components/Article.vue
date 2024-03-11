@@ -2,7 +2,7 @@
 const props = defineProps({
   path: { type: String, required: true }
 });
-const { path } = toRefs(props);
+const path = toRef(props, 'path');
 const { locale, t } = useI18n();
 </script>
 

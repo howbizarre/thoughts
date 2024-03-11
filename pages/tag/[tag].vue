@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 import type { QueryBuilderParams } from '@nuxt/content/types';
 
 const { locale, t } = useI18n();
@@ -7,9 +7,6 @@ const path = computed(() => localePath('/articles'));
 
 const route = useRoute();
 const { tag } = route.params;
-
-const pageTag = t((`TAG_${(tag)}`).toUpperCase());
-const pageTitle = `${t('LBL_TAG')} - ${pageTag}`;
 
 const { data: allArticles } = await useAsyncData(`[tag-${tag}]`, () => {
   return queryContent(path.value)
@@ -20,6 +17,8 @@ const tags = allArticles.value ? [...new Set(allArticles.value.flatMap(article =
 
 const query: QueryBuilderParams = { path: path.value, where: [{ tags: { $contains: tag } }], limit: 5, sort: [{ date: -1 }] };
 
+const pageTag = t((`TAG_${(tag)}`).toUpperCase());
+const pageTitle = `${t('LBL_TAG')} - ${pageTag}`;
 const description = {
   "bg": `Тагът '${pageTag}' е ключова дума за лесно филтриране на статиите по тематики.`,
   "en": `The tag '${pageTag}' is a keyword for easy filtering of articles by topics.`

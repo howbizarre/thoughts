@@ -1,13 +1,13 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/vue/24/solid';
 import type { ParsedContent } from '@nuxt/content/types';
 
-const { locale, t } = useI18n();
+const { locale } = useI18n();
 const route = useRoute();
 const { slug } = route.params;
-
 const localePath = useLocalePath();
 const path = computed(() => localePath(`/articles/${slug}`));
+
 const { data: surround } = await useAsyncData(`[slug-${slug}]`, () => {
   return queryContent()
     .where({ draft: false })

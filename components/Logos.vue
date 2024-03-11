@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 const localePath = useLocalePath();
 const path = computed(() => localePath('/'));
 const logo = ref<HTMLElement | null>(null);

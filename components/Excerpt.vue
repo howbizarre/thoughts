@@ -1,8 +1,8 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 const props = defineProps({
   doc: { type: Object as PropType<any>, required: true }
 });
-const { doc } = toRefs(props);
+const doc = toRef(props, 'doc');
 
 const { locale, t } = useI18n();
 const localePath = useLocalePath();

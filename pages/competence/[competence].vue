@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 import type { ParsedContent, QueryBuilderParams } from '@nuxt/content/types';
 
 const { locale, t } = useI18n();

@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 import { SunIcon, MoonIcon } from '@heroicons/vue/24/solid';
 const { t } = useI18n();
 

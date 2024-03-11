@@ -17,15 +17,10 @@
     @apply px-2;
   }
 
-  .btn .btn--icon-right {
-    @apply -mr-1 ml-2 h-5 w-5 text-gray-700 dark:text-gray-100;
-  }
-
   .btn .btn--icon-left {
     @apply mr-2 -ml-1 h-5 w-5 text-gray-700 dark:text-gray-100;
   }
 
-  .btn:hover .btn--icon-right,
   .btn:hover .btn--icon-left {
     @apply text-gray-300 dark:text-gray-900;
   }

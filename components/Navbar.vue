@@ -3,7 +3,7 @@ import { HomeIcon } from '@heroicons/vue/24/outline';
 const { t } = useI18n();
 
 const { locale } = useI18n();
-const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation());
+const { data: navigation } = await useAsyncData(`[navigation-${locale.value}]`, () => fetchContentNavigation());
 const localeNavigation = computed(() => navigation.value ? navigation.value.filter((item) => item._path === `/${locale.value}`) : []);
 const localePath = useLocalePath();
 const path = computed(() => localePath('/'));
