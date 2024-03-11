@@ -4,11 +4,11 @@ import type { ParsedContent } from '@nuxt/content/types';
 
 const { locale } = useI18n();
 const route = useRoute();
-const { slug } = route.params;
+const slug = ref(route.params.slug);
 const localePath = useLocalePath();
-const path = computed(() => localePath(`/articles/${slug}`));
+const path = computed(() => localePath(`/articles/${slug.value}`));
 
-const { data: surround } = await useAsyncData(`[slug-${slug}]`, () => {
+const { data: surround } = await useAsyncData(`[slug-${slug.value}]`, () => {
   return queryContent()
     .where({ draft: false })
     .only(['slug', 'title', 'excerpt', '_path'])
@@ -20,7 +20,7 @@ const shake = reactive({
   next: null as Pick<ParsedContent, "slug" | "_path" | "title" | "excerpt"> | null
 });
 
-if (surround.value && surround.value.length > 0) {
+if (surround.value) {
   shake.prev = surround.value[0];
   shake.next = surround.value[1];
 }
