@@ -18,10 +18,10 @@ const isDark = computed({
     <ClientOnly>
       <button @click="isDark = !isDark" class="btn btn-default btn-icon" :aria-label="t('BTN_THEME_SWITCH')">
         <template v-if="isDark">
-          <SunIcon class="h-5 w-5" />
+          <SunIcon class="size-5" />
         </template>
         <template v-else>
-          <MoonIcon class="h-5 w-5" />
+          <MoonIcon class="size-5" />
         </template>
       </button>
     </ClientOnly>

@@ -28,7 +28,7 @@ useHead({
 
 <style>
 body, html { @apply flex flex-col; }
-html { @apply h-full w-full; }
+html { @apply size-full; }
 body { @apply min-h-full min-w-full bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 relative font-sans; }
 
 h1, h2, h3, h4, h5, h6, .hN { @apply font-serif text-gray-900 dark:text-gray-100; }

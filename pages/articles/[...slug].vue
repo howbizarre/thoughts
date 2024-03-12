@@ -37,7 +37,7 @@ if (surround.value) {
         <ContentRenderer v-if="shake.prev && (`${(shake.prev)._path}`).includes(`/${locale}/`)" :value="shake.prev">
           <NuxtLink :to="localePath(`/articles/${(shake.prev).slug}`)" class="block px-6 py-8 border rounded-lg !border-gray-50 dark:!border-gray-950 hover:bg-gray-50/50 dark:hover:bg-gray-950/50 group transition-colors duration-300">
             <div class="inline-flex items-center rounded-full p-1.5 bg-gray-100 dark:bg-gray-800 ring-1 ring-gray-300 dark:ring-gray-700 mb-4">
-              <ArrowLeftIcon class="w-5 h-5 text-gray-900 dark:text-white group-hover:text-green-500 transition-colors duration-300" />
+              <ArrowLeftIcon class="size-5 text-gray-900 dark:text-white group-hover:text-green-500 transition-colors duration-300" />
             </div>
 
             <p class="font-medium text-gray-900 dark:text-white text-[15px] mb-1 line-clamp-1 md:line-clamp-none">{{ (shake.prev).title }}</p>
@@ -50,7 +50,7 @@ if (surround.value) {
         <ContentRenderer v-if="shake.next && (`${(shake.next)._path}`).includes(`/${locale}/`)" :value="shake.next">
           <NuxtLink :to="localePath(`/articles/${(shake.next).slug}`)" class="block px-6 py-8 border rounded-lg !border-gray-50 dark:!border-gray-950 hover:bg-gray-50/50 dark:hover:bg-gray-950/50 group transition-colors duration-300 text-right">
             <div class="inline-flex items-center rounded-full p-1.5 bg-gray-100 dark:bg-gray-800 ring-1 ring-gray-300 dark:ring-gray-700 mb-4">
-              <ArrowRightIcon class="w-5 h-5 text-gray-900 dark:text-white group-hover:text-green-500 transition-colors duration-300" />
+              <ArrowRightIcon class="size-5 text-gray-900 dark:text-white group-hover:text-green-500 transition-colors duration-300" />
             </div>
 
             <p class="font-medium text-gray-900 dark:text-white text-[15px] mb-1 line-clamp-1 md:line-clamp-none">{{ (shake.next).title }}</p>
