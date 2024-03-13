@@ -13,7 +13,11 @@ export default defineNuxtConfig({
     pageTransition: { name: "page", mode: "out-in" },
   },
   modules: ["@nuxtjs/tailwindcss", "@nuxtjs/color-mode", "@nuxt/content", "@nuxtjs/i18n"],
-  content: {},
+  content: {
+    highlight: {
+      theme: "github-dark"
+    },
+  },
   i18n: {
     baseUrl: "https://thoughts.bizarre.how",
     locales: [
@@ -47,7 +51,7 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   nitro: {
     prerender: {
-      routes: ["/sitemap.xml"]
-    }
+      routes: ["/sitemap.xml"],
+    },
   },
 });
