@@ -21,11 +21,11 @@ onBeforeUnmount(() => window.removeEventListener('scroll', stickIt));
 
 <template>
   <header ref="header" class="flex transition-colors duration-300 justify-between bg-white dark:bg-black rounded-2xl shadow-lg p-3 mb-10 sticky top-0 z-50">
-    <Navbar />
+    <NavigationTopBar />
 
     <div class="grid grid-flow-col auto-cols-max gap-2">
-      <LangSwitcher />
-      <ColorMode />
+      <NavigationLangSwitcher />
+      <ClientColorMode />
     </div>
   </header>
 </template>

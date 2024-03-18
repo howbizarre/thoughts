@@ -31,13 +31,13 @@ const path = computed(() => localePath(`/articles/${doc.value.slug}`));
     <div class="grid grid-col-1 sm:flex sm:justify-start sm:items-center gap-2 sm:gap-5">
       <div v-if="doc.competence" class="text-sm">
         {{ t("LBL_COMPETENCE") }}:
-        <Competence :competence="doc.competence" :active="false" />
+        <ArticleCompetence :competence="doc.competence" :active="false" />
       </div>
 
       <div v-if="doc.tags" class="text-sm">
         {{ t("LBL_TAGS") }}:
         <template v-for="tag in doc.tags">
-          <Tag :tag="tag" :active="false" />
+          <ArticleTag :tag="tag" :active="false" />
         </template>
       </div>
     </div>

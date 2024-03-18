@@ -42,13 +42,13 @@ useHead({
       </div>
 
       <template v-for="_tag in tags">
-        <Tag :tag="_tag" :active="_tag === tag" />
+        <ArticleTag :tag="_tag" :active="_tag === tag" />
       </template>
     </div>
 
     <ContentList :query="query" v-slot="{ list }">
       <template v-for="doc in list" :key="doc._path">
-        <Excerpt :doc="doc" />
+        <ArticleExcerpt :doc="doc" />
       </template>
     </ContentList>
   </div>

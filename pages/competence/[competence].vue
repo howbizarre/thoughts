@@ -40,14 +40,14 @@ function uniqCompetence(arr: ParsedContent[]): ParsedContent[] {
         </div>
 
         <template v-for="doc in uniqCompetence(list)" :key="doc._path">
-          <Competence :competence="doc.competence" :active="competence === doc.competence" />
+          <ArticleCompetence :competence="doc.competence" :active="competence === doc.competence" />
         </template>
       </ContentList>
     </div>
 
     <ContentList :query="query" v-slot="{ list }">
       <template v-for="doc in list" :key="doc._path">
-        <Excerpt :doc="doc" />
+        <ArticleExcerpt :doc="doc" />
       </template>
     </ContentList>
   </div>

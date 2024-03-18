@@ -22,7 +22,7 @@ useHead({
   <div class="grid grid-cols-1 gap-10">
     <ContentList :query="query" v-slot="{ list }">
       <template v-for="doc in list" :key="doc._path">
-        <Excerpt :doc="doc" />
+        <ArticleExcerpt :doc="doc" />
       </template>
     </ContentList>
   </div>

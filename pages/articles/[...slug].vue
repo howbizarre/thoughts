@@ -5,9 +5,8 @@ import type { ParsedContent } from '@nuxt/content/types';
 const { locale } = useI18n();
 const route = useRoute();
 const slug = ref(route.params.slug);
-//const localePath = useLocalePath();
-//const path = computed(() => localePath(`/articles/${slug.value}`));
-const path = ref(`/${locale.value}/articles/${slug.value}`);
+const localePath = useLocalePath();
+const path = computed(() => localePath(`/articles/${slug.value}`));
 
 const { data: surround } = await useAsyncData(`[slug-${slug.value}]`, () => {
   return queryContent()
@@ -25,10 +24,6 @@ if (surround.value) {
   shake.prev = surround.value[0];
   shake.next = surround.value[1];
 }
-
-watch(() => locale.value, (newLocale) => {
-  path.value = newLocale;
-});
 </script>
 
 <template>
@@ -40,7 +35,7 @@ watch(() => locale.value, (newLocale) => {
 
       <div class="grid gap-8 sm:grid-cols-2">
         <ContentRenderer v-if="shake.prev && (`${(shake.prev)._path}`).includes(`/${locale}/`)" :value="shake.prev">
-          <NuxtLink :to="(`/${locale}/articles/${(shake.prev).slug}`)" class="block px-6 py-8 border rounded-lg !border-gray-50 dark:!border-gray-950 hover:bg-gray-50/50 dark:hover:bg-gray-950/50 group transition-colors duration-300">
+          <NuxtLink :to="localePath(`/articles/${(shake.prev).slug}`)" class="block px-6 py-8 border rounded-lg !border-gray-50 dark:!border-gray-950 hover:bg-gray-50/50 dark:hover:bg-gray-950/50 group transition-colors duration-300">
             <div class="inline-flex items-center rounded-full p-1.5 bg-gray-100 dark:bg-gray-800 ring-1 ring-gray-300 dark:ring-gray-700 mb-4">
               <ArrowLeftIcon class="size-5 text-gray-900 dark:text-white group-hover:text-green-500 transition-colors duration-300" />
             </div>
@@ -53,7 +48,7 @@ watch(() => locale.value, (newLocale) => {
         <div v-else class="block px-6 py-8">&nbsp;</div>
 
         <ContentRenderer v-if="shake.next && (`${(shake.next)._path}`).includes(`/${locale}/`)" :value="shake.next">
-          <NuxtLink :to="(`/${locale}/articles/${(shake.next).slug}`)" class="block px-6 py-8 border rounded-lg !border-gray-50 dark:!border-gray-950 hover:bg-gray-50/50 dark:hover:bg-gray-950/50 group transition-colors duration-300 text-right">
+          <NuxtLink :to="localePath(`/articles/${(shake.next).slug}`)" class="block px-6 py-8 border rounded-lg !border-gray-50 dark:!border-gray-950 hover:bg-gray-50/50 dark:hover:bg-gray-950/50 group transition-colors duration-300 text-right">
             <div class="inline-flex items-center rounded-full p-1.5 bg-gray-100 dark:bg-gray-800 ring-1 ring-gray-300 dark:ring-gray-700 mb-4">
               <ArrowRightIcon class="size-5 text-gray-900 dark:text-white group-hover:text-green-500 transition-colors duration-300" />
             </div>
