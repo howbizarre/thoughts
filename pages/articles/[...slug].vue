@@ -8,13 +8,17 @@ const localePath = useLocalePath();
 const path = computed(() => localePath(`/articles/${slug.value}`));
 
 const { data: surround } = await useAsyncData(`[slug-${slug.value}]`, () => {
-  return queryContent()
-    .where({ draft: false })
-    .only(['slug', 'title', 'excerpt', '_path'])
-    .findSurround(path.value, { before: 1, after: 1 })
+  return import.meta.dev
+    ? queryContent()
+      .only(['slug', 'title', 'excerpt', '_path'])
+      .findSurround(path.value, { before: 1, after: 1 })
+    : queryContent()
+      .where({ draft: false })
+      .only(['slug', 'title', 'excerpt', '_path'])
+      .findSurround(path.value, { before: 1, after: 1 })
 }, { default: () => [] });
 
-const [ prev, next ] = surround.value || [];
+const [prev, next] = surround.value || [];
 </script>
 
 <template>

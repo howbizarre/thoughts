@@ -5,7 +5,9 @@ const localePath = useLocalePath();
 const { locale } = useI18n();
 const path = computed(() => localePath(`/articles`));
 
-const query: QueryBuilderParams = { path: path.value, where: [{ draft: false }], limit: 3, sort: [{ date: -1 }] };
+const query: QueryBuilderParams = import.meta.dev
+  ? { path: path.value, limit: 3, sort: [{ date: -1 }] }
+  : { path: path.value, where: [{ draft: false }], limit: 3, sort: [{ date: -1 }] };
 
 const description = {
   "bg": "Статии, предимно за Vue, Nuxt, TailwindCSS, TypeScript, но не само. Повече за front-end и по-малко за back-end.",
