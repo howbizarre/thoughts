@@ -12,12 +12,15 @@ export default defineNuxtConfig({
     },
     pageTransition: { name: "page", mode: "out-in" },
   },
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/color-mode", "@nuxt/content", "@nuxtjs/i18n"],
+
+  modules: ["nitro-cloudflare-dev", "@nuxtjs/tailwindcss", "@nuxtjs/color-mode", "@nuxt/content", "@nuxtjs/i18n"],
+
   content: {
     highlight: {
-      theme: "github-dark"
+      theme: "github-dark",
     },
   },
+
   i18n: {
     baseUrl: "https://thoughts.bizarre.how",
     locales: [
@@ -42,16 +45,21 @@ export default defineNuxtConfig({
     detectBrowserLanguage: false,
     strategy: "prefix",
   },
+
   tailwindcss: {
     cssPath: ["~/assets/css/tailwind.css", { injectPosition: "first" }],
     configPath: "tailwind.config",
     viewer: false,
   },
+
   colorMode: { classSuffix: "" },
-  devtools: { enabled: false },
+
   nitro: {
+    preset: "cloudflare-pages",
     prerender: {
       routes: ["/sitemap.xml"],
     },
   },
+
+  devtools: { enabled: false },
 });

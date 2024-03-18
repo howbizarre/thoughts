@@ -1,22 +1,29 @@
 {
-  "name": "nuxt-app",
+  "name": "thoughts",
   "private": true,
   "type": "module",
+  "version": "1.1.9",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev --port 8774",
     "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "nuxt_preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "upload": "npm run build && wrangler pages deploy ./dist",
+    "preview": "npm run build && wrangler pages dev ./dist",
+    "build-cf-types": "wrangler types"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240314.0",
     "@nuxtjs/color-mode": "^3.3.2",
     "@nuxtjs/i18n": "^8.2.0",
     "@nuxtjs/tailwindcss": "^6.11.4",
     "@tailwindcss/typography": "^0.5.10",
+    "nitro-cloudflare-dev": "^0.1.2",
     "nuxt": "^3.11.0",
     "vue": "^3.4.21",
-    "vue-router": "^4.3.0"
+    "vue-router": "^4.3.0",
+    "wrangler": "^3.34.2"
   },
   "dependencies": {
     "@heroicons/vue": "^2.1.1",
