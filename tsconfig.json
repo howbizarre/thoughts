@@ -1,6 +1,6 @@
 {
   "extends": "./.nuxt/tsconfig.json",
-  "exclude": ["tailwind.config.js"],
+  "exclude": ["tailwind.config.js", "./dist"],
   "compilerOptions": {
     "types": ["@cloudflare/workers-types/2023-07-01"]
   }
