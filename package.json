@@ -14,8 +14,8 @@
     "build-cf-types": "wrangler types"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20240314.0",
-    "@nuxtjs/color-mode": "^3.3.2",
+    "@cloudflare/workers-types": "^4.20240320.1",
+    "@nuxtjs/color-mode": "^3.3.3",
     "@nuxtjs/i18n": "^8.2.0",
     "@nuxtjs/tailwindcss": "^6.11.4",
     "@tailwindcss/typography": "^0.5.10",
@@ -23,7 +23,7 @@
     "nuxt": "^3.11.1",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",
-    "wrangler": "^3.34.2"
+    "wrangler": "^3.36.0"
   },
   "dependencies": {
     "@heroicons/vue": "^2.1.1",
