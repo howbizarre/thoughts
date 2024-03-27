@@ -18,12 +18,12 @@
     "@nuxtjs/color-mode": "^3.3.3",
     "@nuxtjs/i18n": "^8.2.0",
     "@nuxtjs/tailwindcss": "^6.11.4",
-    "@tailwindcss/typography": "^0.5.11",
+    "@tailwindcss/typography": "^0.5.12",
     "nitro-cloudflare-dev": "^0.1.4",
     "nuxt": "^3.11.1",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",
-    "wrangler": "^3.38.0"
+    "wrangler": "^3.39.0"
   },
   "dependencies": {
     "@heroicons/vue": "^2.1.3",
