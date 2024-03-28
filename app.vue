@@ -15,6 +15,7 @@ useHead({
 
 <template>
   <div id="default-layout" class="max-w-3xl mx-auto p-2 md:px-0">
+    <NuxtLoadingIndicator />
     <LayoutLogos />
     <LayoutHeader />
 
