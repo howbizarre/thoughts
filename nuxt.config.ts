@@ -41,8 +41,11 @@ export default defineNuxtConfig({
     langDir: "i18n/",
     defaultLocale: "bg",
     vueI18n: "./i18n.config.ts",
-    rootRedirect: "bg",
-    detectBrowserLanguage: false,
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: "i18n_redirected",
+      redirectOn: "root",
+    },
     strategy: "prefix",
   },
 
@@ -62,5 +65,5 @@ export default defineNuxtConfig({
     },
   },
 
-  devtools: { enabled: false }
+  devtools: { enabled: false },
 });
