@@ -5,7 +5,7 @@ const { locale, t } = useI18n();
 const localePath = useLocalePath();
 const path = computed(() => localePath('/articles'));
 const route = useRoute();
-const { competence } = route.params;
+const { competence } = route.params
 
 const pageCompetence = t((`COMPETENCE_${(competence)}`).toUpperCase());
 const pageTitle = `${t('LBL_COMPETENCE')} - ${pageCompetence}`;
@@ -67,7 +67,7 @@ function uniqCompetence(arr: ParsedContent[]): ParsedContent[] {
               Опа, заредили сте страница, която не съществува или е премахната, но няма нищо страшно. Понякога и <strong>Гугъл</strong> бърка.
               Винаги може да се върнете в <NuxtLink to="/">началото на сайта</NuxtLink> или да се опитате да поправите уеб адреса.
             </p>
-            
+
             <p v-else>
               Oops, you've loaded a page that doesn't exist or has been removed, but that's okay. Sometimes even <strong>Google</strong> makes mistakes.
               You can always go back to the <NuxtLink to="/">home page</NuxtLink> or try to fix the web address.
