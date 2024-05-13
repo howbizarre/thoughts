@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     pageTransition: { name: "page", mode: "out-in" },
   },
 
-  modules: ["nitro-cloudflare-dev", "@nuxtjs/tailwindcss", "@nuxtjs/color-mode", "@nuxt/content", "@nuxtjs/i18n"],
+  modules: ["nitro-cloudflare-dev", "@nuxtjs/tailwindcss", "@nuxtjs/color-mode", "@nuxt/content", "@nuxtjs/i18n", "@nuxt/devtools"],
 
   content: {
     highlight: {
@@ -63,6 +63,23 @@ export default defineNuxtConfig({
       crawlLinks: true,
       routes: ["/sitemap.xml"],
     },
+  },
+
+  routeRules: {
+    "/en/competence/None": { redirect: { to: "/en/competence/none", statusCode: 301 } },
+    "/bg/competence/None": { redirect: { to: "/bg/competence/none", statusCode: 301 } },
+
+    "/en/competence/Thoughts": { redirect: { to: "/en/competence/thoughts", statusCode: 301 } },
+    "/bg/competence/Thoughts": { redirect: { to: "/bg/competence/thoughts", statusCode: 301 } },
+
+    "/en/competence/Elementary": { redirect: { to: "/en/competence/elementary", statusCode: 301 } },
+    "/bg/competence/Elementary": { redirect: { to: "/bg/competence/elementary", statusCode: 301 } },
+
+    "/en/competence/TailwindCSS": { redirect: { to: "/en/competence/tailwind", statusCode: 301 } },
+    "/bg/competence/TailwindCSS": { redirect: { to: "/bg/competence/tailwind", statusCode: 301 } },
+
+    "/en/competence/Fonts": { redirect: { to: "/en/competence/fonts", statusCode: 301 } },
+    "/bg/competence/Fonts": { redirect: { to: "/bg/competence/fonts", statusCode: 301 } },
   },
 
   devtools: { enabled: false },
