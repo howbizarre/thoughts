@@ -21,5 +21,7 @@
   "TAG_THOUGHTS": "Thoughts",
   "TAG_VUE": "Vue",
   "TAG_VUE-ROUTER": "Vue Router",
-  "TXT_LINK_ARTICLE": "Link to the article"
+  "TXT_ERROR_WEB_ADDRESS": "Error in page address",
+  "TXT_LINK_ARTICLE": "Link to the article",
+  "TXT_NO_ARTICLES_FOUND": "No articles found"
 }

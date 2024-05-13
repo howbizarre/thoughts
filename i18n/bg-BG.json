@@ -21,5 +21,7 @@
   "TAG_THOUGHTS": "Мисли",
   "TAG_VUE": "Vue",
   "TAG_VUE-ROUTER": "Vue Router",
-  "TXT_LINK_ARTICLE": "Линк към статията"
+  "TXT_ERROR_WEB_ADDRESS": "Грешка в адреса на страницата",
+  "TXT_LINK_ARTICLE": "Линк към статията",
+  "TXT_NO_ARTICLES_FOUND": "Няма намерени статии"
 }

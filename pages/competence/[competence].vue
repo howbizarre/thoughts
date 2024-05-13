@@ -45,9 +45,37 @@ function uniqCompetence(arr: ParsedContent[]): ParsedContent[] {
       </ContentList>
     </div>
 
-    <ContentList :query="query" v-slot="{ list }">
-      <template v-for="doc in list" :key="doc._path">
-        <ArticleExcerpt :doc="doc" />
+    <ContentList :query="query">
+      <template #default="{ list }">
+        <template v-for="doc in list" :key="doc._path">
+          <ArticleExcerpt :doc="doc" />
+        </template>
+      </template>
+
+      <template #not-found>
+        <div class="excerpt-card">
+          <div class="text-sm text-gray-500 -mb-1 block">
+            {{ t('TXT_ERROR_WEB_ADDRESS') }}
+          </div>
+
+          <h2 class="text-2xl font-bold">
+            {{ t('TXT_NO_ARTICLES_FOUND') }}
+          </h2>
+
+          <div class="pr-4 my-3">
+            <p v-if="locale === 'bg'">
+              Опа, заредили сте страница, която не съществува или е премахната, но няма нищо страшно. Понякога и <strong>Гугъл</strong> бърка.
+              Винаги може да се върнете в <NuxtLink to="/">началото на сайта</NuxtLink> или да се опитате да поправите уеб адреса.
+            </p>
+            
+            <p v-else>
+              Oops, you've loaded a page that doesn't exist or has been removed, but that's okay. Sometimes even <strong>Google</strong> makes mistakes.
+              You can always go back to the <NuxtLink to="/">home page</NuxtLink> or try to fix the web address.
+            </p>
+
+            <hr class="h-line" />
+          </div>
+        </div>
       </template>
     </ContentList>
   </div>

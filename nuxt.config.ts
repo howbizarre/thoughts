@@ -66,20 +66,11 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    "/en/competence/None": { redirect: { to: "/en/competence/none", statusCode: 301 } },
-    "/bg/competence/None": { redirect: { to: "/bg/competence/none", statusCode: 301 } },
-
-    "/en/competence/Thoughts": { redirect: { to: "/en/competence/thoughts", statusCode: 301 } },
-    "/bg/competence/Thoughts": { redirect: { to: "/bg/competence/thoughts", statusCode: 301 } },
-
-    "/en/competence/Elementary": { redirect: { to: "/en/competence/elementary", statusCode: 301 } },
-    "/bg/competence/Elementary": { redirect: { to: "/bg/competence/elementary", statusCode: 301 } },
-
-    "/en/competence/TailwindCSS": { redirect: { to: "/en/competence/tailwind", statusCode: 301 } },
-    "/bg/competence/TailwindCSS": { redirect: { to: "/bg/competence/tailwind", statusCode: 301 } },
-
-    "/en/competence/Fonts": { redirect: { to: "/en/competence/fonts", statusCode: 301 } },
-    "/bg/competence/Fonts": { redirect: { to: "/bg/competence/fonts", statusCode: 301 } },
+    "/None": { redirect: { to: "/none", statusCode: 301 } },
+    "/Thoughts": { redirect: { to: "/thoughts", statusCode: 301 } },
+    "/Elementary": { redirect: { to: "/elementary", statusCode: 301 } },
+    "/TailwindCSS": { redirect: { to: "/tailwind", statusCode: 301 } },
+    "/Fonts": { redirect: { to: "/fonts", statusCode: 301 } },
   },
 
   devtools: { enabled: false },
