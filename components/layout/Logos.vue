@@ -27,7 +27,7 @@ onMounted(() => doRound());
 </script>
 
 <template>
-  <div class="my-4 px-1 sm:flex sm:justify-between leading-5 z-0">
+  <div class="max-w-3xl mx-auto my-4 px-1 sm:flex sm:justify-between leading-5 z-0">
     <div class="flex justify-center sm:justify-start">
       <NuxtLink :to="path" title="HB's Thoughts">
         <img ref="logo" src="/images/logo.svg" alt="HB's Thoughts" class="size-12 rounded-full scale-95" />

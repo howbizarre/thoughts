@@ -12,15 +12,13 @@ const stickIt = () => {
   }
 };
 
-onMounted(() => {
-  sticky.value = header.value?.offsetTop || 104;
-  window.addEventListener('scroll', stickIt);
-});
+onBeforeMount(() => window.addEventListener('scroll', stickIt));
+onMounted(() => sticky.value = header.value?.offsetTop || 104);
 onBeforeUnmount(() => window.removeEventListener('scroll', stickIt));
 </script>
 
 <template>
-  <header ref="header" class="flex transition-colors duration-300 justify-between bg-white dark:bg-black rounded-2xl shadow-lg p-3 mb-10 sticky top-0 z-50">
+  <header ref="header" class="max-w-3xl mx-auto flex transition-all duration-300 justify-between bg-white dark:bg-black rounded-2xl shadow-lg p-3 mb-10 sticky top-0 z-50">
     <NavigationTopBar />
 
     <div class="grid grid-flow-col auto-cols-max gap-2">
@@ -32,6 +30,6 @@ onBeforeUnmount(() => window.removeEventListener('scroll', stickIt));
 
 <style scoped>
 .sticky-active {
-  @apply rounded-tl-none rounded-tr-none;
+  @apply rounded-tl-none rounded-tr-none !max-w-[50rem];
 }
 </style>
