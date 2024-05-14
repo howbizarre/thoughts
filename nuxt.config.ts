@@ -65,12 +65,10 @@ export default defineNuxtConfig({
     },
   },
 
-  routeRules: {
-    "/None": { redirect: { to: "/none", statusCode: 301 } },
-    "/Thoughts": { redirect: { to: "/thoughts", statusCode: 301 } },
-    "/Elementary": { redirect: { to: "/elementary", statusCode: 301 } },
-    "/TailwindCSS": { redirect: { to: "/tailwind", statusCode: 301 } },
-    "/Fonts": { redirect: { to: "/fonts", statusCode: 301 } },
+  router: {
+    options: {
+      sensitive: true,
+    },
   },
 
   devtools: { enabled: false },
