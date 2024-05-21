@@ -5,7 +5,7 @@
   "version": "1.2.1",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev --port 8774",
+    "dev": "nuxt dev",
     "generate": "nuxt generate",
     "nuxt_preview": "nuxt preview",
     "postinstall": "nuxt prepare",
