@@ -20,8 +20,10 @@
   "TAG_SEO": "SEO",
   "TAG_TAILWIND": "TailwindCSS",
   "TAG_THOUGHTS": "Thoughts",
+  "TAG_TYPESCRIPT": "Typescript",
   "TAG_VUE": "Vue",
   "TAG_VUE-ROUTER": "Vue Router",
+  "TAG_WEB-WORKERS": "Web Workers",
   "TXT_ERROR_WEB_ADDRESS": "Error in page address",
   "TXT_LINK_ARTICLE": "Link to the article",
   "TXT_NO_ARTICLES_FOUND": "No articles found"

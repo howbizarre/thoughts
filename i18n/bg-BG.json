@@ -20,8 +20,10 @@
   "TAG_SEO": "SEO",
   "TAG_TAILWIND": "TailwindCSS",
   "TAG_THOUGHTS": "Мисли",
+  "TAG_TYPESCRIPT": "Typescript",
   "TAG_VUE": "Vue",
   "TAG_VUE-ROUTER": "Vue Router",
+  "TAG_WEB-WORKERS": "Web Workers",
   "TXT_ERROR_WEB_ADDRESS": "Грешка в адреса на страницата",
   "TXT_LINK_ARTICLE": "Линк към статията",
   "TXT_NO_ARTICLES_FOUND": "Няма намерени статии"
