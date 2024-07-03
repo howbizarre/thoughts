@@ -16,12 +16,13 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240620.0",
+    "@nuxt/image": "^1.7.0",
     "@nuxtjs/color-mode": "^3.4.2",
     "@nuxtjs/i18n": "^8.3.1",
     "@nuxtjs/tailwindcss": "^6.12.0",
     "@tailwindcss/typography": "^0.5.13",
     "nitro-cloudflare-dev": "^0.1.5",
-    "nuxt": "^3.12.2",
+    "nuxt": "^3.12.3",
     "vue": "^3.4.31",
     "vue-router": "^4.4.0",
     "wrangler": "^3.62.0"

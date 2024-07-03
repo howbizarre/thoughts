@@ -13,7 +13,15 @@ export default defineNuxtConfig({
     pageTransition: { name: "page", mode: "out-in" },
   },
 
-  modules: ["nitro-cloudflare-dev", "@nuxtjs/tailwindcss", "@nuxtjs/color-mode", "@nuxt/content", "@nuxtjs/i18n", "@nuxt/devtools"],
+  modules: [
+    "nitro-cloudflare-dev",
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/color-mode",
+    "@nuxt/content",
+    "@nuxtjs/i18n",
+    "@nuxt/devtools",
+    "@nuxt/image"
+  ],
 
   content: {
     highlight: {
@@ -72,4 +80,5 @@ export default defineNuxtConfig({
   },
 
   devtools: { enabled: false },
+  compatibilityDate: "2024-07-03",
 });
