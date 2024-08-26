@@ -13,15 +13,7 @@ export default defineNuxtConfig({
     pageTransition: { name: "page", mode: "out-in" },
   },
 
-  modules: [
-    "nitro-cloudflare-dev",
-    "@nuxtjs/tailwindcss",
-    "@nuxtjs/color-mode",
-    "@nuxt/content",
-    "@nuxtjs/i18n",
-    "@nuxt/devtools",
-    "@nuxt/image"
-  ],
+  modules: ["nitro-cloudflare-dev", "@nuxtjs/tailwindcss", "@nuxtjs/color-mode", "@nuxt/content", "@nuxtjs/i18n", "@nuxt/devtools", "@nuxt/image"],
 
   content: {
     highlight: {
@@ -35,13 +27,13 @@ export default defineNuxtConfig({
       {
         code: "en",
         name: "EN",
-        iso: "en",
+        language: "en",
         file: "en-US.json",
       },
       {
         code: "bg",
         name: "БГ",
-        iso: "bg",
+        language: "bg",
         file: "bg-BG.json",
       },
     ],
