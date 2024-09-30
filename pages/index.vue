@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { ParsedContent } from '@nuxt/content/types';
 import { BarsArrowDownIcon } from '@heroicons/vue/24/outline';
+import type { ParsedContent } from '@nuxt/content';
 
 const localePath = useLocalePath();
 const { t, locale } = useI18n();
 const path = computed(() => localePath(`/articles`));
 
-const paginatedContent = ref([] as ParsedContent[]);
+const paginatedContent = ref<ParsedContent[]>([]);
 const countContent = await queryContent(path.value).count();
 const hasLoad = computed(() => countContent > paginatedContent.value.length);
 const showLoad = ref(false);

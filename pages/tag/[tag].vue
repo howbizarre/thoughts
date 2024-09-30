@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { QueryBuilderParams } from '@nuxt/content/types';
+import type { QueryBuilderParams } from '@nuxt/content';
 
 const { locale, t } = useI18n();
 const localePath = useLocalePath();

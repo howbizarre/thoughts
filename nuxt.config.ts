@@ -19,6 +19,9 @@ export default defineNuxtConfig({
     highlight: {
       theme: "github-dark",
     },
+    experimental: {
+      search: { indexed: true },
+    },
   },
 
   i18n: {
