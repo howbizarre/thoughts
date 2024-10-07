@@ -1,12 +1,19 @@
 <script setup lang="ts">
-import { HomeIcon } from '@heroicons/vue/24/outline';
-const { t } = useI18n();
+import { HomeIcon, MagnifyingGlassIcon } from '@heroicons/vue/24/outline';
+import type { NavItem } from '@nuxt/content';
 
-const { locale } = useI18n();
-const { data: navigation } = await useAsyncData(`[navigation-${locale.value}]`, () => fetchContentNavigation());
-const localeNavigation = computed(() => navigation.value ? navigation.value.filter((item) => item._path === `/${locale.value}`) : []);
+const navigation = ref<NavItem[] | null>(null);
+const { t, locale } = useI18n();
 const localePath = useLocalePath();
+
+const localeNavigation = computed(() => navigation.value ? navigation.value.filter((item) => item._path === `/${locale.value}`) : []);
 const path = computed(() => localePath('/'));
+const isSearchPath = (path: string) => path.endsWith('/search');
+
+onMounted(async () => {
+  const { data } = await useAsyncData(`[navigation-${locale.value}]`, () => fetchContentNavigation());
+  navigation.value = data.value;
+});
 </script>
 
 <template>
@@ -16,10 +23,13 @@ const path = computed(() => localePath('/'));
         <HomeIcon class="size-5" />
       </NuxtLink>
 
-      <template v-for="nav of localeNavigation" :key="nav._path">
-        <template v-for="link of nav.children" :key="link._path">
-          <NuxtLink :to="link._path" class="btn btn-default">
-            {{ link.title }}
+      <template v-for="navigationItem of localeNavigation" :key="navigationItem._path">
+        <template v-for="link of navigationItem.children" :key="link._path">
+          <NuxtLink :to="link._path" class="btn btn-default" :class="{ 'btn-icon': isSearchPath(link._path) }">
+            <template v-if="isSearchPath(link._path)">
+              <MagnifyingGlassIcon class="size-5" />
+            </template>
+            <template v-else>{{ link.title }}</template>
           </NuxtLink>
         </template>
       </template>
