@@ -1,19 +1,12 @@
 <script setup lang="ts">
 import { HomeIcon, MagnifyingGlassIcon } from '@heroicons/vue/24/outline';
-import type { NavItem } from '@nuxt/content';
 
-const navigation = ref<NavItem[] | null>(null);
 const { t, locale } = useI18n();
 const localePath = useLocalePath();
-
+const { data: navigation } = await useAsyncData(`[navigation-${locale.value}]`, () => fetchContentNavigation());
 const localeNavigation = computed(() => navigation.value ? navigation.value.filter((item) => item._path === `/${locale.value}`) : []);
 const path = computed(() => localePath('/'));
 const isSearchPath = (path: string) => path.endsWith('/search');
-
-onMounted(async () => {
-  const { data } = await useAsyncData(`[navigation-${locale.value}]`, () => fetchContentNavigation());
-  navigation.value = data.value;
-});
 </script>
 
 <template>
