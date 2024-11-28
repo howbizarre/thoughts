@@ -5,3 +5,5 @@ slug: "search"
 navigation:
   title: "Search"
 ---
+
+You fill in the field above the word you are interested in, and you immediately receive as a result articles that contain this word.

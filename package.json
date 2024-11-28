@@ -25,7 +25,7 @@
     "nuxt": "^3.13.2",
     "vue": "^3.5.11",
     "vue-router": "^4.4.5",
-    "wrangler": "^3.80.0"
+    "wrangler": "^3.91.0"
   },
   "dependencies": {
     "@heroicons/vue": "^2.1.5",
