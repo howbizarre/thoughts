@@ -44,7 +44,7 @@ onMounted(() => doRound());
           </NuxtLink>
         </div>
 
-        <p class="text-gray-500">I try to think really hard.</p>
+        <p class="text-gray-500">If the Universe Is the Answer, What Is the Question?!</p>
       </div>
     </div>
   </div>
