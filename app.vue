@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const i18nHead = useLocaleHead({
-  addSeoAttributes: true
+  seo: true
 });
 
 useHead({
