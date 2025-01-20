@@ -7,7 +7,6 @@ const availableLocales = computed(() => (locales.value).filter(i => i.code !== l
 const switchLocalePath = useSwitchLocalePath();
 
 watch(locale, () => useHead({ htmlAttrs: { lang: locale.value } }));
-onBeforeMount(() => useHead({ htmlAttrs: { lang: locale.value } }));
 </script>
 
 <template>
