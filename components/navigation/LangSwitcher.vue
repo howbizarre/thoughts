@@ -5,10 +5,9 @@ const { locale, locales } = useI18n();
 const availableLocales = computed(() => (locales.value).filter(i => i.code !== locale.value));
 
 const switchLocalePath = useSwitchLocalePath();
-const changeHtmlLang = (lang: string) => document.documentElement.lang = lang;
 
-watch(locale, () => changeHtmlLang(locale.value));
-onBeforeMount(() => changeHtmlLang(locale.value));
+watch(locale, () => useHead({ htmlAttrs: { lang: locale.value } }));
+onBeforeMount(() => useHead({ htmlAttrs: { lang: locale.value } }));
 </script>
 
 <template>
