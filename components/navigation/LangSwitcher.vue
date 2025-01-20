@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { LanguageIcon } from '@heroicons/vue/24/solid';
+import { LanguageIcon } from "@heroicons/vue/24/solid";
 
 const { locale, locales } = useI18n();
 const availableLocales = computed(() => (locales.value).filter(i => i.code !== locale.value));
