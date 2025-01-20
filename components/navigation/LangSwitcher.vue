@@ -2,8 +2,13 @@
 import { LanguageIcon } from '@heroicons/vue/24/solid';
 
 const { locale, locales } = useI18n();
-const switchLocalePath = useSwitchLocalePath();
 const availableLocales = computed(() => (locales.value).filter(i => i.code !== locale.value));
+
+const switchLocalePath = useSwitchLocalePath();
+const changeHtmlLang = (lang: string) => document.documentElement.lang = lang;
+
+watch(locale, () => changeHtmlLang(locale.value));
+onBeforeMount(() => changeHtmlLang(locale.value));
 </script>
 
 <template>
