@@ -43,7 +43,7 @@
     @apply selection:bg-gray-950 dark:selection:bg-gray-50 selection:text-gray-50 dark:selection:text-gray-950;
 
     h2 {
-      @apply text-3xl font-semibold mb-6;
+      @apply text-3xl font-normal my-6;
     }
 
     p {

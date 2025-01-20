@@ -15,7 +15,7 @@ const path = computed(() => localePath(`/articles/${doc.value.slug}`));
       {{ (new Date(doc.date)).toLocaleDateString(locale) }}
     </div>
 
-    <h2 class="text-2xl font-bold">
+    <h2 class="text-2xl font-bold !mt-1">
       <NuxtLink :to="path">
         {{ doc.title }}
         <span class="sr-only">{{ t('TXT_LINK_ARTICLE') }}</span>

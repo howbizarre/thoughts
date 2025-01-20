@@ -34,11 +34,11 @@ onMounted(() => doRound());
       </NuxtLink>
 
       <div class="ml-3">
-        <h1 v-if="isHomePage" class="text-2xl font-semibold">
+        <h1 v-if="isHomePage" class="text-2xl font-medium">
           HB's Thoughts
         </h1>
 
-        <div v-else class="hN text-2xl font-semibold">
+        <div v-else class="hN text-2xl font-medium">
           <NuxtLink :to="path" title="HB's Thoughts">
             HB's Thoughts
           </NuxtLink>

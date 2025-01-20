@@ -13,7 +13,7 @@ const { locale, t } = useI18n();
       <div class="px-5 pt-5" :data-article-pat="path">
         <header class="text-left mb-10">
           <p class="text-gray-500 text-sm !-mb-1 block">{{ (new Date(doc.date)).toLocaleDateString(locale) }}</p>
-          <h1 class="text-4xl font-bold">{{ doc.title }}</h1>
+          <h1 class="text-4xl font-medium">{{ doc.title }}</h1>
         </header>
 
         <ContentRenderer :value="doc" class="prose dark:prose-invert max-w-full" />
