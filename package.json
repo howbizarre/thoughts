@@ -15,17 +15,17 @@
     "build-cf-types": "wrangler types"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20250129.0",
+    "@cloudflare/workers-types": "^4.20250214.0",
     "@nuxt/image": "^1.9.0",
     "@nuxtjs/color-mode": "^3.5.2",
-    "@nuxtjs/i18n": "^9.1.5",
+    "@nuxtjs/i18n": "^9.2.0",
     "@nuxtjs/tailwindcss": "^6.13.1",
     "@tailwindcss/typography": "^0.5.16",
     "nitro-cloudflare-dev": "^0.2.1",
     "nuxt": "^3.15.4",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0",
-    "wrangler": "^3.107.3"
+    "wrangler": "^3.109.2"
   },
   "dependencies": {
     "@heroicons/vue": "^2.2.0",
