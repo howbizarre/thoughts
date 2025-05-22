@@ -1,3 +1,5 @@
+import contentConfig from './content/configuration.yml';
+
 export default defineNuxtConfig({
   app: {
     baseURL: '/',
@@ -16,6 +18,7 @@ export default defineNuxtConfig({
   modules: ['nitro-cloudflare-dev', '@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxt/content', '@nuxtjs/i18n', '@nuxt/devtools', '@nuxt/image'],
 
   content: {
+    ...contentConfig.content,
     highlight: {
       theme: 'github-dark'
     },

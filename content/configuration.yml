@@ -1,0 +1,29 @@
+content:
+  # Define the default locale for the content
+  defaultLocale: 'en'
+
+  # Define the locales available for the content
+  locales:
+    - code: 'en'
+      iso: 'en-US'
+      file: 'en-US.json'
+    - code: 'bg'
+      iso: 'bg-BG'
+      file: 'bg-BG.json'
+
+  # Define the directory where the content files are located
+  dir: 'content'
+
+  # Define the default slug for the content
+  defaultSlug: 'index'
+
+  # Define the default navigation settings for the content
+  navigation:
+    - title: 'Home'
+      slug: '/'
+    - title: 'Articles'
+      slug: '/articles'
+    - title: 'Tags'
+      slug: '/tags'
+    - title: 'Search'
+      slug: '/search'
