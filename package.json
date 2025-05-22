@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@heroicons/vue": "^2.2.0",
-    "@nuxt/content": "^2.13.4",
+    "@nuxt/content": "^3.0.0",
     "sitemap": "^8.0.0"
   },
   "packageManager": "pnpm@10.10.0"

@@ -8,7 +8,7 @@ const path = computed(() => localePath('/'));
 const search = ref("");
 const miniSearchOptions = defineMiniSearchOptions({ fields: ["title", "content"] });
 
-const results = await searchContent(search, { miniSearch: miniSearchOptions });
+const results = await queryContent(search, { miniSearch: miniSearchOptions });
 const filteredResults = computed(() => results.value.filter(res => res.id.startsWith(`${path.value}/`) && !res.titles.length));
 
 const description = {

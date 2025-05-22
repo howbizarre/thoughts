@@ -16,7 +16,7 @@ const { locale, t } = useI18n();
           <h1 class="text-4xl font-medium">{{ doc.title }}</h1>
         </header>
 
-        <ContentRenderer :value="doc" class="prose dark:prose-invert max-w-full" />
+        <ContentRenderer :value="doc.body" class="prose dark:prose-invert max-w-full" />
 
         <hr class="h-line" />
 

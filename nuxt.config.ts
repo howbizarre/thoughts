@@ -20,7 +20,8 @@ export default defineNuxtConfig({
       theme: 'github-dark'
     },
     experimental: {
-      search: { indexed: true }
+      documentDriven: true,
+      advancedSearch: true
     }
   },
 
